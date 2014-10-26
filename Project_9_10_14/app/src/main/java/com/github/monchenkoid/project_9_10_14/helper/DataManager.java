@@ -16,12 +16,17 @@ public static interface Callback<Result> {
     void onError(Exception e);
 }
 
+
+
     public static <ProcessingResult, DataSourceResult, Params> void
     loadData(
+
             final Callback<ProcessingResult> callback,
             final Params params,
             final DataSource<DataSourceResult, Params> dataSource,
-            final Processor<ProcessingResult, DataSourceResult> processor) {
+            final Processor<ProcessingResult, DataSourceResult> processor
+    )
+    {
         if (callback == null) {
             throw new IllegalArgumentException("callback can't be null");
         }

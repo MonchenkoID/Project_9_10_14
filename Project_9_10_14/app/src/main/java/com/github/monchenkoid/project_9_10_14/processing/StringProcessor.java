@@ -1,6 +1,7 @@
 package com.github.monchenkoid.project_9_10_14.processing;
 
 import com.github.monchenkoid.project_9_10_14.source.HttpDataSource;
+import com.github.monchenkoid.project_9_10_14.source.RawDataSource;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -24,9 +25,15 @@ public class StringProcessor implements Processor<String, InputStream> {
             }
             return builder.toString();
         } finally {
-            HttpDataSource.close(in);
+           /* HttpDataSource.close(in);
             HttpDataSource.close(inputStreamReader);
-            HttpDataSource.close(inputStream);
+            HttpDataSource.close(inputStream);*/
+            RawDataSource.close(in);
+            RawDataSource.close(inputStreamReader);
+            RawDataSource.close(inputStream);
         }
+
+
+
     }
 }

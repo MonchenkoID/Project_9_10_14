@@ -21,6 +21,7 @@ import com.github.monchenkoid.project_9_10_14.processing.RedirectProcessor;
 import com.github.monchenkoid.project_9_10_14.processing.StringProcessor;
 import com.github.monchenkoid.project_9_10_14.source.ArrayStringDataSource;
 import com.github.monchenkoid.project_9_10_14.source.HttpDataSource;
+import com.github.monchenkoid.project_9_10_14.source.RawDataSource;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +33,6 @@ public class MainActivity extends ActionBarActivity implements DataManager.Callb
 
     public static final String URL = "https://dl.dropboxusercontent.com/u/16403954/test.json";
     private ArrayAdapter mAdapter;
-
     private SwipeRefreshLayout mSwipeRefreshLayout;
 
     @Override
@@ -40,23 +40,25 @@ public class MainActivity extends ActionBarActivity implements DataManager.Callb
         super.onCreate(pSavedInstanceState);
         setContentView(R.layout.activity_main);
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
-        final HttpDataSource dataSource = HttpDataSource.get(MainActivity.this);
+        final RawDataSource dataSource = RawDataSource.get(MainActivity.this);        ;
         final NoteArrayProcessor processor = new NoteArrayProcessor();
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 DataManager.loadData(MainActivity.this,
-                        URL,
+                        R.raw.test,
                         dataSource,
                         processor);
             }
         });
         DataManager.loadData(MainActivity.this,
-                URL,
+                R.raw.test,
                 dataSource,
                 processor);
 
     }
+
+
 
     @Override
     public void onDataLoadStart() {
