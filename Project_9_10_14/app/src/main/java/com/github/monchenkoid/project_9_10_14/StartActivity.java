@@ -15,7 +15,6 @@ public class StartActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
 
             startMainActivity();
-
     }
 
     private void startMainActivity() {
