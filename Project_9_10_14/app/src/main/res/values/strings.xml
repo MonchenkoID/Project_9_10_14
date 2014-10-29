@@ -6,5 +6,6 @@
     <string name="name">Имя</string>
     <string name="password">Пароль</string>
     <string name="logIn">Войти</string>
+    <string name="registration">Регистрация</string>
 
 </resources>

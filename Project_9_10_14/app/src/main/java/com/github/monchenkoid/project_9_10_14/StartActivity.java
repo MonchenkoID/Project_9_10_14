@@ -14,7 +14,7 @@ public class StartActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-            startMainActivity();
+        startMainActivity();
     }
 
     private void startMainActivity() {
