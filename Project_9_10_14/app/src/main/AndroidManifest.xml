@@ -27,13 +27,26 @@
         <activity
             android:name="com.github.monchenkoid.project_9_10_14.StartActivity"
             android:label="@string/app_name" >
+
+        </activity>
+
+        <activity
+            android:name=".auth.StartActivity"
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
->
+        <activity
+            android:name=".auth.LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name=".auth.UserPageActivity"
+            android:label="@string/title_activity_user_page" >
+        </activity>
     </application>
 
 </manifest>

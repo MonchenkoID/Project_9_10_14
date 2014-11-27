@@ -7,5 +7,8 @@
     <string name="password">Пароль</string>
     <string name="logIn">Войти</string>
     <string name="registration">Регистрация</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_user_page">UserPageActivity</string>
+
 
 </resources>
