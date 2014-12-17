@@ -4,7 +4,7 @@
    https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/master/GcmEndpoints
 */
 
-package com.github.monchenkoid.project_9_10_14_server;
+package com.github.monchenkoid.project_9_10_14.backend;
 
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 
 import javax.inject.Named;
 
-import static com.github.monchenkoid.project_9_10_14_server.OfyService.ofy;
+import static com.github.monchenkoid.project_9_10_14.backend.OfyService.ofy;
 
 /**
  * A registration endpoint class we are exposing for a device's GCM registration id on the backend
@@ -28,7 +28,7 @@ import static com.github.monchenkoid.project_9_10_14_server.OfyService.ofy;
  * authentication! If this app is deployed, anyone can access this endpoint! If
  * you'd like to add authentication, take a look at the documentation.
  */
-@Api(name = "registration", version = "v1", namespace = @ApiNamespace(ownerDomain = "project_9_10_14_server.monchenkoid.github.com", ownerName = "project_9_10_14_server.monchenkoid.github.com", packagePath = ""))
+@Api(name = "registration", version = "v1", namespace = @ApiNamespace(ownerDomain = "backend.project_9_10_14.monchenkoid.github.com", ownerName = "backend.project_9_10_14.monchenkoid.github.com", packagePath = ""))
 public class RegistrationEndpoint {
 
     private static final Logger log = Logger.getLogger(RegistrationEndpoint.class.getName());

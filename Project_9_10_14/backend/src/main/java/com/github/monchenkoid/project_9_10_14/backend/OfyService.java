@@ -1,4 +1,4 @@
-package com.github.monchenkoid.project_9_10_14_server;
+package com.github.monchenkoid.project_9_10_14.backend;
 
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyFactory;

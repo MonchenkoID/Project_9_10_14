@@ -4,7 +4,7 @@
    https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/master/GcmEndpoints
 */
 
-package com.github.monchenkoid.project_9_10_14_server;
+package com.github.monchenkoid.project_9_10_14.backend;
 
 import com.google.android.gcm.server.Constants;
 import com.google.android.gcm.server.Message;
@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 
 import javax.inject.Named;
 
-import static com.github.monchenkoid.project_9_10_14_server.OfyService.ofy;
+import static com.github.monchenkoid.project_9_10_14.backend.OfyService.ofy;
 
 /**
  * An endpoint to send messages to devices registered with the backend
@@ -31,7 +31,7 @@ import static com.github.monchenkoid.project_9_10_14_server.OfyService.ofy;
  * authentication! If this app is deployed, anyone can access this endpoint! If
  * you'd like to add authentication, take a look at the documentation.
  */
-@Api(name = "messaging", version = "v1", namespace = @ApiNamespace(ownerDomain = "project_9_10_14_server.monchenkoid.github.com", ownerName = "project_9_10_14_server.monchenkoid.github.com", packagePath = ""))
+@Api(name = "messaging", version = "v1", namespace = @ApiNamespace(ownerDomain = "backend.project_9_10_14.monchenkoid.github.com", ownerName = "backend.project_9_10_14.monchenkoid.github.com", packagePath = ""))
 public class MessagingEndpoint {
     private static final Logger log = Logger.getLogger(MessagingEndpoint.class.getName());
 
