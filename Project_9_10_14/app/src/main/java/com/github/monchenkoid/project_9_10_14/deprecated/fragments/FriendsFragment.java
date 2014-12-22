@@ -1,4 +1,4 @@
-package com.github.monchenkoid.project_9_10_14.auth.fragments;
+package com.github.monchenkoid.project_9_10_14.deprecated.fragments;
 
 import android.annotation.TargetApi;
 import android.app.Fragment;

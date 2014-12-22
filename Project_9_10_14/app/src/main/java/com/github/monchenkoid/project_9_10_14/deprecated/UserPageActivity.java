@@ -1,4 +1,4 @@
-package com.github.monchenkoid.project_9_10_14.auth;
+package com.github.monchenkoid.project_9_10_14.deprecated;
 
 import android.os.AsyncTask;
 import android.os.Bundle;

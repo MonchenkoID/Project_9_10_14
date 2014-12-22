@@ -1,12 +1,18 @@
-package com.github.monchenkoid.project_9_10_14.auth;
+package com.github.monchenkoid.project_9_10_14.deprecated;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.util.Pair;
 import android.view.View;
 
+import com.github.monchenkoid.project_9_10_14.EndpointsAsyncTask;
 import com.github.monchenkoid.project_9_10_14.R;
+import com.github.monchenkoid.project_9_10_14.backend.myApi.MyApi;
+import com.github.monchenkoid.project_9_10_14.backend.myApi.model.MyBean;
+import com.google.api.client.extensions.android.http.AndroidHttp;
 
 
 public class StartActivity extends ActionBarActivity {
@@ -18,6 +24,9 @@ public class StartActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+
+        new EndpointsAsyncTask().execute(new MyBean());
+
 
     }
 

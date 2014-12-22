@@ -1,4 +1,4 @@
-package com.github.monchenkoid.project_9_10_14.auth.auth;
+package com.github.monchenkoid.project_9_10_14.deprecated.auth;
 
 import android.util.Log;
 
