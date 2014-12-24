@@ -45,7 +45,7 @@ public class UserBeanEndpoint {
     @ApiMethod(name = "getUserBean")
     public UserBean getUserBean(@Named("id") Long id) {
         // TODO: Implement this function
-        logger.info("Calling getTIMBean method");
+        logger.info("Calling getUserBean method");
         return null;
     }
 

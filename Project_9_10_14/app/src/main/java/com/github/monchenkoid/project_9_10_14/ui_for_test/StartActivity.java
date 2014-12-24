@@ -14,6 +14,8 @@ import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.github.monchenkoid.project_9_10_14.R;
+import com.github.monchenkoid.project_9_10_14.asynctasks.EndpointsAsyncTask;
+import com.github.monchenkoid.project_9_10_14.backend.timBeanApi.model.TIMBean;
 
 
 public class StartActivity extends ActionBarActivity {
@@ -29,7 +31,9 @@ public class StartActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-        // new EndpointsAsyncTask().execute(new TIMBean());
+
+
+
 
         mPasswordLoginButton = (Button) findViewById(R.id.login_btn);
         mPasswordLoginButton.setOnClickListener(new View.OnClickListener() {
