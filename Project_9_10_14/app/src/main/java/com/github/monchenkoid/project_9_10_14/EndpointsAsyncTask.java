@@ -22,16 +22,11 @@ public class EndpointsAsyncTask extends AsyncTask<TIMBean, Void, Void> {
         if (timBeanApiService == null) {  // Only do this once
             TimBeanApi.Builder builder = new TimBeanApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null);
             // end options for devappserver
-
             timBeanApiService = builder.build();
         }
         /*TODO write normal universal AsyncTask */
-        TIMBean beann = new TIMBean();
-        beann.setId(12553L);
-        beann.setName("win!!????");
-
         try {
-            timBeanApiService.insertTIMBean(beann).execute();
+            timBeanApiService.insertTIMBean(bean[0]).execute();
         } catch (IOException e) {
             Log.d("must die", e.getMessage());
         }

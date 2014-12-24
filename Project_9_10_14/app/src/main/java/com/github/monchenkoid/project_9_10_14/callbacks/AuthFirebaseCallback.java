@@ -8,12 +8,12 @@ import android.util.Log;
 
 public abstract class AuthFirebaseCallback<Result> {
 
-    @Override
+
     public void onDataLoadStart() {
         Log.d("SimpleCallback", "onDataLoadStart");
     }
 
-    @Override
+
     public void onError(Exception e) {
         Log.e("SimpleCallback", "onError", e);
     }
