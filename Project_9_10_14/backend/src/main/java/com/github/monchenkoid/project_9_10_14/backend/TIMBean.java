@@ -10,9 +10,9 @@ public class TIMBean /*TODO implements Serializable*/ {
 
     private Long id;
     private String name;
-    private String[] dichotomy = new String[3];
+ /*   private String[] dichotomy = new String[3];
     private String[] traitsReinin = new String[10];
-    private String[] modelA = new String[7];
+    private String[] modelA = new String[7];*/
 
 
     public Long getId() {
@@ -30,7 +30,7 @@ public class TIMBean /*TODO implements Serializable*/ {
     public void setName(String name) {
         this.name = name;
     }
-
+/*
     public String[] getDichotomy() {
         return dichotomy;
     }
@@ -54,5 +54,5 @@ public class TIMBean /*TODO implements Serializable*/ {
     public void setModelA(String[] modelA) {
         this.modelA = modelA;
     }
-
+*/
 }

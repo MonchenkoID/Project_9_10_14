@@ -56,9 +56,9 @@ public class TIMBeanEndpoint {
             Key timBeanParentKey = KeyFactory.createKey("TIMBeanParent", "bcknd");
             Entity timEntity = new Entity("TIMBean", timBean.getId(), timBeanParentKey);
             timEntity.setProperty("name", timBean.getName());
-            timEntity.setProperty("dichotomy", timBean.getDichotomy());
+         /*   timEntity.setProperty("dichotomy", timBean.getDichotomy());
             timEntity.setProperty("traitsReinin", timBean.getTraitsReinin());
-            timEntity.setProperty("modelA", timBean.getModelA());
+            timEntity.setProperty("modelA", timBean.getModelA());*/
             datastoreService.put(timEntity);
             txn.commit();
         } finally {
@@ -79,9 +79,9 @@ public class TIMBeanEndpoint {
             TIMBean timBean = new TIMBean();
             timBean.setId(result.getKey().getId());
             timBean.setName((String) result.getProperty("name"));
-            timBean.setDichotomy((String[]) result.getProperty("dichotomy"));
+         /*   timBean.setDichotomy((String[]) result.getProperty("dichotomy"));
             timBean.setTraitsReinin((String[]) result.getProperty("traitsReinin"));
-            timBean.setModelA((String[]) result.getProperty("modelA"));
+            timBean.setModelA((String[]) result.getProperty("modelA"));*/
             timBeans.add(timBean);
         }
 
