@@ -8,11 +8,11 @@ public class TIMBean /*TODO implements Serializable*/ {
 
     //   static final long serialVersionUID = 10275539472837496L;
 
-    private static Long id;
-    private static String name;
-    private static String[] dichotomy = new String[3];
-    private static String[] traitsReinin = new String[10];
-    private static String[] modelA = new String[7];
+    private Long id;
+    private String name;
+    private String[] dichotomy = new String[3];
+    private String[] traitsReinin = new String[10];
+    private String[] modelA = new String[7];
 
 
     public Long getId() {
@@ -20,7 +20,7 @@ public class TIMBean /*TODO implements Serializable*/ {
     }
 
     public void setId(Long id) {
-        TIMBean.id = id;
+        this.id = id;
     }
 
     public String getName() {
@@ -28,7 +28,7 @@ public class TIMBean /*TODO implements Serializable*/ {
     }
 
     public void setName(String name) {
-        TIMBean.name = name;
+        this.name = name;
     }
 
     public String[] getDichotomy() {
@@ -36,7 +36,7 @@ public class TIMBean /*TODO implements Serializable*/ {
     }
 
     public void setDichotomy(String[] dichotomy) {
-        TIMBean.dichotomy = dichotomy;
+        this.dichotomy = dichotomy;
     }
 
     public String[] getTraitsReinin() {
@@ -44,7 +44,7 @@ public class TIMBean /*TODO implements Serializable*/ {
     }
 
     public void setTraitsReinin(String[] traitsReinin) {
-        TIMBean.traitsReinin = traitsReinin;
+        this.traitsReinin = traitsReinin;
     }
 
     public String[] getModelA() {
@@ -52,7 +52,7 @@ public class TIMBean /*TODO implements Serializable*/ {
     }
 
     public void setModelA(String[] modelA) {
-        TIMBean.modelA = modelA;
+        this.modelA = modelA;
     }
 
 }

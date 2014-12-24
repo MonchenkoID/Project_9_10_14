@@ -13,5 +13,10 @@
     <string name="auth_firebase">Authenticating with Firebase…</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="hello_world">You are in our system</string>
+    <string name="tag_password">password</string>
+    <string name="invalid_provider">"Invalid provider: "</string>
+    <string name="logged_in_as">"Logged in as "</string>
+    <string name="auth_succefull">" auth successful"</string>
+    <string name="error">Error</string>
 
 </resources>

@@ -54,7 +54,7 @@ public class UserBeanEndpoint {
         DatastoreService datastoreService = DatastoreServiceFactory.getDatastoreService();
         Transaction txn = datastoreService.beginTransaction();
         try {
-            Key userBeanParentKey = KeyFactory.createKey("UserBeanParent", "todo.txt");
+            Key userBeanParentKey = KeyFactory.createKey("UserBeanParent", "bcknd");
             Entity userEntity = new Entity("UserBean", userBean.getId(), userBeanParentKey);
             userEntity.setProperty("name", userBean.getName());
             userEntity.setProperty("lastName", userBean.getLastName());
@@ -77,7 +77,7 @@ public class UserBeanEndpoint {
     @ApiMethod(name = "getUserBeans")
     public List<UserBean> getUserBeans() {
         DatastoreService datastoreService = DatastoreServiceFactory.getDatastoreService();
-        Key userBeanParentKey = KeyFactory.createKey("UserBeanParent", "todo.txt");
+        Key userBeanParentKey = KeyFactory.createKey("UserBeanParent", "bcknd");
         Query query = new Query(userBeanParentKey);
         List<Entity> results = datastoreService.prepare(query).asList(FetchOptions.Builder.withDefaults());
         ArrayList<UserBean> userBeans = new ArrayList<UserBean>();
@@ -103,7 +103,7 @@ public class UserBeanEndpoint {
         DatastoreService datastoreService = DatastoreServiceFactory.getDatastoreService();
         Transaction txn = datastoreService.beginTransaction();
         try {
-            Key userBeanParentKey = KeyFactory.createKey("UserBeanParent", "todo.txt");
+            Key userBeanParentKey = KeyFactory.createKey("UserBeanParent", "bcknd");
             Query query = new Query(userBeanParentKey);
             List<Entity> results = datastoreService.prepare(query).asList(FetchOptions.Builder.withDefaults());
             for (Entity result : results) {

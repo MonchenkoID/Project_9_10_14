@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,8 +29,6 @@ public class StartActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-
-
         // new EndpointsAsyncTask().execute(new TIMBean());
 
         mPasswordLoginButton = (Button) findViewById(R.id.login_btn);
@@ -62,34 +59,28 @@ public class StartActivity extends ActionBarActivity {
         });
     }
 
-
-    /**
-     * Once a user is logged in, take the mAuthData provided from Firebase and "use" it.
-     */
     public void setAuthenticatedUser(AuthData authData) {
         if (authData != null) {
             /* Hide all the login buttons */
             mPasswordLoginButton.setVisibility(View.GONE);
             /* show a provider specific status text */
             String name = null;
-            if (authData.getProvider().equals("password")) {
+            if (authData.getProvider().equals(getString(R.string.tag_password))) {
                 name = authData.getUid();
             } else {
-                Log.e(TAG, "Invalid provider: " + authData.getProvider());
+                Log.e(TAG, getString(R.string.invalid_provider) + authData.getProvider());
             }
             if (name != null) {
-                Log.i(TAG, "Logged in as " + name + " (" + authData.getProvider() + ")");
+                Log.i(TAG, getString(R.string.logged_in_as) + name + " (" + authData.getProvider() + ")");
                 startActivity(new Intent(this, MainActivity.class));
                 mAuthProgressDialog.cancel();
                 finish();
             }
         } else {
-            /* No authenticated user show all the login buttons */
             mPasswordLoginButton.setVisibility(View.VISIBLE);
         }
         this.mAuthData = authData;
-        /* invalidate options menu to hide/show the logout button */
-        supportInvalidateOptionsMenu();
+
     }
 
     public class AuthFirebaseHandler implements Firebase.AuthResultHandler {
@@ -103,7 +94,7 @@ public class StartActivity extends ActionBarActivity {
         @Override
         public void onAuthenticated(AuthData authData) {
             mAuthProgressDialog.hide();
-            Log.i(TAG, provider + " auth successful");
+            Log.i(TAG, provider + getString(R.string.auth_succefull));
             setAuthenticatedUser(authData);
         }
 
@@ -116,7 +107,7 @@ public class StartActivity extends ActionBarActivity {
 
     public void showErrorDialog(String message) {
         new AlertDialog.Builder(this)
-                .setTitle("Error")
+                .setTitle(getString(R.string.error))
                 .setMessage(message)
                 .setPositiveButton(android.R.string.ok, null)
                 .setIcon(android.R.drawable.ic_dialog_alert)
@@ -125,7 +116,7 @@ public class StartActivity extends ActionBarActivity {
 
     public void loginWithPassword() {
         mAuthProgressDialog.show();
-        mFirebase.authWithPassword(mUserEmail.getText().toString(), mUserPassword.getText().toString(), new AuthFirebaseHandler("password"));
+        mFirebase.authWithPassword(mUserEmail.getText().toString(), mUserPassword.getText().toString(), new AuthFirebaseHandler(getString(R.string.tag_password)));
     }
 
 }

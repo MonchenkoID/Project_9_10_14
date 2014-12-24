@@ -1,8 +1,9 @@
-package com.github.monchenkoid.project_9_10_14;
+package com.github.monchenkoid.project_9_10_14.asynctasks;
 
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.github.monchenkoid.project_9_10_14.R;
 import com.github.monchenkoid.project_9_10_14.backend.timBeanApi.TimBeanApi;
 import com.github.monchenkoid.project_9_10_14.backend.timBeanApi.model.TIMBean;
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -28,7 +29,7 @@ public class EndpointsAsyncTask extends AsyncTask<TIMBean, Void, Void> {
         try {
             timBeanApiService.insertTIMBean(bean[0]).execute();
         } catch (IOException e) {
-            Log.d("must die", e.getMessage());
+            Log.d(String.valueOf((R.string.error)), e.getMessage());
         }
         return null;
     }

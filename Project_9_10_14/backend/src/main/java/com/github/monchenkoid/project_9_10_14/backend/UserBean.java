@@ -9,22 +9,22 @@ import java.util.Date;
 public class UserBean/*TODO implements Serializable*/ {
 
     //  static final long serialVersionUID = 10275539472837495L;
-    private static Long id;
-    private static String name;
-    private static String lastName;
-    private static String state;
-    private static String countryNatale;
-    private static String cityNatale;
-    private static String gender;
-    private static Date userDateBirthday;
-    private static TIMBean userTIM;
+    private Long id;
+    private String name;
+    private String lastName;
+    private String state;
+    private String countryNatale;
+    private String cityNatale;
+    private String gender;
+    private Date userDateBirthday;
+    private TIMBean userTIM;
 
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
-        UserBean.id = id;
+        this.id = id;
     }
 
     public String getName() {
@@ -32,7 +32,7 @@ public class UserBean/*TODO implements Serializable*/ {
     }
 
     public void setName(String name) {
-        UserBean.name = name;
+        this.name = name;
     }
 
     public String getLastName() {
@@ -40,7 +40,7 @@ public class UserBean/*TODO implements Serializable*/ {
     }
 
     public void setLastName(String lastName) {
-        UserBean.lastName = lastName;
+        this.lastName = lastName;
     }
 
     public String getState() {
@@ -48,7 +48,7 @@ public class UserBean/*TODO implements Serializable*/ {
     }
 
     public void setState(String state) {
-        UserBean.state = state;
+        this.state = state;
     }
 
     public String getCountryNatale() {
@@ -56,7 +56,7 @@ public class UserBean/*TODO implements Serializable*/ {
     }
 
     public void setCountryNatale(String countryNatale) {
-        UserBean.countryNatale = countryNatale;
+        this.countryNatale = countryNatale;
     }
 
     public String getCityNatale() {
@@ -64,7 +64,7 @@ public class UserBean/*TODO implements Serializable*/ {
     }
 
     public void setCityNatale(String cityNatale) {
-        UserBean.cityNatale = cityNatale;
+        this.cityNatale = cityNatale;
     }
 
     public String getGender() {
@@ -72,7 +72,7 @@ public class UserBean/*TODO implements Serializable*/ {
     }
 
     public void setGender(String gender) {
-        UserBean.gender = gender;
+        this.gender = gender;
     }
 
     public Date getUserDateBirthday() {
@@ -80,7 +80,7 @@ public class UserBean/*TODO implements Serializable*/ {
     }
 
     public void setUserDateBirthday(Date userDateBirthday) {
-        UserBean.userDateBirthday = userDateBirthday;
+        this.userDateBirthday = userDateBirthday;
     }
 
     public TIMBean getUserTIM() {
@@ -88,6 +88,6 @@ public class UserBean/*TODO implements Serializable*/ {
     }
 
     public void setUserTIM(TIMBean userTIM) {
-        UserBean.userTIM = userTIM;
+        this.userTIM = userTIM;
     }
 }

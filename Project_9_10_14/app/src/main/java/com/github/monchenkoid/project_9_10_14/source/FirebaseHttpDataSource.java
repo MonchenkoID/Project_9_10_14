@@ -20,11 +20,7 @@ public class FirebaseHttpDataSource implements DataSource<Firebase, String> {
 
     @Override
     public Firebase getResult(String p) throws Exception {
-        //download data and return
-
         mFirebase = new Firebase(p);
-        // Read all the text returned by the server
-
         return mFirebase;
     }
 

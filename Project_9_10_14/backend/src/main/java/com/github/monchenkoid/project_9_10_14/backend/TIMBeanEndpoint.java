@@ -53,7 +53,7 @@ public class TIMBeanEndpoint {
         DatastoreService datastoreService = DatastoreServiceFactory.getDatastoreService();
         Transaction txn = datastoreService.beginTransaction();
         try {
-            Key timBeanParentKey = KeyFactory.createKey("TIMBeanParent", "todo.txt");
+            Key timBeanParentKey = KeyFactory.createKey("TIMBeanParent", "bcknd");
             Entity timEntity = new Entity("TIMBean", timBean.getId(), timBeanParentKey);
             timEntity.setProperty("name", timBean.getName());
             timEntity.setProperty("dichotomy", timBean.getDichotomy());
@@ -71,7 +71,7 @@ public class TIMBeanEndpoint {
     @ApiMethod(name = "getTIMBeans")
     public List<TIMBean> getTIMBeans() {
         DatastoreService datastoreService = DatastoreServiceFactory.getDatastoreService();
-        Key timBeanParentKey = KeyFactory.createKey("TIMBeanParent", "todo.txt");
+        Key timBeanParentKey = KeyFactory.createKey("TIMBeanParent", "bcknd");
         Query query = new Query(timBeanParentKey);
         List<Entity> results = datastoreService.prepare(query).asList(FetchOptions.Builder.withDefaults());
         ArrayList<TIMBean> timBeans = new ArrayList<TIMBean>();
@@ -93,7 +93,7 @@ public class TIMBeanEndpoint {
         DatastoreService datastoreService = DatastoreServiceFactory.getDatastoreService();
         Transaction txn = datastoreService.beginTransaction();
         try {
-            Key timBeanParentKey = KeyFactory.createKey("TIMBeanParent", "todo.txt");
+            Key timBeanParentKey = KeyFactory.createKey("TIMBeanParent", "bcknd");
             Query query = new Query(timBeanParentKey);
             List<Entity> results = datastoreService.prepare(query).asList(FetchOptions.Builder.withDefaults());
             for (Entity result : results) {

@@ -6,17 +6,17 @@ import java.util.Date;
  * Created by Irina Monchenko on 24.12.2014.
  */
 public class UserData /* TODO implements Parcelable*/ {
-    private static Long id;
-    private static String name;
-    private static String lastName;
-    private static String state;
-    private static String countryNatale;
-    private static String cityNatale;
-    private static String gender;
-    private static Date userDateBirthday;
-    private static String[] dichotomy = new String[3];
-    private static String[] traitsReinin = new String[10];
-    private static String[] modelA = new String[7];
+    private Long id;
+    private String name;
+    private String lastName;
+    private String state;
+    private String countryNatale;
+    private String cityNatale;
+    private String gender;
+    private Date userDateBirthday;
+    private String[] dichotomy = new String[3];
+    private String[] traitsReinin = new String[10];
+    private String[] modelA = new String[7];
 
     /*  TODO  public static final Parcelable.Creator<UserData> CREATOR
                 = new Parcelable.Creator<UserData>() {
@@ -33,91 +33,91 @@ public class UserData /* TODO implements Parcelable*/ {
         protected UserData(Parcel in) {
             super(in);
         }*/
-    public static Long getId() {
+    public Long getId() {
         return id;
     }
 
-    public static void setId(Long id) {
-        UserData.id = id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public static String getName() {
+    public String getName() {
         return name;
     }
 
-    public static void setName(String name) {
-        UserData.name = name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public static String getLastName() {
+    public String getLastName() {
         return lastName;
     }
 
-    public static void setLastName(String lastName) {
-        UserData.lastName = lastName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public static String getState() {
+    public String getState() {
         return state;
     }
 
-    public static void setState(String state) {
-        UserData.state = state;
+    public void setState(String state) {
+        this.state = state;
     }
 
-    public static String getCountryNatale() {
+    public String getCountryNatale() {
         return countryNatale;
     }
 
-    public static void setCountryNatale(String countryNatale) {
-        UserData.countryNatale = countryNatale;
+    public void setCountryNatale(String countryNatale) {
+        this.countryNatale = countryNatale;
     }
 
-    public static String getCityNatale() {
+    public String getCityNatale() {
         return cityNatale;
     }
 
-    public static void setCityNatale(String cityNatale) {
-        UserData.cityNatale = cityNatale;
+    public void setCityNatale(String cityNatale) {
+        this.cityNatale = cityNatale;
     }
 
-    public static String getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public static void setGender(String gender) {
-        UserData.gender = gender;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public static Date getUserDateBirthday() {
+    public Date getUserDateBirthday() {
         return userDateBirthday;
     }
 
-    public static void setUserDateBirthday(Date userDateBirthday) {
-        UserData.userDateBirthday = userDateBirthday;
+    public void setUserDateBirthday(Date userDateBirthday) {
+        this.userDateBirthday = userDateBirthday;
     }
 
-    public static String[] getDichotomy() {
+    public String[] getDichotomy() {
         return dichotomy;
     }
 
-    public static void setDichotomy(String[] dichotomy) {
-        UserData.dichotomy = dichotomy;
+    public void setDichotomy(String[] dichotomy) {
+        this.dichotomy = dichotomy;
     }
 
-    public static String[] getTraitsReinin() {
+    public String[] getTraitsReinin() {
         return traitsReinin;
     }
 
-    public static void setTraitsReinin(String[] traitsReinin) {
-        UserData.traitsReinin = traitsReinin;
+    public void setTraitsReinin(String[] traitsReinin) {
+        this.traitsReinin = traitsReinin;
     }
 
-    public static String[] getModelA() {
+    public String[] getModelA() {
         return modelA;
     }
 
-    public static void setModelA(String[] modelA) {
-        UserData.modelA = modelA;
+    public void setModelA(String[] modelA) {
+        this.modelA = modelA;
     }
 }
