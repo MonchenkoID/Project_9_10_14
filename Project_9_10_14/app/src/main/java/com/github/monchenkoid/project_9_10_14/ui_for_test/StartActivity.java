@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +21,7 @@ public class StartActivity extends ActionBarActivity {
 
     private static final String TAG = StartActivity.class.getSimpleName();
     private ProgressDialog mAuthProgressDialog;
-    private Firebase mFirebaseRef;
+    private Firebase mFirebase;
     private AuthData mAuthData;
     private static Button mPasswordLoginButton;
     private static EditText mUserEmail, mUserPassword;
@@ -31,6 +30,7 @@ public class StartActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+
 
         // new EndpointsAsyncTask().execute(new TIMBean());
 
@@ -44,9 +44,7 @@ public class StartActivity extends ActionBarActivity {
 
         mUserEmail = (EditText) findViewById(R.id.login);
         mUserPassword = (EditText) findViewById(R.id.password);
-        /* Create the Firebase ref that is used for all authentication with Firebase */
-        mFirebaseRef = new Firebase(getResources().getString(R.string.firebase_url));
-        /* Setup the progress dialog that is displayed later when authenticating with Firebase */
+        mFirebase = new Firebase(getResources().getString(R.string.firebase_url));
         mAuthProgressDialog = new ProgressDialog(this);
         mAuthProgressDialog.setTitle(getString(R.string.loading));
         mAuthProgressDialog.setMessage(getString(R.string.auth_firebase));
@@ -55,7 +53,7 @@ public class StartActivity extends ActionBarActivity {
 
         /* Check if the user is authenticated with Firebase already. If this is the case we can set the authenticated
          * user and hide hide any login buttons */
-        mFirebaseRef.addAuthStateListener(new Firebase.AuthStateListener() {
+        mFirebase.addAuthStateListener(new Firebase.AuthStateListener() {
             @Override
             public void onAuthStateChanged(AuthData authData) {
                 mAuthProgressDialog.hide();
@@ -64,43 +62,6 @@ public class StartActivity extends ActionBarActivity {
         });
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        /* If a user is currently authenticated, display a logout menu */
-        if (this.mAuthData != null) {
-            getMenuInflater().inflate(R.menu.main, menu);
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_logout) {
-            logout();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    /**
-     * Unauthenticate from Firebase and from providers where necessary.
-     */
-    private void logout() {
-        if (this.mAuthData != null) {
-            /* logout of Firebase */
-            mFirebaseRef.unauth();
-            /* Update authenticated user and show login buttons */
-            setAuthenticatedUser(null);
-        }
-    }
 
     /**
      * Once a user is logged in, take the mAuthData provided from Firebase and "use" it.
@@ -164,7 +125,7 @@ public class StartActivity extends ActionBarActivity {
 
     public void loginWithPassword() {
         mAuthProgressDialog.show();
-        mFirebaseRef.authWithPassword(mUserEmail.getText().toString(), mUserPassword.getText().toString(), new AuthFirebaseHandler("password"));
+        mFirebase.authWithPassword(mUserEmail.getText().toString(), mUserPassword.getText().toString(), new AuthFirebaseHandler("password"));
     }
 
 }
