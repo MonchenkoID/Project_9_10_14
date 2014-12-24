@@ -2,13 +2,16 @@
 <resources>
 
     <string name="app_name">Socionics</string>
-    <string name="action_settings">Options</string>
     <string name="name">Имя</string>
     <string name="password">Пароль</string>
     <string name="logIn">Войти</string>
     <string name="registration">Регистрация</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="title_activity_user_page">UserPageActivity</string>
-
+    <string name="action_settings">Settings</string>
+    <string name="action_logout">Logout</string>
+    <string name="login_with_password">Login with Password</string>
+    <string name="loading">Loading</string>
+    <string name="auth_firebase">Authenticating with Firebase…</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="hello_world">You are in our system</string>
 
 </resources>

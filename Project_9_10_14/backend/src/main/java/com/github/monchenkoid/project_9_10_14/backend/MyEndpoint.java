@@ -21,27 +21,28 @@ import com.google.appengine.api.datastore.Transaction;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.inject.Named;
-
 /**
  * An endpoint class we are exposing
  */
 @Api(name = "myApi",
      version = "v1",
-        namespace = @ApiNamespace(ownerDomain = "backend.project_9_10_14.monchenkoid.github.com", ownerName = "backend.project_9_10_14.monchenkoid.github.com", packagePath = ""))
+        namespace = @ApiNamespace(
+                ownerDomain = "backend.project_9_10_14.monchenkoid.github.com",
+                ownerName = "backend.project_9_10_14.monchenkoid.github.com",
+                packagePath = ""))
 public class MyEndpoint {
 
     /**
      * A simple endpoint method that takes a name and says Hi back
      */
     @ApiMethod(name = "storeMy")
-    public void storeMy(MyBean myBean) {
+    public void storeMy(TIMBean TIMBean) {
         DatastoreService datastoreService = DatastoreServiceFactory.getDatastoreService();
         Transaction txn = datastoreService.beginTransaction();
         try {
             Key myBeanParentKey = KeyFactory.createKey("MyBeanParent", "todo.txt");
-            Entity taskEntity = new Entity("MyBean", myBean.getId(), myBeanParentKey);
-            taskEntity.setProperty("data", myBean.getData());
+            Entity taskEntity = new Entity("MyBean", TIMBean.getId(), myBeanParentKey);
+            taskEntity.setProperty("data", TIMBean.getName());
             datastoreService.put(taskEntity);
             txn.commit();
         } finally {
@@ -52,20 +53,20 @@ public class MyEndpoint {
     }
 
     @ApiMethod(name = "getTasks")
-    public List<MyBean> getTasks() {
+    public List<TIMBean> getTasks() {
         DatastoreService datastoreService = DatastoreServiceFactory.getDatastoreService();
         Key taskBeanParentKey = KeyFactory.createKey("TaskBeanParent", "todo.txt");
         Query query = new Query(taskBeanParentKey);
         List<Entity> results = datastoreService.prepare(query).asList(FetchOptions.Builder.withDefaults());
-        ArrayList<MyBean> myBeans = new ArrayList<MyBean>();
+        ArrayList<TIMBean> TIMBeans = new ArrayList<TIMBean>();
         for (Entity result : results) {
-            MyBean myBean = new MyBean();
-            myBean.setId(result.getKey().getId());
-            myBean.setData((String) result.getProperty("data"));
-            myBeans.add(myBean);
+            TIMBean TIMBean = new TIMBean();
+            TIMBean.setId(result.getKey().getId());
+            TIMBean.setName((String) result.getProperty("data"));
+            TIMBeans.add(TIMBean);
         }
 
-        return myBeans;
+        return TIMBeans;
     }
 
     @ApiMethod(name = "clearTasks")
