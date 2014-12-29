@@ -69,7 +69,7 @@ public class TIMBeanEndpoint {
     }
 
     @ApiMethod(name = "getTIMBeans")
-    public List<TIMBean> getTIMBeans() {
+    public ArrayList<TIMBean> getTIMBeans() {
         DatastoreService datastoreService = DatastoreServiceFactory.getDatastoreService();
         Key timBeanParentKey = KeyFactory.createKey("TIMBeanParent", "bcknd");
         Query query = new Query(timBeanParentKey);
