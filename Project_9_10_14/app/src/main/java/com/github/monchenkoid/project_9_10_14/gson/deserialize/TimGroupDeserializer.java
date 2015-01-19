@@ -14,17 +14,14 @@ import java.util.Map;
 /**
  * Created by Irina Monchenko on 19.01.2015.
  */
-public class TimGroupDeserializer implements JsonDeserializer<TIMGroup>
-{
+public class TimGroupDeserializer implements JsonDeserializer<TIMGroup> {
     @Override
     public TIMGroup deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws
-            JsonParseException
-    {
+            JsonParseException {
         TIMGroup result = new TIMGroup();
         JsonObject jsonObject = json.getAsJsonObject();
 
-        for (Map.Entry<String, JsonElement> entry : jsonObject.entrySet())
-        {
+        for (Map.Entry<String, JsonElement> entry : jsonObject.entrySet()) {
             TIM tim = context.deserialize(entry.getValue(), TIM.class);
             tim.setName0(entry.getKey());
             result.addTIM(tim);

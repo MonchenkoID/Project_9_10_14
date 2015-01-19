@@ -12,14 +12,11 @@ import java.lang.reflect.Type;
 /**
  * Created by Irina Monchenko on 19.01.2015.
  */
-public class TIMGroupSerializer implements JsonSerializer<TIMGroup>
-{
+public class TIMGroupSerializer implements JsonSerializer<TIMGroup> {
     @Override
-    public JsonElement serialize(TIMGroup src, Type typeOfSrc, JsonSerializationContext context)
-    {
+    public JsonElement serialize(TIMGroup src, Type typeOfSrc, JsonSerializationContext context) {
         JsonObject result = new JsonObject();
-        for (TIM tim : src.getAdmins())
-        {
+        for (TIM tim : src.getAdmins()) {
             result.add(tim.getName0(), context.serialize(tim));
         }
         return result;

@@ -13,8 +13,6 @@ import android.widget.TextView;
 
 import com.github.monchenkoid.project_9_10_14.R;
 import com.github.monchenkoid.project_9_10_14.bo.models.TIM;
-import com.github.monchenkoid.project_9_10_14.garbage.TIMGsonModel;
-import com.github.monchenkoid.project_9_10_14.garbage.TIMObject;
 import com.github.monchenkoid.project_9_10_14.gson.serialize.TimSerializer;
 import com.github.monchenkoid.project_9_10_14.helper.DataManager;
 import com.github.monchenkoid.project_9_10_14.processing.TIMArrayProcessor;
@@ -68,8 +66,6 @@ public class TIMListActivity extends Activity implements DataManager.Callback<Li
     }
 
 
-
-
     @Override
     public void onDone(List<TIM> data) {
         if (mSwipeRefreshLayout.isRefreshing()) {
@@ -106,12 +102,12 @@ public class TIMListActivity extends Activity implements DataManager.Callback<Li
                     Intent intent = new Intent(TIMListActivity.this, DetailsActivity.class);
                     TIM item = (TIM) mAdapter.getItem(position);
 
-                    Gson gson= new GsonBuilder()
+                    Gson gson = new GsonBuilder()
                             .setPrettyPrinting()
                             .registerTypeAdapter(TIM.class, new TimSerializer())
                             .create();
-                   String res= gson.toJson(item);
-                   // TIMGsonModel mTim = new TIMGsonModel(item.getId(), item.getName(), item.getMbti(), item.getIore(), item.getNors(), item.getTorf(), item.getPorj());
+                    String res = gson.toJson(item);
+                    // TIMGsonModel mTim = new TIMGsonModel(item.getId(), item.getName(), item.getMbti(), item.getIore(), item.getNors(), item.getTorf(), item.getPorj());
                     intent.putExtra("item", res);
                     startActivity(intent);
                 }

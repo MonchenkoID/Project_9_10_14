@@ -53,7 +53,7 @@ public class TimSerializer implements JsonSerializer<TIM> {
         JsonObject mRelationships = new JsonObject();
         result.add("Relationship", mRelationships);
 
-        if(src.getRelationships() != null) {
+        if (src.getRelationships() != null) {
             for (Relationship relationship : src.getRelationships()) {
                 mRelationships.add(relationship.getmNameRelationship(), context.serialize(relationship));
             }

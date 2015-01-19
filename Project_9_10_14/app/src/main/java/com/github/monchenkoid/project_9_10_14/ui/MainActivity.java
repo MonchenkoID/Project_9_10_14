@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 import com.github.monchenkoid.project_9_10_14.R;
@@ -12,15 +11,14 @@ import com.github.monchenkoid.project_9_10_14.bo.models.TIM;
 import com.github.monchenkoid.project_9_10_14.bo.models.TIMGroup;
 import com.github.monchenkoid.project_9_10_14.gson.serialize.TIMGroupSerializer;
 import com.github.monchenkoid.project_9_10_14.gson.serialize.TimSerializer;
-import com.github.monchenkoid.project_9_10_14.utils.Log;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 public class MainActivity extends Activity {
-   // Button mButton;
+    // Button mButton;
 
     private EditText editText;
-   public static final String TAG = MainActivity.class.getSimpleName();
+    public static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +27,10 @@ public class MainActivity extends Activity {
 
         editText = (EditText) findViewById(R.id.editText);
 
-       // mButton = (Button) findViewById(R.id.button);
+        // mButton = (Button) findViewById(R.id.button);
 
         TIM tim;
-        TIMGroup timGr =new TIMGroup();
+        TIMGroup timGr = new TIMGroup();
 
 
         tim = new TIM("Дон Кихот");
@@ -66,7 +64,7 @@ public class MainActivity extends Activity {
         tim.setModelA6("E - этика эмоций");
         tim.setModelA7("T - интуиция времени");
         tim.setModelA8("P - деловая логика");
-    timGr.addTIM(tim);
+        timGr.addTIM(tim);
         tim = new TIM("Дuma");
         timGr.addTIM(tim);
         Gson gson = new GsonBuilder()
@@ -76,7 +74,7 @@ public class MainActivity extends Activity {
                 .create();
         String json = gson.toJson(timGr);
 
-       // Log.i(TAG, json);
+        // Log.i(TAG, json);
         editText.setText(json);
 
         //  Adams adams = new Adams();
@@ -100,7 +98,7 @@ public class MainActivity extends Activity {
     */
     }
 
- public void onOkClick(View view) {
+    public void onOkClick(View view) {
         startActivity(new Intent(this, TIMListActivity.class));
         finish();
 

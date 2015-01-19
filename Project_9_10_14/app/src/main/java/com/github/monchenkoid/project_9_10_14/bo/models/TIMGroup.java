@@ -9,17 +9,16 @@ import java.util.List;
 public class TIMGroup {
 
 
+    List<TIM> mTIMs = new LinkedList<>();
 
-        List<TIM> mTIMs = new LinkedList<>();
-
-        public List<TIM> getAdmins() {
-            return new LinkedList<>(mTIMs);
-        }
-
-        public void addTIM(TIM mTIM) {
-            this.mTIMs.add(mTIM);
-        }
-
-
+    public List<TIM> getAdmins() {
+        return new LinkedList<>(mTIMs);
     }
+
+    public void addTIM(TIM mTIM) {
+        this.mTIMs.add(mTIM);
+    }
+
+
+}
 
