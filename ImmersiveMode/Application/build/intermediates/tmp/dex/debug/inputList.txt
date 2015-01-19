@@ -1,0 +1,4 @@
+D:\socionics\ImmersiveMode\Application\build\intermediates\classes\debug
+D:\socionics\ImmersiveMode\Application\build\intermediates\pre-dexed\debug\support-annotations-21.0.2-beb5880cff06cc6b9474a541545cd829dafe9abb.jar
+D:\socionics\ImmersiveMode\Application\build\intermediates\pre-dexed\debug\internal_impl-21.0.2-1079366e959679b7cc94d32962238de06a84da6e.jar
+D:\socionics\ImmersiveMode\Application\build\intermediates\pre-dexed\debug\classes-c9887b035e4608997dcf22b0547b9a53c3df0ccc.jar

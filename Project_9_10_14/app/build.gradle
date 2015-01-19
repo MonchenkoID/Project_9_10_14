@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    buildToolsVersion "21.0.2"
 
     defaultConfig {
         applicationId "com.github.monchenkoid.project_9_10_14"
@@ -10,6 +10,8 @@ android {
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
+
+        multiDexEnabled = true
     }
     buildTypes {
         release {
@@ -30,11 +32,14 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-
-
     compile 'com.android.support:appcompat-v7:21.0.3'
+
     compile 'com.google.android.gms:play-services:6.5.87'
-    compile 'com.firebase:firebase-client-android:2.0.3'
+
+    compile 'com.google.apis:google-api-services-datastore-protobuf:v1beta2-rev1-2.1.0'
+
+    compile 'com.google.code.gson:gson:2.3.1'
+
     compile project(path: ':backend', configuration: 'android-endpoints')
 
 }

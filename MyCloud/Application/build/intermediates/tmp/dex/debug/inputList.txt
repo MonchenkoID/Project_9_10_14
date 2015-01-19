@@ -1,0 +1,7 @@
+D:\socionics\MyCloud\Application\build\intermediates\classes\debug
+D:\socionics\MyCloud\Application\build\intermediates\pre-dexed\debug\internal_impl-21.0.2-b97aa51626c80798e3d3281c2b2186e1a61a81bf.jar
+D:\socionics\MyCloud\Application\build\intermediates\pre-dexed\debug\support-annotations-21.0.2-beb5880cff06cc6b9474a541545cd829dafe9abb.jar
+D:\socionics\MyCloud\Application\build\intermediates\pre-dexed\debug\classes-4ef7fc8e5f38ecd207b3d36a9f3d985a5779dbe9.jar
+D:\socionics\MyCloud\Application\build\intermediates\pre-dexed\debug\classes-5b55746133b8730aced06831f13228b99bdf5f82.jar
+D:\socionics\MyCloud\Application\build\intermediates\pre-dexed\debug\internal_impl-21.0.2-8bda578a7346cce9f404ec917a2151a822a401c4.jar
+D:\socionics\MyCloud\Application\build\intermediates\pre-dexed\debug\classes-4da8c6bc74787255f4d2bae499706d900df36351.jar

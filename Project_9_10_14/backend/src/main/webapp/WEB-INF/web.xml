@@ -6,7 +6,8 @@
         <init-param>
             <param-name>services</param-name>
             <param-value>com.github.monchenkoid.project_9_10_14.backend.TIMBeanEndpoint,
-                com.github.monchenkoid.project_9_10_14.backend.UserBeanEndpoint</param-value>
+                com.github.monchenkoid.project_9_10_14.backend.UserBeanEndpoint
+            </param-value>
         </init-param>
     </servlet>
 
