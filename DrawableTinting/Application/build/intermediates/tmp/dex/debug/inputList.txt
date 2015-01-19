@@ -1,7 +1,0 @@
-D:\socionics\DrawableTinting\Application\build\intermediates\classes\debug
-D:\socionics\DrawableTinting\Application\build\intermediates\pre-dexed\debug\internal_impl-21.0.2-539e97b134f9f58d2231c9d3acd8b4b71609a0f6.jar
-D:\socionics\DrawableTinting\Application\build\intermediates\pre-dexed\debug\support-annotations-21.0.2-beb5880cff06cc6b9474a541545cd829dafe9abb.jar
-D:\socionics\DrawableTinting\Application\build\intermediates\pre-dexed\debug\classes-1ca7bc9546f1e83f21f0ea1eaac8595ae0594cdc.jar
-D:\socionics\DrawableTinting\Application\build\intermediates\pre-dexed\debug\classes-7d6d8b36d1eb64e88c3a1060e70e94de0c70a93a.jar
-D:\socionics\DrawableTinting\Application\build\intermediates\pre-dexed\debug\internal_impl-21.0.2-880ded4c3bccf4526311b077caa44017c05b5de8.jar
-D:\socionics\DrawableTinting\Application\build\intermediates\pre-dexed\debug\classes-b5627969eff060ce26a6b06835bfae1ce26fee6c.jar

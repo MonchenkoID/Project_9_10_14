@@ -1,9 +1,0 @@
-D:\socionics\NavigationDrawer\Application\build\intermediates\classes\debug
-D:\socionics\NavigationDrawer\Application\build\intermediates\pre-dexed\debug\internal_impl-21.0.2-a4a8e627c142527a3edfe08087a66b74366daf49.jar
-D:\socionics\NavigationDrawer\Application\build\intermediates\pre-dexed\debug\support-annotations-21.0.2-beb5880cff06cc6b9474a541545cd829dafe9abb.jar
-D:\socionics\NavigationDrawer\Application\build\intermediates\pre-dexed\debug\classes-2e907ebb485b2c84353b62a233e66ab7a2ef4b5c.jar
-D:\socionics\NavigationDrawer\Application\build\intermediates\pre-dexed\debug\classes-374176d8b46e2ec81153d6d6377c8084fb31aa08.jar
-D:\socionics\NavigationDrawer\Application\build\intermediates\pre-dexed\debug\internal_impl-21.0.2-eb80d157ce3e34030897ac9b2eba674476889988.jar
-D:\socionics\NavigationDrawer\Application\build\intermediates\pre-dexed\debug\classes-cee51b308ec056f50bb86e2db0fc3b132f359ae1.jar
-D:\socionics\NavigationDrawer\Application\build\intermediates\pre-dexed\debug\classes-90773cfe230d16914c06ea8ff5924e060d37bec2.jar
-D:\socionics\NavigationDrawer\Application\build\intermediates\pre-dexed\debug\classes-12c3260237336824d06ae28cbf6a1e2bbf9d5feb.jar
