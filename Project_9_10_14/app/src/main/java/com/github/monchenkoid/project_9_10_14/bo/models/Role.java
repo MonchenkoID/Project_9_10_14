@@ -7,18 +7,18 @@ import android.util.Log;
  */
 public class Role<T> {
 
+    private static final String TAG = "ROLE";
     private T role;
-    private String TAG = "ROLE";
 
-    Role(T mRole) {
+    public Role(T mRole) {
         role = mRole;
     }
 
-    T getRole() {
+    public T getRole() {
         return role;
     }
 
-    void showType() {
+    public void showType() {
         Log.i(TAG, "Тип T: " + role.getClass().getName());
     }
 }

@@ -7,12 +7,18 @@ import java.util.List;
  */
 public class UniqueAnalized extends User {
 
+    private Long id;
+
     private int mAgeDefinition;
+
     private String mCityDefinition;
+
     private String mSocialAddress;
+
     private List<Relationship> mRelationships;
 
-    public UniqueAnalized(int mAgeDefinition, String mCityDefinition, String mSocialAddress, List<Relationship> mRelationships) {
+    public UniqueAnalized(int mAgeDefinition, String mCityDefinition, String mSocialAddress,
+                          List<Relationship> mRelationships) {
 
         this.mAgeDefinition = mAgeDefinition;
         this.mCityDefinition = mCityDefinition;

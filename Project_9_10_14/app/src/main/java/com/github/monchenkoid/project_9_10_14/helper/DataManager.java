@@ -8,18 +8,12 @@ import com.github.monchenkoid.project_9_10_14.source.DataSource;
 /**
  * Created by Irina Monchenko on 19.10.2014.
  */
-public class DataManager {
+public final class DataManager {
 
-    public static interface Callback<Result> {
-        void onDataLoadStart();
-
-        void onDone(Result data);
-
-        void onError(Exception e);
+    private DataManager() {
     }
 
-    public static <ProcessingResult, DataSourceResult, Params> void
-    loadData(
+    public static <ProcessingResult, DataSourceResult, Params> void loadData(
             final Callback<ProcessingResult> callback,
             final Params params,
             final DataSource<DataSourceResult, Params> dataSource,
@@ -51,6 +45,15 @@ public class DataManager {
                 }
             }
         }).start();
+    }
+
+    public interface Callback<Result> {
+
+        void onDataLoadStart();
+
+        void onDone(Result data);
+
+        void onError(Exception e);
     }
 
 }

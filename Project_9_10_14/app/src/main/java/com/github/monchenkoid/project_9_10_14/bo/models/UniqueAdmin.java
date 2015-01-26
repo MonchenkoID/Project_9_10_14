@@ -7,7 +7,10 @@ import java.util.List;
  */
 public class UniqueAdmin extends User {
 
+    private Long id;
+
     private String mEmail;
+
     private List<Relationship> mRelationships;
 
     public UniqueAdmin(String mEmail, List<Relationship> mRelationships) {

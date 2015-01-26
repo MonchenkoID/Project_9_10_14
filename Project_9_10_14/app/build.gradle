@@ -1,8 +1,18 @@
 apply plugin: 'com.android.application'
+apply plugin: 'checkstyle'
 
+task checkstyle(type: Checkstyle) {
+    source 'src'
+    include '**/*.java'
+    exclude '**/gen/**'
+    // empty classpath
+    classpath = files()
+    //Do not fail build
+    ignoreFailures = true
+}
 android {
     compileSdkVersion 21
-    buildToolsVersion "21.0.2"
+    buildToolsVersion "21.1.2"
 
     defaultConfig {
         applicationId "com.github.monchenkoid.project_9_10_14"
@@ -39,7 +49,5 @@ dependencies {
     compile 'com.google.apis:google-api-services-datastore-protobuf:v1beta2-rev1-2.1.0'
 
     compile 'com.google.code.gson:gson:2.3.1'
-
-    compile project(path: ':backend', configuration: 'android-endpoints')
 
 }

@@ -7,8 +7,12 @@ import java.util.List;
  */
 public class UniquePersonage {
 
+    private Long id;
+
     private String media;
+
     private String personaName;
+
     private List<Relationship> relationships;
 
     public UniquePersonage(String media, String personaName, List<Relationship> relationships) {

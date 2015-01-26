@@ -7,18 +7,18 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.github.monchenkoid.project_9_10_14.R;
-import com.github.monchenkoid.project_9_10_14.bo.models.TIM;
-import com.github.monchenkoid.project_9_10_14.bo.models.TIMGroup;
-import com.github.monchenkoid.project_9_10_14.gson.serialize.TIMGroupSerializer;
-import com.github.monchenkoid.project_9_10_14.gson.serialize.TimSerializer;
+import com.github.monchenkoid.project_9_10_14.bo.models.TypeInfMet;
+import com.github.monchenkoid.project_9_10_14.utils.Constants;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends Activity {
     // Button mButton;
 
-    private EditText editText;
     public static final String TAG = MainActivity.class.getSimpleName();
+    private EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,76 +26,65 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         editText = (EditText) findViewById(R.id.editText);
+        ArrayList<String> name;
+        name = new ArrayList<>();
 
-        // mButton = (Button) findViewById(R.id.button);
+        name.add("Дон Кихот");
+        name.add("ИЛЭ");
+        name.add("Интуитивно-Логический Экстраверт");
+        name.add("Искатель");
+        name.add("ENTP");
 
-        TIM tim;
-        TIMGroup timGr = new TIMGroup();
+
+        ArrayList<String> dUng = new ArrayList<>();
+
+        dUng.add("Экстраверт");
+        dUng.add("Интуит");
+        dUng.add("Логик");
+        dUng.add("Иррационал");
 
 
-        tim = new TIM("Дон Кихот");
-        tim.setName1("ИЛЭ");
-        tim.setName2("Интуитивно-Логический Экстраверт");
-        tim.setName3("Искатель");
-        tim.setName4("ENTP");
+        ArrayList<String> reign;
+        reign = new ArrayList<>();
 
-        tim.setdUng1("Экстраверт");
-        tim.setdUng2("Интуит");
-        tim.setdUng3("Логик");
-        tim.setdUng4("Иррационал");
+        reign.add("Статик");
+        reign.add("Позитивист");
+        reign.add("Квестим");
+        reign.add("Тактик");
+        reign.add("Конструктивист");
+        reign.add("Процессер");
+        reign.add("Уступчивый");
+        reign.add("Беспечный");
+        reign.add("Рассудительный");
+        reign.add("Весёлый");
+        reign.add("Демократ");
 
-        tim.setReign1("Статик");
-        tim.setReign2("Позитивист");
-        tim.setReign3("Квестим");
-        tim.setReign4("Тактик");
-        tim.setReign5("Конструктивист");
-        tim.setReign6("Процессер");
-        tim.setReign7("Уступчивый");
-        tim.setReign8("Беспечный");
-        tim.setReign9("Рассудительный");
-        tim.setReign10("Весёлый");
-        tim.setReign11("Демократ");
 
-        tim.setModelA1("I - интуиция возможностей");
-        tim.setModelA2("L - структурная логика");
-        tim.setModelA3("F - силовая сенсорика");
-        tim.setModelA4("R - этика отношений");
-        tim.setModelA5("S - сенсорика ощущений");
-        tim.setModelA6("E - этика эмоций");
-        tim.setModelA7("T - интуиция времени");
-        tim.setModelA8("P - деловая логика");
-        timGr.addTIM(tim);
-        tim = new TIM("Дuma");
-        timGr.addTIM(tim);
-        Gson gson = new GsonBuilder()
-                .setPrettyPrinting()
-                .registerTypeAdapter(TIM.class, new TimSerializer())
-                .registerTypeAdapter(TIMGroup.class, new TIMGroupSerializer())
-                .create();
-        String json = gson.toJson(timGr);
+        ArrayList<String> modelA = new ArrayList<>();
 
-        // Log.i(TAG, json);
-        editText.setText(json);
+        modelA.add("I - интуиция возможностей");
+        modelA.add("L - структурная логика");
+        modelA.add("F - силовая сенсорика");
+        modelA.add("R - этика отношений");
+        modelA.add("S - сенсорика ощущений");
+        modelA.add("E - этика эмоций");
+        modelA.add("T - интуиция времени");
+        modelA.add("P - деловая логика");
+        Long id = 1000000000000L;
+        TypeInfMet typeInfMet = new TypeInfMet(id, name, dUng, reign, modelA, null);
+        ArrayList<TypeInfMet> tims;
+        tims = new ArrayList<>();
+        Gson gson = new Gson();
 
-        //  Adams adams = new Adams();
-        //  adams.AdRun();
+        tims.add(typeInfMet);
 
-       /* TIMBean timBean = new TIMBean();
-        timBean.setId(1234567890777L);
-        timBean.setName("Balzak");
-        Log.d(String.valueOf("test"), "begin asynctask");
-        ArrayList<TIMBean> tim;
+        name.add("Дuma");
+        typeInfMet = new TypeInfMet(id, name, dUng, reign, modelA, null);
+        tims.add(typeInfMet);
 
-        try {
-            tim = new EndpointsAsyncTask().execute(timBean).get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-        //TIMBean timBean = (TIMBean) getIntent().getSerializableExtra();
-        Log.d(String.valueOf("test"), "end asynctask");
-    */
+        String jsonRepresentation = gson.toJson(tims);
+        editText.setText(jsonRepresentation);
+
     }
 
     public void onOkClick(View view) {

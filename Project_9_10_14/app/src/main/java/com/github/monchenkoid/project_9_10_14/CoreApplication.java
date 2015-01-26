@@ -13,6 +13,21 @@ public class CoreApplication extends Application {
 
     private HttpDataSource mHttpDataSource;
 
+    public static <T> T get(Context context, String key) {
+        if (context == null || key == null) {
+            throw new IllegalArgumentException("Context and key must not be null");
+        }
+        T systemService = (T) context.getSystemService(key);
+        if (systemService == null) {
+            context = context.getApplicationContext();
+            systemService = (T) context.getSystemService(key);
+        }
+        if (systemService == null) {
+            throw new IllegalStateException(key + " not available");
+        }
+        return systemService;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -29,20 +44,5 @@ public class CoreApplication extends Application {
             return mHttpDataSource;
         }
         return super.getSystemService(name);
-    }
-
-    public static <T> T get(Context context, String key) {
-        if (context == null || key == null) {
-            throw new IllegalArgumentException("Context and key must not be null");
-        }
-        T systemService = (T) context.getSystemService(key);
-        if (systemService == null) {
-            context = context.getApplicationContext();
-            systemService = (T) context.getSystemService(key);
-        }
-        if (systemService == null) {
-            throw new IllegalStateException(key + " not available");
-        }
-        return systemService;
     }
 }

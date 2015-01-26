@@ -20,14 +20,6 @@ public class HttpDataSource implements DataSource<InputStream, String> {
         return CoreApplication.get(context, KEY);
     }
 
-    @Override
-    public InputStream getResult(String p) throws Exception {
-        //download data and return
-        URL url = new URL(p);
-        // Read all the text returned by the server
-        return url.openStream();
-    }
-
     public static void close(Closeable in) {
         if (in != null) {
             try {
@@ -36,5 +28,13 @@ public class HttpDataSource implements DataSource<InputStream, String> {
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public InputStream getResult(String p) throws Exception {
+        //download data and return
+        URL url = new URL(p);
+        // Read all the text returned by the server
+        return url.openStream();
     }
 }

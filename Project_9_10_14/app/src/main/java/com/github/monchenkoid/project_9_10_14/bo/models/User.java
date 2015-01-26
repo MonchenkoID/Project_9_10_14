@@ -1,38 +1,38 @@
 package com.github.monchenkoid.project_9_10_14.bo.models;
 
-import java.util.Date;
 
 /**
  * Created by Irina Monchenko on 24.12.2014.
  */
-public class User {
+public abstract class User {
+
     private Long id;
-    private String name;
-    private String lastName;
-    private String state;
-    private String countryNatale;
-    private String cityNatale;
-    private String gender;
-    private Date userDateBirthday;
-    private Role role;
-    private TIM timObject;
+
+    private String mName;
+
+    private String mState;
+
+    private String mAddress;
+
+    private String mGender;
+
+    private Role mRole;
+
+    private TypeInfMet mTypeInfMetObject;
 
     public User() {
 
     }
 
-    public User(Long id, String name, String lastName, String state, String countryNatale, String cityNatale,
-                String gender, Date userDateBirthday, Role role, TIM timObject) {
+    public User(Long id, String mName, String mState, String mAddress,
+                String mGender, Role mRole, TypeInfMet mTypeInfMetObject) {
         this.id = id;
-        this.name = name;
-        this.lastName = lastName;
-        this.state = state;
-        this.countryNatale = countryNatale;
-        this.cityNatale = cityNatale;
-        this.gender = gender;
-        this.userDateBirthday = userDateBirthday;
-        this.role = role;
-        this.timObject = timObject;
+        this.mName = mName;
+        this.mState = mState;
+        this.mAddress = mAddress;
+        this.mGender = mGender;
+        this.mRole = mRole;
+        this.mTypeInfMetObject = mTypeInfMetObject;
     }
 
     public Long getId() {
@@ -44,74 +44,50 @@ public class User {
     }
 
     public String getName() {
-        return name;
+        return mName;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String mName) {
+        this.mName = mName;
     }
 
     public String getState() {
-        return state;
+        return mState;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setState(String mState) {
+        this.mState = mState;
     }
 
-    public String getCountryNatale() {
-        return countryNatale;
+    public String getAddress() {
+        return mAddress;
     }
 
-    public void setCountryNatale(String countryNatale) {
-        this.countryNatale = countryNatale;
-    }
-
-    public String getCityNatale() {
-        return cityNatale;
-    }
-
-    public void setCityNatale(String cityNatale) {
-        this.cityNatale = cityNatale;
+    public void setAddress(String mAddress) {
+        this.mAddress = mAddress;
     }
 
     public String getGender() {
-        return gender;
+        return mGender;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public Date getUserDateBirthday() {
-        return userDateBirthday;
-    }
-
-    public void setUserDateBirthday(Date userDateBirthday) {
-        this.userDateBirthday = userDateBirthday;
+    public void setGender(String mGender) {
+        this.mGender = mGender;
     }
 
     public Role getRole() {
-        return role;
+        return mRole;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRole(Role mRole) {
+        this.mRole = mRole;
     }
 
-    public TIM getTimObject() {
-        return timObject;
+    public TypeInfMet getTypeInfMetObject() {
+        return mTypeInfMetObject;
     }
 
-    public void setTimObject(TIM timObject) {
-        this.timObject = timObject;
+    public void setTypeInfMetObject(TypeInfMet mTypeInfMetObject) {
+        this.mTypeInfMetObject = mTypeInfMetObject;
     }
 }

@@ -1,19 +1,20 @@
-package com.github.monchenkoid.project_9_10_14.garbage;
+package com.github.monchenkoid.project_9_10_14.bo;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Created by Irina Monchenko on 23.10.2014.
+ * Created by shiza on 24.01.2015.
  */
-public class JSONObjectWrapper implements Parcelable {
+public class JsonObjectWrapper implements Parcelable {
 
     private JSONObject mJO;
 
-    public JSONObjectWrapper(String jsonObject) {
+    public JsonObjectWrapper(String jsonObject) {
         try {
             mJO = new JSONObject(jsonObject);
         } catch (JSONException e) {
@@ -21,7 +22,11 @@ public class JSONObjectWrapper implements Parcelable {
         }
     }
 
-    public JSONObjectWrapper(JSONObject jsonObject) {
+    protected JsonObjectWrapper(Parcel in) {
+        readFromParcel(in);
+    }
+
+    public JsonObjectWrapper(JSONObject jsonObject) {
         mJO = jsonObject;
     }
 
@@ -29,8 +34,20 @@ public class JSONObjectWrapper implements Parcelable {
         return mJO.optString(key);
     }
 
+    protected Boolean getBoolean(String key) {
+        return mJO.optBoolean(key);
+    }
+
     protected Long getLong(String id) {
         return mJO.optLong(id);
+    }
+
+    protected void set(String key, String value) {
+        try {
+            mJO.put(key, value);
+        } catch (JSONException e) {
+            throw new IllegalArgumentException(e);
+        }
     }
 
     @Override
@@ -51,14 +68,15 @@ public class JSONObjectWrapper implements Parcelable {
     /**
      * Read from parcel.
      *
-     * @param in the in
+     * @param in
+     *            the in
      */
     protected void readFromParcel(final Parcel in) {
         String string = in.readString();
         try {
             mJO = new JSONObject(string);
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new IllegalArgumentException("invalid parcel");
         }
     }
 }
