@@ -1,8 +1,7 @@
-package com.github.monchenkoid.project_9_10_14.ui;
+package com.github.monchenkoid.project_9_10_14.ui.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.TextView;
 
 import com.github.monchenkoid.project_9_10_14.R;
 
@@ -17,8 +16,8 @@ public class DetailsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
         //TIMGsonModel timGsonModel = (TIMGsonModel) getIntent().getSerializableExtra("item");
-       // ((TextView) findViewById(R.id.name)).setText(timGsonModel.getName());
-       // ((TextView) findViewById(R.id.mbti)).setText(timGsonModel.getMbti());
+        // ((TextView) findViewById(R.id.name)).setText(timGsonModel.getName());
+        // ((TextView) findViewById(R.id.mbti)).setText(timGsonModel.getMbti());
     }
 
 }

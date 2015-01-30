@@ -1,12 +1,11 @@
 package com.github.monchenkoid.project_9_10_14.bo.models;
 
 import android.os.Parcel;
-import android.os.Parcelable;
 
 /**
  * Created by Irina Monchenko on 17.01.2015.
  */
-public class Relationship implements Parcelable {
+public class Relationship {
 
     private Long mId;
 
@@ -75,35 +74,5 @@ public class Relationship implements Parcelable {
         mSecondUser = (Role) in.readValue(Role.class.getClassLoader());
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        if (mId == null) {
-            dest.writeByte((byte) (0x00));
-        } else {
-            dest.writeByte((byte) (0x01));
-            dest.writeLong(mId);
-        }
-        dest.writeString(mTypeRelationship);
-        dest.writeString(mNameRelationship);
-        dest.writeString(mDescriptionRelationship);
-        dest.writeValue(mSecondUser);
-    }
-
-    @SuppressWarnings("unused")
-    public static final Parcelable.Creator<Relationship> CREATOR = new Parcelable.Creator<Relationship>() {
-        @Override
-        public Relationship createFromParcel(Parcel in) {
-            return new Relationship(in);
-        }
-
-        @Override
-        public Relationship[] newArray(int size) {
-            return new Relationship[size];
-        }
-    };
 }

@@ -10,7 +10,7 @@ public final class Constants {
     public static final int TIM_NAME_ALIAS = 1;
     public static final int TIM_NAME_FORMAL = 2;
     public static final int TIM_NAME_FORMAL_FULL = 3;
-    public static final int TIM_NAME_ROLE= 4;
+    public static final int TIM_NAME_ROLE = 4;
     public static final int TIM_NAME_MBTI = 5;
     public static final int TIM_UNG_EXTRAVERT_OR_INTROVERT = 0;
     public static final int TIM_UNG_INTUITION_OR_SENSATION = 1;

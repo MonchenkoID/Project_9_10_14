@@ -1,4 +1,4 @@
-package com.github.monchenkoid.project_9_10_14.ui;
+package com.github.monchenkoid.project_9_10_14.ui.adapters.interfaces;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,11 +8,10 @@ import android.widget.EditText;
 
 import com.github.monchenkoid.project_9_10_14.R;
 import com.github.monchenkoid.project_9_10_14.bo.models.TypeInfMet;
-import com.github.monchenkoid.project_9_10_14.utils.Constants;
+import com.github.monchenkoid.project_9_10_14.ui.activities.TIMListActivity;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends Activity {
     // Button mButton;
@@ -70,7 +69,7 @@ public class MainActivity extends Activity {
         modelA.add("E - этика эмоций");
         modelA.add("T - интуиция времени");
         modelA.add("P - деловая логика");
-        Long id = 1000000000000L;
+        Long id = null;//= 1000000000000L;
         TypeInfMet typeInfMet = new TypeInfMet(id, name, dUng, reign, modelA, null);
         ArrayList<TypeInfMet> tims;
         tims = new ArrayList<>();

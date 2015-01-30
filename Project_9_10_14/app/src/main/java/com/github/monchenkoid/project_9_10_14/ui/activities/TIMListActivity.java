@@ -1,4 +1,4 @@
-package com.github.monchenkoid.project_9_10_14.ui;
+package com.github.monchenkoid.project_9_10_14.ui.activities;
 
 import android.app.Activity;
 import android.content.Intent;

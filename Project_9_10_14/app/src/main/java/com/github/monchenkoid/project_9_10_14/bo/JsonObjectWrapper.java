@@ -3,7 +3,6 @@ package com.github.monchenkoid.project_9_10_14.bo;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -68,8 +67,7 @@ public class JsonObjectWrapper implements Parcelable {
     /**
      * Read from parcel.
      *
-     * @param in
-     *            the in
+     * @param in the in
      */
     protected void readFromParcel(final Parcel in) {
         String string = in.readString();

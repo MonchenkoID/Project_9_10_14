@@ -1,4 +1,4 @@
-package com.github.monchenkoid.project_9_10_14.bo.models;
+package com.github.monchenkoid.project_9_10_14.helper;
 
 /**
  * Created by shiza on 26.01.2015.
