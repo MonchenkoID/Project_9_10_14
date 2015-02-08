@@ -9,39 +9,39 @@ public class UniquePersonage {
 
     private Long id;
 
-    private String media;
+    private String mMedia;
 
-    private String personaName;
+    private String mPersonaName;
 
-    private List<Relationship> relationships;
+    private List<Relationship> mRelationships;
 
     public UniquePersonage(String media, String personaName, List<Relationship> relationships) {
-        this.media = media;
-        this.personaName = personaName;
-        this.relationships = relationships;
+        this.mMedia = media;
+        this.mPersonaName = personaName;
+        this.mRelationships = relationships;
     }
 
     public String getMedia() {
-        return media;
+        return mMedia;
     }
 
     public void setMedia(String media) {
-        this.media = media;
+        this.mMedia = media;
     }
 
     public String getPersonaName() {
-        return personaName;
+        return mPersonaName;
     }
 
     public void setPersonaName(String personaName) {
-        this.personaName = personaName;
+        this.mPersonaName = personaName;
     }
 
     public List<Relationship> getRelationships() {
-        return relationships;
+        return mRelationships;
     }
 
     public void setRelationships(List<Relationship> relationships) {
-        this.relationships = relationships;
+        this.mRelationships = relationships;
     }
 }

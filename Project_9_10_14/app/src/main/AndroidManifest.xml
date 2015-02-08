@@ -1,54 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.github.monchenkoid.project_9_10_14">
+    package="com.github.monchenkoid.project_9_10_14" >
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <permission
         android:name="com.example.gcm.permission.C2D_MESSAGE"
-        android:protectionLevel="signature"/>
+        android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.example.gcm.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.example.gcm.permission.C2D_MESSAGE" />
 
     <application
         android:name=".CoreApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/myTheme"
-        >
+        android:theme="@style/myTheme" >
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version"/>
+            android:value="@integer/google_play_services_version" />
 
         <activity
             android:name=".ui.adapters.interfaces.MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name" >
         </activity>
         <activity
             android:name=".ui.activities.TIMListActivity"
-            android:label="@string/title_activity_timlist"/>
+            android:label="@string/title_activity_timlist" />
         <activity
             android:name=".ui.activities.DetailsActivity"
-            android:label="@string/title_activity_details"/>
+            android:label="@string/title_activity_details" />
         <activity
             android:name=".ui.activities.MainActivity"
             android:label="@string/title_activity_details"
-            android:theme="@style/myTheme">
+            android:theme="@style/myTheme" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.activities.SettingsActivity"
-            android:label="@string/settings">
-        </activity>
+
     </application>
 
 </manifest>

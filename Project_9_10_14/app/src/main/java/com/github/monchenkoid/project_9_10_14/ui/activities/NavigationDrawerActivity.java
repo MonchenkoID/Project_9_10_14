@@ -42,9 +42,6 @@ public abstract class NavigationDrawerActivity extends ActionBarActivity {
 
     private View mHeader;
 
-    private TextView mTitleFooter;
-    private ImageView mIconFooter;
-
     private int mColorName = 0;
     private int mColorIcon = 0;
     private int mColorSeparator = 0;
@@ -63,7 +60,6 @@ public abstract class NavigationDrawerActivity extends ActionBarActivity {
 
     private DrawerLayout mDrawerLayout;
     private FrameLayout mRelativeDrawer;
-    private RelativeLayout mFooterDrawer;
 
     private NavigationAdapter mNavigationAdapter;
     private ActionBarDrawerToggleCompat mDrawerToggle;
@@ -71,16 +67,8 @@ public abstract class NavigationDrawerActivity extends ActionBarActivity {
 
     public static final String CURRENT_POSITION = "CURRENT_POSITION";
 
-    /**
-     * User information
-     */
     public abstract void onUserInformation();
 
-    /**
-     * onCreate(Bundle savedInstanceState).
-     *
-     * @param savedInstanceState onCreate(Bundle savedInstanceState).
-     */
     public abstract void onInt(Bundle savedInstanceState);
 
 
@@ -101,12 +89,6 @@ public abstract class NavigationDrawerActivity extends ActionBarActivity {
 
         mDrawerToggle = new ActionBarDrawerToggleCompat(this, mDrawerLayout, mToolbar);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-
-        mTitleFooter = (TextView) this.findViewById(R.id.titleFooter);
-        mIconFooter = (ImageView) this.findViewById(R.id.iconFooter);
-
-        mFooterDrawer = (RelativeLayout) this.findViewById(R.id.footerDrawer);
-        mFooterDrawer.setOnClickListener(onClickFooterDrawer);
 
         mRelativeDrawer = (FrameLayout) this.findViewById(R.id.relativeDrawer);
 
@@ -230,7 +212,7 @@ public abstract class NavigationDrawerActivity extends ActionBarActivity {
     private OnClickListener onClickFooterDrawer = new OnClickListener() {
         @Override
         public void onClick(View v) {
-            mNavigationListener.onClickFooterItemNavigation(v);
+
             mDrawerLayout.closeDrawer(mRelativeDrawer);
         }
     };
@@ -291,7 +273,6 @@ public abstract class NavigationDrawerActivity extends ActionBarActivity {
         this.mListHeader = listItensHeader;
         this.mSparseCounter = sparceItensCount;
     }
-
     /**
      * Set adapter attributes
      *
@@ -302,7 +283,6 @@ public abstract class NavigationDrawerActivity extends ActionBarActivity {
         this.mListNameItem = listNameItem;
         this.mListIcon = listIcon;
     }
-
     /**
      * Starting listener navigation
      *
@@ -311,8 +291,6 @@ public abstract class NavigationDrawerActivity extends ActionBarActivity {
     public void setNavigationListener(NavigationDrawerListener navigationListener) {
         this.mNavigationListener = navigationListener;
     }
-
-
     /**
      * First item of the position selected from the list
      *
@@ -321,7 +299,6 @@ public abstract class NavigationDrawerActivity extends ActionBarActivity {
     public void setDefaultStartPositionNavigation(int position) {
         this.mCurrentPosition = position;
     }
-
     /**
      * Position in the last clicked item list
      *
@@ -337,9 +314,6 @@ public abstract class NavigationDrawerActivity extends ActionBarActivity {
     public int getCurrentPosition() {
         return this.mCurrentPosition;
     }
-
-    /*{  }*/
-
     /**
      * Select item clicked
      *
@@ -351,146 +325,13 @@ public abstract class NavigationDrawerActivity extends ActionBarActivity {
         this.mNavigationAdapter.setChecked(position, checked);
     }
 
-    /**
-     * Information footer list item
-     *
-     * @param title item footer name.
-     * @param icon  item footer icon.
-     */
-    public void setFooterInformationDrawer(String title, int icon) {
-
-        if (title == null) {
-            throw new RuntimeException(getString(R.string.title_null_or_empty));
-        }
-
-        if (title.trim().equals("")) {
-            throw new RuntimeException(getString(R.string.title_null_or_empty));
-        }
-
-        mTitleFooter.setText(title);
-
-        if (icon == 0) {
-            mIconFooter.setVisibility(View.GONE);
-        } else {
-            mIconFooter.setImageResource(icon);
-        }
-    }
-
-    /**
-     * Information footer list item
-     *
-     * @param title     item footer name.
-     * @param icon      item footer icon.
-     * @param colorName item footer name color.
-     * @param colorIcon item footer icon color.
-     */
-    public void setFooterInformationDrawer(String title, int icon, int colorName, int colorIcon) {
-
-        if (title == null) {
-            throw new RuntimeException(getString(R.string.title_null_or_empty));
-        }
-
-        if (title.trim().equals("")) {
-            throw new RuntimeException(getString(R.string.title_null_or_empty));
-        }
-
-        mTitleFooter.setText(title);
-
-        if (colorName > 0) {
-            mTitleFooter.setTextColor(getResources().getColor(colorName));
-        }
-
-        if (icon == 0) {
-            mIconFooter.setVisibility(View.GONE);
-        } else {
-            mIconFooter.setImageResource(icon);
-
-            if (colorIcon > 0) {
-                mIconFooter.setColorFilter(getResources().getColor(colorIcon));
-            }
-        }
-    }
-
-
-    /**
-     * Information footer list item
-     *
-     * @param title item footer name.
-     * @param icon  item footer icon.
-     */
-    public void setFooterInformationDrawer(int title, int icon) {
-
-        if (title == 0) {
-            throw new RuntimeException(getString(R.string.title_null_or_empty));
-        }
-
-        mTitleFooter.setText(getString(title));
-
-        if (icon == 0) {
-            mIconFooter.setVisibility(View.GONE);
-        } else {
-            mIconFooter.setImageResource(icon);
-        }
-    }
-
-
-    /**
-     * Information footer list item
-     *
-     * @param title     item footer name.
-     * @param icon      item footer icon.
-     * @param colorName item footer name color.
-     * @param colorIcon item footer icon color.
-     */
-    public void setFooterInformationDrawer(int title, int icon, int colorName, int colorIcon) {
-
-        if (title == 0) {
-            throw new RuntimeException(getString(R.string.title_null_or_empty));
-        }
-
-        mTitleFooter.setText(title);
-
-        if (colorName > 0) {
-            mTitleFooter.setTextColor(getResources().getColor(colorName));
-        }
-
-        if (icon == 0) {
-            mIconFooter.setVisibility(View.GONE);
-        } else {
-            mIconFooter.setImageResource(icon);
-
-            if (colorIcon > 0) {
-                mIconFooter.setColorFilter(getResources().getColor(colorIcon));
-            }
-        }
-    }
-
-
-    /**
-     * If not want to use the footer item just put false
-     *
-     * @param visible true or false.
-     */
-    public void setFooterNavigationVisible(boolean visible) {
-        this.mFooterDrawer.setVisibility((visible) ? View.VISIBLE : View.GONE);
-    }
-
-    /**
+       /**
      * Item color selected in the list - name and icon (use before the setNavigationAdapter)
      *
      * @param colorId color id.
      */
     public void setColorSelectedItemNavigation(int colorId) {
         this.mColorSelected = colorId;
-    }
-
-    /**
-     * Footer icon color
-     *
-     * @param colorId color id.
-     */
-    public void setFooterIconColorNavigation(int colorId) {
-        this.mIconFooter.setColorFilter(getResources().getColor(colorId));
     }
 
     /**

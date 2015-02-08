@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/profile_user_status_full"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/default_padding"
+    android:layout_marginTop="@dimen/default_padding_half"
+    android:text="@string/sub_tims"
+    style="@style/myTheme" />

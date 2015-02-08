@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="navigation_drawer_width">240dp</dimen>
-    <dimen name="statusMargin">0dp</dimen>
-    <dimen name="userSpace">164dp</dimen>
-    <dimen name="photoMarginTop">16dp</dimen>
-
-    <!-- match_parent = -1dp / wrap_content = -2dp -->
-    <dimen name="drawerWidth">-1dp</dimen>
-
+ <!-- match_parent = -1dp / wrap_content = -2dp -->
     <!-- navigation_drawer.xml -->
     <dimen name="drawer_layout_width">-.5dp</dimen>
 
@@ -25,14 +14,6 @@
     <dimen name="userPhoto_layout_marginTop">16dp</dimen>
     <dimen name="userPhoto_layout_marginLeft">16dp</dimen>
 
-    <dimen name="userPhotoTwo_layout_width">40dp</dimen>
-    <dimen name="userPhotoTwo_layout_height">40dp</dimen>
-    <dimen name="userPhotoTwo_layout_marginRight">16dp</dimen>
-
-    <dimen name="userPhotoTree_layout_width">40dp</dimen>
-    <dimen name="userPhotoTree_layout_height">40dp</dimen>
-    <dimen name="userPhotoTree_layout_marginRight">16dp</dimen>
-
     <dimen name="userData_layout_height">56dp</dimen>
     <dimen name="userData_layout_marginBottom">8dp</dimen>
 
@@ -41,4 +22,24 @@
 
     <dimen name="userEmail_textSize">14sp</dimen>
     <dimen name="userEmail_layout_marginLeft">16dp</dimen>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="navigation_drawer_width">240dp</dimen>
+    <dimen name="default_padding">12dp</dimen>
+    <dimen name="default_padding_half">6dp</dimen>
+    <dimen name="default_height">48dp</dimen>
+
+
+
+
+    <dimen name="material_margin_layout_vertical">16dp</dimen>
+    <dimen name="material_margin_avatar_vertical">72dp</dimen>
+    <dimen name="material_divider_vertical">8dp</dimen>
+    <dimen name="material_nawigation_drawer_item_vertical">48dp</dimen>
+    <dimen name="material_nawigation_drawer_margin_vertical">56dp</dimen>
+    <dimen name="material_list_with_icon_vertical">56dp</dimen>
+    <dimen name="material_list_item_vertical">48dp</dimen>
+
+
 </resources>

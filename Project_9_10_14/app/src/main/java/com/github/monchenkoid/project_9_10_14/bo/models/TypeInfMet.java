@@ -1,6 +1,10 @@
 package com.github.monchenkoid.project_9_10_14.bo.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.github.monchenkoid.project_9_10_14.bo.JSONObjectWrapper;
 import com.google.gson.annotations.SerializedName;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +20,8 @@ import static com.github.monchenkoid.project_9_10_14.utils.Constants.KEY_TIM_UNG
  * Created by Irina Monchenko on 18.01.2015.
  */
 
-public class TypeInfMet {
+public class TypeInfMet extends JSONObjectWrapper
+{
 
     @SerializedName(KEY_TIM_ID)
     private Long mId;
@@ -31,9 +36,29 @@ public class TypeInfMet {
     @SerializedName(KEY_TIM_RELATIONSHIPS)
     private List<Relationship> mRelationships;
 
-    public TypeInfMet() {
+	public static final Parcelable.Creator<TypeInfMet> CREATOR
+			= new Parcelable.Creator<TypeInfMet>() {
+		public TypeInfMet createFromParcel(Parcel in) {
+			return new TypeInfMet(in);
+		}
 
-    }
+		public TypeInfMet[] newArray(int size) {
+			return new TypeInfMet[size];
+		}
+	};
+
+	public TypeInfMet(String jsonObject) {
+		super(jsonObject);
+	}
+
+	public TypeInfMet(JSONObject jsonObject) {
+		super(jsonObject);
+	}
+
+	protected TypeInfMet(Parcel in) {
+		super(in);
+	}
+	/*
 
     public TypeInfMet(Long mId, ArrayList<String> mName, ArrayList<String> mDiUng, ArrayList<String> mReign,
                       ArrayList<String> mModelA, List<Relationship> mRelationships) {
@@ -46,7 +71,7 @@ public class TypeInfMet {
         this.mRelationships = mRelationships;
 
     }
-
+*/
     public Long getId() {
         return mId;
     }

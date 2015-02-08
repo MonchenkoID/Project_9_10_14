@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.NonNull;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
@@ -47,7 +48,7 @@ public class ScrimInsetsFrameLayout extends FrameLayout {
     }
 
     @Override
-    protected boolean fitSystemWindows(Rect insets) {
+    protected boolean fitSystemWindows(@NonNull Rect insets) {
         mInsets = new Rect(insets);
         setWillNotDraw(mInsetForeground == null);
         ViewCompat.postInvalidateOnAnimation(this);
@@ -58,7 +59,7 @@ public class ScrimInsetsFrameLayout extends FrameLayout {
     }
 
     @Override
-    public void draw(Canvas canvas) {
+    public void draw(@NonNull Canvas canvas) {
         super.draw(canvas);
 
         int width = getWidth();

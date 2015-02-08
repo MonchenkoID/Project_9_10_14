@@ -17,14 +17,14 @@ public class MainActivity extends Activity {
     // Button mButton;
 
     public static final String TAG = MainActivity.class.getSimpleName();
-    private EditText editText;
+   // private EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editText = (EditText) findViewById(R.id.editText);
+        //editText = (EditText) findViewById(R.id.editText);
         ArrayList<String> name;
         name = new ArrayList<>();
 
@@ -81,8 +81,8 @@ public class MainActivity extends Activity {
         typeInfMet = new TypeInfMet(id, name, dUng, reign, modelA, null);
         tims.add(typeInfMet);
 
-        String jsonRepresentation = gson.toJson(tims);
-        editText.setText(jsonRepresentation);
+       // String jsonRepresentation = gson.toJson(tims);
+      //  editText.setText(jsonRepresentation);
 
     }
 

@@ -1,11 +1,15 @@
 package com.github.monchenkoid.project_9_10_14.bo.models;
 
 import android.os.Parcel;
+import android.os.Parcelable;
+import com.github.monchenkoid.project_9_10_14.bo.JSONObjectWrapper;
+import org.json.JSONObject;
 
 /**
  * Created by Irina Monchenko on 17.01.2015.
  */
-public class Relationship {
+public class Relationship extends JSONObjectWrapper
+{
 
     private Long mId;
 
@@ -17,21 +21,44 @@ public class Relationship {
 
     private Role mSecondUser;
 
-    public Relationship(Long id, String typeRelationship, String nameRelationship,
+	public static final Parcelable.Creator<Relationship> CREATOR
+			= new Parcelable.Creator<Relationship>() {
+		public Relationship createFromParcel(Parcel in) {
+			return new Relationship(in);
+		}
+
+		public Relationship[] newArray(int size) {
+			return new Relationship[size];
+		}
+	};
+
+	public Relationship(String jsonObject) {
+		super(jsonObject);
+	}
+
+	public Relationship(JSONObject jsonObject) {
+		super(jsonObject);
+	}
+
+	protected Relationship(Parcel in) {
+		super(in);
+	}
+
+  /*  public Relationship(Long id, String typeRelationship, String nameRelationship,
                         String descriptionRelationship, Role secondUser) {
-        mId = id;
-        mTypeRelationship = typeRelationship;
-        mNameRelationship = nameRelationship;
-        mDescriptionRelationship = descriptionRelationship;
-        mSecondUser = secondUser;
-    }
+		this.mId = id;
+        this.mTypeRelationship = typeRelationship;
+        this.mNameRelationship = nameRelationship;
+        this.mDescriptionRelationship = descriptionRelationship;
+        this.mSecondUser = secondUser;
+    }*/
 
     public Long getId() {
         return mId;
     }
 
     public void setId(Long id) {
-        mId = id;
+        this.mId = id;
     }
 
     public String getTypeRelationship() {
@@ -39,7 +66,7 @@ public class Relationship {
     }
 
     public void setTypeRelationship(String typeRelationship) {
-        mTypeRelationship = typeRelationship;
+        this.mTypeRelationship = typeRelationship;
     }
 
     public String getNameRelationship() {
@@ -47,7 +74,7 @@ public class Relationship {
     }
 
     public void setNameRelationship(String nameRelationship) {
-        mNameRelationship = nameRelationship;
+        this.mNameRelationship = nameRelationship;
     }
 
     public String getDescriptionRelationship() {
@@ -55,7 +82,7 @@ public class Relationship {
     }
 
     public void setDescriptionRelationship(String descriptionRelationship) {
-        mDescriptionRelationship = descriptionRelationship;
+        this.mDescriptionRelationship = descriptionRelationship;
     }
 
     public Role getSecondUser() {
@@ -63,9 +90,9 @@ public class Relationship {
     }
 
     public void setSecondUser(Role secondUser) {
-        mSecondUser = secondUser;
+        this.mSecondUser = secondUser;
     }
-
+/*
     protected Relationship(Parcel in) {
         mId = in.readByte() == 0x00 ? null : in.readLong();
         mTypeRelationship = in.readString();
@@ -73,6 +100,6 @@ public class Relationship {
         mDescriptionRelationship = in.readString();
         mSecondUser = (Role) in.readValue(Role.class.getClassLoader());
     }
-
+*/
 
 }

@@ -1,10 +1,10 @@
 <resources>
 
     <style name="AppTheme.Ligth" parent="Theme.AppCompat.Light">
-        <item name="colorPrimary">@color/nliveo_cyan_colorPrimary</item>
-        <item name="colorPrimaryDark">@color/nliveo_cyan_alpha_colorPrimaryDark</item>
-        <item name="colorAccent">@color/nliveo_cyan_colorPrimary</item>
-        <item name="colorControlHighlight">@color/nliveo_cyan_colorPrimary</item>
+        <item name="colorPrimary">@color/primary_light</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="colorControlHighlight">@color/primary</item>
         <item name="android:windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="windowActionModeOverlay">true</item>
@@ -14,10 +14,10 @@
     </style>
 
     <style name="AppTheme.DarkActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/nliveo_cyan_colorPrimary</item>
-        <item name="colorPrimaryDark">@color/nliveo_cyan_alpha_colorPrimaryDark</item>
-        <item name="colorAccent">@color/nliveo_cyan_colorPrimary</item>
-        <item name="colorControlHighlight">@color/nliveo_cyan_colorPrimary</item>
+        <item name="colorPrimary">@color/primary_dark</item>
+        <item name="colorPrimaryDark">@color/primary</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="colorControlHighlight">@color/primary_light</item>
         <item name="android:windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="windowActionModeOverlay">true</item>
@@ -29,9 +29,7 @@
     <style name="myTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="windowActionBar">false</item>
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/nliveo_blue_colorPrimary</item>
-        <item name="colorPrimaryDark">@color/nliveo_blue_colorPrimaryDark</item>
-        <item name="colorAccent">@color/nliveo_blue_colorPrimary</item>
+
     </style>
 
     <!--Here will be the theme of the class that will extends NavigationLiveo-->

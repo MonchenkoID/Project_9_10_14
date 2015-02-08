@@ -11,7 +11,7 @@ public class Role<T> {
     private T role;
 
     public Role(T mRole) {
-        role = mRole;
+        this.role = mRole;
     }
 
     public T getRole() {

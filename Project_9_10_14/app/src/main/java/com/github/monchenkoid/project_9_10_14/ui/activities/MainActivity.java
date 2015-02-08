@@ -110,9 +110,4 @@ public class MainActivity extends NavigationDrawerActivity implements Navigation
         Toast.makeText(this, R.string.open_user_profile, Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    public void onClickFooterItemNavigation(View v) {
-        //footer onClick
-        // startActivity(new Intent(this, SettingsActivity.class));
-    }
 }

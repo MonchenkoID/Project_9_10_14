@@ -21,14 +21,6 @@ public interface NavigationDrawerListener {
      * @param visible  use to hide the menu when the navigation is open.
      */
     public void onPrepareOptionsMenuNavigation(Menu menu, int position, boolean visible);
-
-    /**
-     * Click footer item navigation
-     *
-     * @param v view.
-     */
-    public void onClickFooterItemNavigation(View v);
-
     /**
      * Click user photo navigation
      *
