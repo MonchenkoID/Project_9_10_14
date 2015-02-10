@@ -30,31 +30,37 @@ public class ProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 	private ProfileFragment.OnProfileClick mOnProfileClick;
 
 
-	private enum ViewTypes {
-		 STATUS, DELETED
+	private enum ViewTypes
+	{
+		STATUS, DELETED
 	}
 
 
-	private static class StatusViewHolder extends RecyclerView.ViewHolder {
+	private static class StatusViewHolder extends RecyclerView.ViewHolder
+	{
 		private TextView mUserStatus;
 
-		private StatusViewHolder(View v) {
+		private StatusViewHolder(View v)
+		{
 			super(v);
 			mUserStatus = (TextView) v.findViewById(R.id.profile_user_status_full);
 		}
 	}
 
-	private static class DeleteViewHolder extends RecyclerView.ViewHolder {
+	private static class DeleteViewHolder extends RecyclerView.ViewHolder
+	{
 		private TextView mUserDelete;
 
-		private DeleteViewHolder(View v) {
+		private DeleteViewHolder(View v)
+		{
 			super(v);
 			mUserDelete = (TextView) v.findViewById(R.id.profile_deleted);
 		}
 	}
 
 	public ProfileAdapter(Context context, Cursor cursor,
-						  ProfileFragment.OnProfileClick onProfileClick, String userId) {
+						  ProfileFragment.OnProfileClick onProfileClick, String userId)
+	{
 		mCursor = cursor;
 		mResources = context.getResources();
 		mContext = context;
@@ -68,10 +74,12 @@ public class ProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 	public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
 	{
 		ViewTypes[] types = ViewTypes.values();
-		switch (types[viewType]) {
+		switch (types[viewType])
+		{
 			case STATUS:
 				return new StatusViewHolder(mInflater.inflate(R.layout.profile_item_status, parent, false));
-			default: case DELETED:
+			default:
+			case DELETED:
 				return new DeleteViewHolder(mInflater.inflate(R.layout.profile_deleted, parent, false));
 		}
 	}
@@ -79,12 +87,14 @@ public class ProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 	@Override
 	public void onBindViewHolder(RecyclerView.ViewHolder holder, int position)
 	{
-		if (mCursor == null || mCursor.isClosed()) {
+		if (mCursor == null || mCursor.isClosed())
+		{
 			return;
 		}
 
 		ViewTypes[] types = ViewTypes.values();
-		switch (types[getItemViewType(position)]) {
+		switch (types[getItemViewType(position)])
+		{
 
 			case STATUS:
 				//StatusViewHolder statusHolder = (StatusViewHolder) holder;
@@ -107,14 +117,17 @@ public class ProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 	}
 
 	@Override
-	public int getItemViewType(int position) {
+	public int getItemViewType(int position)
+	{
 		return mUsedTypes.get(position).ordinal();
 	}
 
-	public void setCursor(Cursor cursor) {
+	public void setCursor(Cursor cursor)
+	{
 		CursorUtils.closeCursor(mCursor);
 		mCursor = cursor;
-		if (mCursor != null && ! mCursor.isClosed() && mCursor.getCount() > 0) {
+		if (mCursor != null && !mCursor.isClosed() && mCursor.getCount() > 0)
+		{
 			mCursor.moveToFirst();
 			buildLists();
 		}
@@ -122,14 +135,17 @@ public class ProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 		notifyDataSetChanged();
 	}
 
-	private void buildLists() {
+	private void buildLists()
+	{
 		mUsedTypes.clear();
-		if (! TextUtils.isEmpty(CursorUtils.getString(mCursor, "status"))) {
+		if (!TextUtils.isEmpty(CursorUtils.getString(mCursor, "status")))
+		{
 			mUsedTypes.add(ViewTypes.STATUS);
 		}
 
 		String deleted = CursorUtils.getString(mCursor, "deleted");
-		if (! TextUtils.isEmpty(deleted)) {
+		if (!TextUtils.isEmpty(deleted))
+		{
 			mUsedTypes.add(ViewTypes.DELETED);
 		}
 /*
@@ -146,7 +162,6 @@ public class ProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 		if (! mCounters.isEmpty()) {
 			mUsedTypes.add(ViewTypes.COUNTERS);
 		}*/
-
 
 
 	}

@@ -20,30 +20,36 @@ public enum DrawerItems
 	private int mCount;
 	private BaseFragment.Builder mBuilder;
 
-	DrawerItems(int iconId, int title, BaseFragment.Builder builder) {
+	DrawerItems(int iconId, int title, BaseFragment.Builder builder)
+	{
 		mIconId = iconId;
 		mTitleId = title;
 		mBuilder = builder;
 		mCount = 0;
 	}
 
-	public int getIconId() {
+	public int getIconId()
+	{
 		return mIconId;
 	}
 
-	public int getTitleId() {
+	public int getTitleId()
+	{
 		return mTitleId;
 	}
 
-	public int getCount() {
+	public int getCount()
+	{
 		return mCount;
 	}
 
-	public void setCount(int count) {
+	public void setCount(int count)
+	{
 		mCount = count;
 	}
 
-	public Fragment getFragment() {
+	public Fragment getFragment()
+	{
 		return mBuilder.build();
 	}
 }

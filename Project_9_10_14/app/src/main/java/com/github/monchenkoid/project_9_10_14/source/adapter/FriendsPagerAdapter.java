@@ -38,10 +38,14 @@ public class FriendsPagerAdapter extends FragmentStatePagerAdapter
 	}
 
 	@Override
-	public CharSequence getPageTitle(int position) {
-		if (position == 0) {
+	public CharSequence getPageTitle(int position)
+	{
+		if (position == 0)
+		{
 			return mAll;
-		} else {
+		}
+		else
+		{
 			return mOnline;
 		}
 	}

@@ -15,7 +15,8 @@ import com.github.monchenkoid.project_9_10_14.source.holder.HolderBuilder;
 public class DrawerMenuListAdapter extends BaseArrayAdapter<DrawerItems, DrawerMenuListAdapter.ViewHolder>
 {
 
-	public DrawerMenuListAdapter(Context context) {
+	public DrawerMenuListAdapter(Context context)
+	{
 		super(context, DrawerItems.values(), new Builder());
 	}
 
@@ -39,9 +40,12 @@ public class DrawerMenuListAdapter extends BaseArrayAdapter<DrawerItems, DrawerM
 	public long getItemId(int position)
 	{
 		DrawerItems item = getItem(position);
-		if (item != null) {
+		if (item != null)
+		{
 			return item.ordinal();
-		} else {
+		}
+		else
+		{
 			return 0;
 		}
 	}
@@ -52,7 +56,8 @@ public class DrawerMenuListAdapter extends BaseArrayAdapter<DrawerItems, DrawerM
 		private TextView mTitle;
 		private TextView mCount;
 
-		public ViewHolder(View v) {
+		public ViewHolder(View v)
+		{
 			mIcon = (ImageView) v.findViewById(R.id.icon);
 			mTitle = (TextView) v.findViewById(R.id.title);
 			mCount = (TextView) v.findViewById(R.id.counter);
@@ -62,7 +67,8 @@ public class DrawerMenuListAdapter extends BaseArrayAdapter<DrawerItems, DrawerM
 	private static class Builder implements HolderBuilder
 	{
 		@Override
-		public BaseViewHolder build(View v) {
+		public BaseViewHolder build(View v)
+		{
 			return new ViewHolder(v);
 		}
 	}

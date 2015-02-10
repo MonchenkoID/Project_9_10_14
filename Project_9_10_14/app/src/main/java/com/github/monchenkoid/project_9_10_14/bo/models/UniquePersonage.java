@@ -5,43 +5,51 @@ import java.util.List;
 /**
  * Created by Irina Monchenko on 17.01.2015.
  */
-public class UniquePersonage {
+public class UniquePersonage
+{
 
-    private Long id;
+	private Long id;
 
-    private String mMedia;
+	private String mMedia;
 
-    private String mPersonaName;
+	private String mPersonaName;
 
-    private List<Relationship> mRelationships;
+	private List<Relationship> mRelationships;
 
-    public UniquePersonage(String media, String personaName, List<Relationship> relationships) {
-        this.mMedia = media;
-        this.mPersonaName = personaName;
-        this.mRelationships = relationships;
-    }
+	public UniquePersonage(String media, String personaName, List<Relationship> relationships)
+	{
+		this.mMedia = media;
+		this.mPersonaName = personaName;
+		this.mRelationships = relationships;
+	}
 
-    public String getMedia() {
-        return mMedia;
-    }
+	public String getMedia()
+	{
+		return mMedia;
+	}
 
-    public void setMedia(String media) {
-        this.mMedia = media;
-    }
+	public void setMedia(String media)
+	{
+		this.mMedia = media;
+	}
 
-    public String getPersonaName() {
-        return mPersonaName;
-    }
+	public String getPersonaName()
+	{
+		return mPersonaName;
+	}
 
-    public void setPersonaName(String personaName) {
-        this.mPersonaName = personaName;
-    }
+	public void setPersonaName(String personaName)
+	{
+		this.mPersonaName = personaName;
+	}
 
-    public List<Relationship> getRelationships() {
-        return mRelationships;
-    }
+	public List<Relationship> getRelationships()
+	{
+		return mRelationships;
+	}
 
-    public void setRelationships(List<Relationship> relationships) {
-        this.mRelationships = relationships;
-    }
+	public void setRelationships(List<Relationship> relationships)
+	{
+		this.mRelationships = relationships;
+	}
 }

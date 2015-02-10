@@ -12,7 +12,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.util.SparseIntArray;
-import android.view.*;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.*;
 import com.github.monchenkoid.project_9_10_14.R;
 import com.github.monchenkoid.project_9_10_14.ui.adapters.NavigationAdapter;
@@ -70,7 +73,8 @@ public class NavigationDrawerFragment extends Fragment
 	public ActionBarActivity activity = (ActionBarActivity) getActivity();
 
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState)
+	{
 		super.onCreate(savedInstanceState);
 
 		/*FragmentActivity activity = getActivity();
@@ -79,16 +83,20 @@ public class NavigationDrawerFragment extends Fragment
 			mUserLearnedDrawer = sharedPreferences.getBoolean(PREF_USER_LEARNED_DRAWER, false);
 		}*/
 
-		if (savedInstanceState != null) {
+		if (savedInstanceState != null)
+		{
 			setCurrentPosition(savedInstanceState.getInt(CURRENT_POSITION));
 		}
 	}
-	private void setCurrentPosition(int position) {
+
+	private void setCurrentPosition(int position)
+	{
 		this.mCurrentPosition = position;
 	}
 
 	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
+	public void onActivityCreated(Bundle savedInstanceState)
+	{
 		super.onActivityCreated(savedInstanceState);
 		// Indicate that this fragment would like to influence the set of actions in the action bar.
 		setHasOptionsMenu(true);
@@ -96,7 +104,8 @@ public class NavigationDrawerFragment extends Fragment
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-							 Bundle savedInstanceState) {
+							 Bundle savedInstanceState)
+	{
 		View view = inflater.inflate(R.layout.navigation_main, container, false);
 
 
@@ -118,23 +127,29 @@ public class NavigationDrawerFragment extends Fragment
 		activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		activity.getSupportActionBar().setHomeButtonEnabled(true);
 
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-			try {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+		{
+			try
+			{
 				Resources.Theme theme = activity.getTheme();
 				TypedArray typedArray = theme.obtainStyledAttributes(new int[]{android.R.attr.colorPrimary});
 				mDrawerLayout.setStatusBarBackground(typedArray.getResourceId(0, 0));
-			} catch (Exception e) {
+			}
+			catch (Exception e)
+			{
 				e.getMessage();
 			}
 
 			setElevationToolBar(15);
 		}
 
-		if (mList != null) {
+		if (mList != null)
+		{
 			mountListNavigation(savedInstanceState, inflater);
 		}
 
-		if (savedInstanceState == null) {
+		if (savedInstanceState == null)
+		{
 			mNavigationListener.onItemClickNavigation(mCurrentPosition, R.id.container);
 		}
 
@@ -143,13 +158,16 @@ public class NavigationDrawerFragment extends Fragment
 		return view;
 	}
 
-	private class DrawerItemClickListener implements ListView.OnItemClickListener {
+	private class DrawerItemClickListener implements ListView.OnItemClickListener
+	{
 		@Override
-		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+		{
 
 			int mPosition = (position - 1);
 
-			if (position != 0) {
+			if (position != 0)
+			{
 				mNavigationListener.onItemClickNavigation(mPosition, R.id.container);
 				setCurrentPosition(mPosition);
 				setCheckedItemNavigation(mPosition, true);
@@ -159,7 +177,8 @@ public class NavigationDrawerFragment extends Fragment
 		}
 	}
 
-	public void setCheckedItemNavigation(int position, boolean checked) {
+	public void setCheckedItemNavigation(int position, boolean checked)
+	{
 		this.mNavigationAdapter.resetarCheck();
 		this.mNavigationAdapter.setChecked(position, checked);
 	}
@@ -174,16 +193,19 @@ public class NavigationDrawerFragment extends Fragment
 
 	}
 
-	private void mountListNavigation(Bundle savedInstanceState,LayoutInflater inflater) {
+	private void mountListNavigation(Bundle savedInstanceState, LayoutInflater inflater)
+	{
 		createUserDefaultHeader(inflater);
 		onUserInformation();
 		onInt(savedInstanceState);
 		setAdapterNavigation();
 	}
 
-	private void setAdapterNavigation() {
+	private void setAdapterNavigation()
+	{
 
-		if (mNavigationListener == null) {
+		if (mNavigationListener == null)
+		{
 			throw new RuntimeException(getString(R.string.start_navigation_listener));
 		}
 
@@ -200,7 +222,8 @@ public class NavigationDrawerFragment extends Fragment
 		mList.setAdapter(mNavigationAdapter);
 	}
 
-	private void createUserDefaultHeader(LayoutInflater inflater) {
+	private void createUserDefaultHeader(LayoutInflater inflater)
+	{
 
 		mHeader = inflater.inflate(R.layout.navigation_list_header, mList, false);
 
@@ -215,12 +238,11 @@ public class NavigationDrawerFragment extends Fragment
 	}
 
 
-
-
 	private class ActionBarDrawerToggleCompat extends ActionBarDrawerToggle
 	{
 
-		public ActionBarDrawerToggleCompat(Activity activity, DrawerLayout drawerLayout, Toolbar toolbar) {
+		public ActionBarDrawerToggleCompat(Activity activity, DrawerLayout drawerLayout, Toolbar toolbar)
+		{
 			super(
 					activity,
 					drawerLayout, toolbar,
@@ -229,29 +251,36 @@ public class NavigationDrawerFragment extends Fragment
 		}
 
 		@Override
-		public void onDrawerClosed(View view) {
+		public void onDrawerClosed(View view)
+		{
 			activity.supportInvalidateOptionsMenu();
 		}
 
 		@Override
-		public void onDrawerOpened(View drawerView) {
+		public void onDrawerOpened(View drawerView)
+		{
 			activity.supportInvalidateOptionsMenu();
 		}
 	}
 
-	public void setElevationToolBar(float elevation) {
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+	public void setElevationToolBar(float elevation)
+	{
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+		{
 			this.getToolbar().setElevation(elevation);
 		}
 	}
 
-	public Toolbar getToolbar() {
+	public Toolbar getToolbar()
+	{
 		return this.mToolbar;
 	}
 
-	private View.OnClickListener onClickUserPhoto = new View.OnClickListener() {
+	private View.OnClickListener onClickUserPhoto = new View.OnClickListener()
+	{
 		@Override
-		public void onClick(View v) {
+		public void onClick(View v)
+		{
 			// TODO Auto-generated method stub
 			mNavigationListener.onClickUserPhotoNavigation(v);
 			mDrawerLayout.closeDrawer(mRelativeDrawer);
@@ -260,49 +289,58 @@ public class NavigationDrawerFragment extends Fragment
 
 
 	@Override
-	public void onAttach(Activity activity) {
+	public void onAttach(Activity activity)
+	{
 		super.onAttach(activity);
 
-		if (activity instanceof com.github.monchenkoid.project_9_10_14.source.fragment.NavigationDrawerFragment.NavigationDrawerCallbacks) {
+		if (activity instanceof com.github.monchenkoid.project_9_10_14.source.fragment.NavigationDrawerFragment.NavigationDrawerCallbacks)
+		{
 			mCallbacks = (com.github.monchenkoid.project_9_10_14.source.fragment.NavigationDrawerFragment.NavigationDrawerCallbacks) activity;
 		}
 	}
 
 	@Override
-	public void onDetach() {
+	public void onDetach()
+	{
 		super.onDetach();
 
 		mCallbacks = null;
 	}
 
 	@Override
-	public void onSaveInstanceState(Bundle outState) {
+	public void onSaveInstanceState(Bundle outState)
+	{
 		super.onSaveInstanceState(outState);
 		outState.putInt(CURRENT_POSITION, mCurrentPosition);
 	}
 
 	@Override
-	public void onConfigurationChanged(Configuration newConfig) {
+	public void onConfigurationChanged(Configuration newConfig)
+	{
 		super.onConfigurationChanged(newConfig);
 		// Forward the new configuration the drawer toggle component.
-		if (mDrawerToggle != null) {
+		if (mDrawerToggle != null)
+		{
 			mDrawerToggle.onConfigurationChanged(newConfig);
 		}
 	}
 
 
-
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		if (mDrawerToggle != null) {
-			if (mDrawerToggle.onOptionsItemSelected(item)) {
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		if (mDrawerToggle != null)
+		{
+			if (mDrawerToggle.onOptionsItemSelected(item))
+			{
 				return true;
 			}
 		}
 		return super.onOptionsItemSelected(item);
 	}
 
-	public static interface NavigationDrawerCallbacks {
+	public static interface NavigationDrawerCallbacks
+	{
 		/**
 		 * Called when an item in the navigation drawer is selected.
 		 */

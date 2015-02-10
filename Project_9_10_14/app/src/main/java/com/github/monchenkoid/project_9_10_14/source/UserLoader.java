@@ -1,7 +1,6 @@
 package com.github.monchenkoid.project_9_10_14.source;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.support.v4.content.CursorLoader;
 
 /**

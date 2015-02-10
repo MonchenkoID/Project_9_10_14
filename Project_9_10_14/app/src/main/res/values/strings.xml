@@ -11,16 +11,9 @@
     <string name="no_data">Нет данных</string>
     <string name="error">Error</string>
     <string name="title_activity_details">DetailsActivity</string>
-
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
-
-
-
     <string name="sign_in">Sign in</string>
-
     <string name="tims">ТИМы</string>
     <string name="reignins">Признаки Рейнина</string>
     <string name="model_a">Модель А</string>
@@ -34,7 +27,7 @@
 
     <!-- Toast -->
     <string name="open_user_profile">Open user profile</string>
-     <string name="clear">""</string>
+    <string name="clear">""</string>
     <string name="drawer_open">Open drawer navigation</string>
     <string name="drawer_close">Navigation drawer Close</string>
     <string name="header_not_created">Header was not created</string>
@@ -46,26 +39,28 @@
     <string name="value_icon_should_be_0">The value of the icon for a subHeader item should be 0</string>
     <string name="enter_item_name_position">Enter the item name position </string>
     <string name="ok">OK</string>
-     <string name="fragment_wall">Wall</string>
+    <string name="fragment_wall">Wall</string>
     <string name="fragment_profile">User profile</string>
     <string name="friends">Friends</string>
+    <string-array name="navigation_array">
+        <item>ТИМ-ы</item>
+        <item>Признаки Рейнина</item>
+        <item>Модель А</item>
+        <item>Таблица отношений</item>
+        <item>Администрирование</item>
+    </string-array>
 
 
+    <string name="action_websearch">Web search</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+
+    <string name="intro_message">bla</string>
+    <string name="navigationdraweractivity_title">Navigation Drawer Example</string>
+    <string name="navigationdraweractivity_description">This example illustrates a common usage of the DrawerLayout widget in the Android support library.</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-      <string name="no_connection">No connection</string>
+    <string name="no_connection">No connection</string>
     <string name="retry">Retry</string>
     <string name="vk_user_delete_page">user delete page</string>
 

@@ -5,7 +5,6 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -21,7 +20,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 /**
  * Created by shiza on 01.02.2015.
  */
-public abstract class BaseFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>{
+public abstract class BaseFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>
+{
 
 	private View mProgress;
 	private View mRetryLoad;
@@ -32,38 +32,51 @@ public abstract class BaseFragment extends Fragment implements LoaderManager.Loa
 
 
 	protected abstract int getLayoutId();
+
 	protected abstract Loader<Cursor> createLoader(Bundle args);
+
 	protected abstract int getFragmentTitleResource();
+
 	private AtomicBoolean mIsNetworkLoading = new AtomicBoolean(false);
+
 	protected abstract void onLoadCursorFinished(Cursor cursor);
+
 	protected abstract int buildLoaderId();
+
 	protected abstract Bundle prepareLoaderBundle();
 
-	public interface Builder {
+	public interface Builder
+	{
 		Fragment build();
 	}
 
 	@Override//method to fragment
-	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+	{
 		View view = inflater.inflate(getLayoutId(), container, false);
-	//	FragmentActivity activity = getActivity();
+		//	FragmentActivity activity = getActivity();
 		mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_container);
 		mProgress = view.findViewById(android.R.id.progress);
 		mRetryLoad = view.findViewById(R.id.layout_no_connection);
 		mEmptyData = view.findViewById(R.id.layout_no_data);
 		mMainContainer = view.findViewById(R.id.main_container);
-		if (mSwipeRefreshLayout != null) {
-			mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+		if (mSwipeRefreshLayout != null)
+		{
+			mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener()
+			{
 				@Override
-				public void onRefresh() {
+				public void onRefresh()
+				{
 					onSwipeRefresh();
 				}
 			});
 		}
 		View buttonView = view.findViewById(R.id.button_retry);
-		buttonView.setOnClickListener(new View.OnClickListener() {
+		buttonView.setOnClickListener(new View.OnClickListener()
+		{
 			@Override
-			public void onClick(View v) {
+			public void onClick(View v)
+			{
 				onRetryClick();
 			}
 		});
@@ -71,11 +84,13 @@ public abstract class BaseFragment extends Fragment implements LoaderManager.Loa
 	}
 
 	@Override//method to fragment
-	public void onStart() {
+	public void onStart()
+	{
 		super.onStart();
 
 		ActionBar actionBar = getActionBar();
-		if (actionBar != null) {
+		if (actionBar != null)
+		{
 			actionBar.setTitle(getFragmentTitleResource());
 		}
 	}
@@ -91,9 +106,12 @@ public abstract class BaseFragment extends Fragment implements LoaderManager.Loa
 	{
 		showLoad(mIsNetworkLoading.get());
 
-		if ((cursor == null || cursor.getCount() == 0) && ! mIsNetworkLoading.get()) {
+		if ((cursor == null || cursor.getCount() == 0) && !mIsNetworkLoading.get())
+		{
 			mEmptyData.setVisibility(View.VISIBLE);
-		} else {
+		}
+		else
+		{
 			mEmptyData.setVisibility(View.GONE);
 			onLoadCursorFinished(cursor);
 		}
@@ -105,60 +123,79 @@ public abstract class BaseFragment extends Fragment implements LoaderManager.Loa
 		showLoad(true);
 	}
 
-	protected void showLoad(boolean state) {
+	protected void showLoad(boolean state)
+	{
 		mProgress.setVisibility(state ? View.VISIBLE : View.GONE);
-		if (mMainContainer != null) {
+		if (mMainContainer != null)
+		{
 			mMainContainer.setVisibility(state ? View.GONE : View.VISIBLE);
 		}
 		mRetryLoad.setVisibility(View.GONE);
 		mEmptyData.setVisibility(View.GONE);
 	}
 
-	protected ActionBar getActionBar() {
+	protected ActionBar getActionBar()
+	{
 		Activity activity = getActivity();
-		if (activity == null) {
+		if (activity == null)
+		{
 			return null;
 		}
 		return ((ActionBarActivity) activity).getSupportActionBar();
 	}
 
-	protected void onSwipeRefresh() {
+	protected void onSwipeRefresh()
+	{
 		reloadData();
 	}
 
-	protected void onRetryClick() {
-		  reloadData();
+	protected void onRetryClick()
+	{
+		reloadData();
 	}
 
-	protected SwipeRefreshLayout getSwipeRefreshLayout() {
-	   return mSwipeRefreshLayout;
-	    }
-
-	protected void prepareLoader(boolean needRestart) {
-		       prepareLoader(needRestart, this);
+	protected SwipeRefreshLayout getSwipeRefreshLayout()
+	{
+		return mSwipeRefreshLayout;
 	}
 
-	protected void prepareLoader(boolean needRestart, LoaderManager.LoaderCallbacks<Cursor> callback) {
+	protected void prepareLoader(boolean needRestart)
+	{
+		prepareLoader(needRestart, this);
+	}
+
+	protected void prepareLoader(boolean needRestart, LoaderManager.LoaderCallbacks<Cursor> callback)
+	{
 		showLoad(true);
-		if (needRestart) {
+		if (needRestart)
+		{
 			getLoaderManager().restartLoader(buildLoaderId(), prepareLoaderBundle(), callback);
-		} else {
+		}
+		else
+		{
 			getLoaderManager().initLoader(buildLoaderId(), prepareLoaderBundle(), callback);
 		}
 	}
 
-	protected void reloadData() {
+	protected void reloadData()
+	{
 	}
-	protected String getArgsUserId() {
+
+	protected String getArgsUserId()
+	{
 		return getArgsStringByName(ARGS_USER_ID);
 	}
-	protected String getArgsStringByName(String name) {
+
+	protected String getArgsStringByName(String name)
+	{
 		return getArgsByName(name);
 	}
 
-	protected <T> T getArgsByName(String name) {
+	protected <T> T getArgsByName(String name)
+	{
 		Bundle arguments = getArguments();
-		if (arguments != null) {
+		if (arguments != null)
+		{
 			Object argResult = arguments.get(name);
 			//noinspection unchecked
 			return (T) argResult;       //may be throw ClassCastException

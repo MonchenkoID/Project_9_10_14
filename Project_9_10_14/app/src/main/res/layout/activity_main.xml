@@ -15,8 +15,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Main Activity"/>
-        </FrameLayout>
+            android:text="Main Activity" />
+    </FrameLayout>
 
     <!-- android:layout_gravity="start" tells DrawerLayout to treat
          this as a sliding drawer on the left side for left-to-right
@@ -30,5 +30,5 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:name="com.github.monchenkoid.project_9_10_14.source.fragment.NavigationDrawerFragment"
-        tools:layout="@layout/fragment_navigation_drawer"/>
+        tools:layout="@layout/fragment_navigation_drawer" />
 </android.support.v4.widget.DrawerLayout>

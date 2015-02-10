@@ -38,7 +38,7 @@
 
     </style>
 
-    <style name="nLiveo.Theme.Light" parent="AppTheme.Ligth"/>
+    <style name="nLiveo.Theme.Light" parent="AppTheme.Ligth" />
 
-    <style name="nLiveo.Theme.DarkActionBar" parent="AppTheme.DarkActionBar"/>
+    <style name="nLiveo.Theme.DarkActionBar" parent="AppTheme.DarkActionBar" />
 </resources>

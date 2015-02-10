@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
- <!-- match_parent = -1dp / wrap_content = -2dp -->
+    <!-- match_parent = -1dp / wrap_content = -2dp -->
     <!-- navigation_drawer.xml -->
     <dimen name="drawer_layout_width">-.5dp</dimen>
 
@@ -31,8 +31,6 @@
     <dimen name="default_height">48dp</dimen>
 
 
-
-
     <dimen name="material_margin_layout_vertical">16dp</dimen>
     <dimen name="material_margin_avatar_vertical">72dp</dimen>
     <dimen name="material_divider_vertical">8dp</dimen>
@@ -41,5 +39,29 @@
     <dimen name="material_list_with_icon_vertical">56dp</dimen>
     <dimen name="material_list_item_vertical">48dp</dimen>
 
+
+    <dimen name="font_english_like_display_4">112sp</dimen>
+    <dimen name="font_english_like_display_3">56sp</dimen>
+    <dimen name="font_english_like_display_2">45sp</dimen>
+    <dimen name="font_english_like_display_1">34sp</dimen>
+    <dimen name="font_english_like_headline">24sp</dimen>
+    <dimen name="font_english_like_title">20sp</dimen>
+    <dimen name="font_english_like_subhead">16sp</dimen>
+    <dimen name="font_english_like_body_2">14sp</dimen>
+    <dimen name="font_english_like_body_1">14sp</dimen>
+    <dimen name="font_english_like_caption">12sp</dimen>
+    <dimen name="font_english_like_button">14sp</dimen>
+    <!-- Define standard dimensions to comply with Holo-style grids and rhythm. -->
+
+    <dimen name="margin_tiny">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">32dp</dimen>
+    <dimen name="margin_huge">64dp</dimen>
+
+    <!-- Semantic definitions -->
+
+    <dimen name="horizontal_page_margin">@dimen/margin_medium</dimen>
+    <dimen name="vertical_page_margin">@dimen/margin_medium</dimen>
 
 </resources>

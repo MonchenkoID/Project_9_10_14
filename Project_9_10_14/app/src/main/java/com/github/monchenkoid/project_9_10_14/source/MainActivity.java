@@ -16,11 +16,13 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
 {
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState)
+	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		if (savedInstanceState == null) {
+		if (savedInstanceState == null)
+		{
 			showProfileFragment("12345");
 		}
 
@@ -42,10 +44,12 @@ public class MainActivity extends BaseActivity implements NavigationDrawerFragme
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
 		NavigationDrawerFragment navigationDrawerFragment = (NavigationDrawerFragment)
 				getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-		if (navigationDrawerFragment != null && ! navigationDrawerFragment.isDrawerOpen()) {
+		if (navigationDrawerFragment != null && !navigationDrawerFragment.isDrawerOpen())
+		{
 			// Only show items in the action bar relevant to this screen
 			// if the drawer is not showing. Otherwise, let the drawer
 			// decide what to show in the action bar.

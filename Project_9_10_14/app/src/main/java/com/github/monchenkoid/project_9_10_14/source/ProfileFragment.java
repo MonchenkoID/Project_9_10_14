@@ -24,7 +24,8 @@ public class ProfileFragment extends BaseRecyclerViewFragment implements LoaderM
 	protected RecyclerView.Adapter getNewAdapter()
 	{
 		FragmentActivity activity = getActivity();
-		if (activity != null) {
+		if (activity != null)
+		{
 			return new ProfileAdapter(activity, null, mOnProfileClick, getArgsUserId());
 		}
 		return null;
@@ -40,7 +41,8 @@ public class ProfileFragment extends BaseRecyclerViewFragment implements LoaderM
 	protected Loader<Cursor> createLoader(Bundle args)
 	{
 		FragmentActivity activity = getActivity();
-		if (activity == null) {
+		if (activity == null)
+		{
 			return null;
 		}
 		//return new UserLoader(activity, args);
@@ -55,8 +57,10 @@ public class ProfileFragment extends BaseRecyclerViewFragment implements LoaderM
 
 	@Override
 	protected void onLoadCursorFinished(Cursor cursor)
-	{		ProfileAdapter adapter = (ProfileAdapter) getAdapter();
-		if (adapter != null && cursor != null) {
+	{
+		ProfileAdapter adapter = (ProfileAdapter) getAdapter();
+		if (adapter != null && cursor != null)
+		{
 			adapter.setCursor(cursor);
 			adapter.notifyItemChanged(0);
 		}
@@ -76,7 +80,9 @@ public class ProfileFragment extends BaseRecyclerViewFragment implements LoaderM
 
 		return bundle;
 	}
-	public static interface OnProfileClick {
+
+	public static interface OnProfileClick
+	{
 		void onProfileFriendClick(String userId);
 
 		void onProfilePhotoClick(String userId);
@@ -84,7 +90,8 @@ public class ProfileFragment extends BaseRecyclerViewFragment implements LoaderM
 		void onProfileWallClick(String userId);
 	}
 
-	public static Fragment newInstance(String userId) {
+	public static Fragment newInstance(String userId)
+	{
 		Fragment fragment = new ProfileFragment();
 		Bundle bundle = new Bundle();
 		bundle.putString(ARGS_USER_ID, userId);

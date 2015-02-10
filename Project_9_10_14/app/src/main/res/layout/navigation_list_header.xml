@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#fafafa"
-                android:fitsSystemWindows="true"
-                tools:ignore="MissingPrefix">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fafafa"
+    android:fitsSystemWindows="true"
+    tools:ignore="MissingPrefix">
 
     <ImageView
         android:id="@+id/userBackground"
         android:layout_width="match_parent"
         android:layout_height="@dimen/userBackground_layout_height"
         android:contentDescription="@string/clear"
-        android:scaleType="fitXY"/>
+        android:scaleType="fitXY" />
 
     <com.github.monchenkoid.project_9_10_14.ui.RoundedImageView
         android:id="@+id/userPhoto"
@@ -23,7 +23,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="@dimen/userPhoto_layout_marginLeft"
         android:layout_marginLeft="@dimen/userPhoto_layout_marginLeft"
-        android:layout_marginTop="@dimen/userPhoto_layout_marginTop"/>
+        android:layout_marginTop="@dimen/userPhoto_layout_marginTop" />
 
     <com.github.monchenkoid.project_9_10_14.ui.RoundedImageView
         android:id="@+id/userPhotoTwo"
@@ -33,7 +33,7 @@
         android:layout_marginRight="@dimen/userPhotoTwo_layout_marginRight"
         android:layout_marginEnd="@dimen/userPhotoTwo_layout_marginRight"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true" />
 
     <com.github.monchenkoid.project_9_10_14.ui.RoundedImageView
         android:id="@+id/userPhotoTree"
@@ -43,7 +43,7 @@
         android:layout_marginRight="@dimen/userPhotoTree_layout_marginRight"
         android:layout_marginEnd="@dimen/userPhotoTree_layout_marginRight"
         android:layout_toLeftOf="@+id/userPhotoTwo"
-        android:layout_toStartOf="@+id/userPhotoTwo"/>
+        android:layout_toStartOf="@+id/userPhotoTwo" />
 
     <LinearLayout
         android:id="@+id/userData"
@@ -66,7 +66,7 @@
             android:layout_marginStart="@dimen/userName_layout_marginLeft"
             android:layout_marginLeft="@dimen/userName_layout_marginLeft"
             android:textColor="#FFFFFF"
-            android:textSize="@dimen/userName_textSize"/>
+            android:textSize="@dimen/userName_textSize" />
 
         <TextView
             android:id="@+id/userEmail"
@@ -76,6 +76,6 @@
             android:layout_marginStart="@dimen/userEmail_layout_marginLeft"
             android:layout_marginLeft="@dimen/userEmail_layout_marginLeft"
             android:textColor="#FFFFFF"
-            android:textSize="@dimen/userEmail_textSize"/>
+            android:textSize="@dimen/userEmail_textSize" />
     </LinearLayout>
 </RelativeLayout>

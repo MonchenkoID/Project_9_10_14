@@ -11,41 +11,47 @@ import org.json.JSONObject;
 public class Relationship extends JSONObjectWrapper
 {
 
-    private Long mId;
+	private Long mId;
 
-    private String mTypeRelationship;
+	private String mTypeRelationship;
 
-    private String mNameRelationship;
+	private String mNameRelationship;
 
-    private String mDescriptionRelationship;
+	private String mDescriptionRelationship;
 
-    private Role mSecondUser;
+	private Role mSecondUser;
 
 	public static final Parcelable.Creator<Relationship> CREATOR
-			= new Parcelable.Creator<Relationship>() {
-		public Relationship createFromParcel(Parcel in) {
+			= new Parcelable.Creator<Relationship>()
+	{
+		public Relationship createFromParcel(Parcel in)
+		{
 			return new Relationship(in);
 		}
 
-		public Relationship[] newArray(int size) {
+		public Relationship[] newArray(int size)
+		{
 			return new Relationship[size];
 		}
 	};
 
-	public Relationship(String jsonObject) {
+	public Relationship(String jsonObject)
+	{
 		super(jsonObject);
 	}
 
-	public Relationship(JSONObject jsonObject) {
+	public Relationship(JSONObject jsonObject)
+	{
 		super(jsonObject);
 	}
 
-	protected Relationship(Parcel in) {
+	protected Relationship(Parcel in)
+	{
 		super(in);
 	}
 
   /*  public Relationship(Long id, String typeRelationship, String nameRelationship,
-                        String descriptionRelationship, Role secondUser) {
+						String descriptionRelationship, Role secondUser) {
 		this.mId = id;
         this.mTypeRelationship = typeRelationship;
         this.mNameRelationship = nameRelationship;
@@ -53,45 +59,55 @@ public class Relationship extends JSONObjectWrapper
         this.mSecondUser = secondUser;
     }*/
 
-    public Long getId() {
-        return mId;
-    }
+	public Long getId()
+	{
+		return mId;
+	}
 
-    public void setId(Long id) {
-        this.mId = id;
-    }
+	public void setId(Long id)
+	{
+		this.mId = id;
+	}
 
-    public String getTypeRelationship() {
-        return mTypeRelationship;
-    }
+	public String getTypeRelationship()
+	{
+		return mTypeRelationship;
+	}
 
-    public void setTypeRelationship(String typeRelationship) {
-        this.mTypeRelationship = typeRelationship;
-    }
+	public void setTypeRelationship(String typeRelationship)
+	{
+		this.mTypeRelationship = typeRelationship;
+	}
 
-    public String getNameRelationship() {
-        return mNameRelationship;
-    }
+	public String getNameRelationship()
+	{
+		return mNameRelationship;
+	}
 
-    public void setNameRelationship(String nameRelationship) {
-        this.mNameRelationship = nameRelationship;
-    }
+	public void setNameRelationship(String nameRelationship)
+	{
+		this.mNameRelationship = nameRelationship;
+	}
 
-    public String getDescriptionRelationship() {
-        return mDescriptionRelationship;
-    }
+	public String getDescriptionRelationship()
+	{
+		return mDescriptionRelationship;
+	}
 
-    public void setDescriptionRelationship(String descriptionRelationship) {
-        this.mDescriptionRelationship = descriptionRelationship;
-    }
+	public void setDescriptionRelationship(String descriptionRelationship)
+	{
+		this.mDescriptionRelationship = descriptionRelationship;
+	}
 
-    public Role getSecondUser() {
-        return mSecondUser;
-    }
+	public Role getSecondUser()
+	{
+		return mSecondUser;
+	}
 
-    public void setSecondUser(Role secondUser) {
-        this.mSecondUser = secondUser;
-    }
+	public void setSecondUser(Role secondUser)
+	{
+		this.mSecondUser = secondUser;
+	}
 /*
     protected Relationship(Parcel in) {
         mId = in.readByte() == 0x00 ? null : in.readLong();

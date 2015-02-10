@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="start"
-                android:background="@color/background_material_dark"
-                android:fitsSystemWindows="true"
-                tools:ignore="MissingPrefix">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:background="@color/background_material_dark"
+    android:fitsSystemWindows="true"
+    tools:ignore="MissingPrefix">
 
     <ListView
         android:id="@+id/list"
@@ -19,7 +19,7 @@
         android:fitsSystemWindows="true"
         android:divider="@color/divider"
         android:background="@color/background_material_dark"
-        android:dividerHeight="0dp"/>
+        android:dividerHeight="0dp" />
 
 
     <RelativeLayout
@@ -45,7 +45,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
-                android:contentDescription="@string/clear"/>
+                android:contentDescription="@string/clear" />
 
             <TextView
                 android:id="@+id/titleFooter"
@@ -61,7 +61,7 @@
                 android:text="@string/clear"
                 android:textSize="@dimen/default_textSize"
                 android:layout_toRightOf="@+id/iconFooter"
-                android:layout_toEndOf="@+id/iconFooter"/>
+                android:layout_toEndOf="@+id/iconFooter" />
         </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

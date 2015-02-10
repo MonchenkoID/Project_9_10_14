@@ -19,7 +19,8 @@ import android.widget.ListView;
  * Created by shiza on 01.02.2015.
  */
 public abstract class BaseListFragment extends BaseFragment implements ListView.OnScrollListener,
-		AdapterView.OnItemClickListener{
+		AdapterView.OnItemClickListener
+{
 
 	private ListView mListView;
 	private int mLastVisibleIndex;
@@ -30,10 +31,14 @@ public abstract class BaseListFragment extends BaseFragment implements ListView.
 
 
 	protected abstract CursorAdapter getNewListAdapter(Cursor cursor);
-	protected ListView getListView() {
+
+	protected ListView getListView()
+	{
 		return mListView;
 	}
-	protected int getListViewId() {
+
+	protected int getListViewId()
+	{
 		return android.R.id.list;
 	}
 
@@ -42,17 +47,22 @@ public abstract class BaseListFragment extends BaseFragment implements ListView.
 	{
 		//Log.d("BaseListFragment", "onLoadCursorFinished set sel:" + mIsReversedList + " " + mIsRequestNewData);
 		FragmentActivity activity = getActivity();
-		if (activity != null && cursor != null) {
+		if (activity != null && cursor != null)
+		{
 			CursorAdapter adapter = (CursorAdapter) mListView.getAdapter();
-			if (adapter == null) {
+			if (adapter == null)
+			{
 				adapter = getNewListAdapter(cursor);
 				mListView.setAdapter(adapter);
-			} else {
+			}
+			else
+			{
 				adapter.changeCursor(cursor);
 				adapter.notifyDataSetChanged();
 			}
 
-			if (mLastVisibleIndex != 0) {
+			if (mLastVisibleIndex != 0)
+			{
 				mListView.setSelectionFromTop(mLastVisibleIndex, mOffsetTop);
 				mLastVisibleIndex = 0;
 			}
@@ -64,15 +74,18 @@ public abstract class BaseListFragment extends BaseFragment implements ListView.
 	public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount)
 	{
 		ListAdapter adapter = view.getAdapter();
-		if (adapter == null) {
+		if (adapter == null)
+		{
 			return;
 		}
 		int count = adapter.getCount();
-		if (count == 0) {
+		if (count == 0)
+		{
 			return;
 		}
 		SwipeRefreshLayout swipeRefreshLayout = getSwipeRefreshLayout();
-		if (swipeRefreshLayout != null) {
+		if (swipeRefreshLayout != null)
+		{
 			//get shift from top for first visible item - if >=0 scroll position in top
 			ListView listView = getListView();
 			int topRowVerticalPosition =
@@ -86,20 +99,25 @@ public abstract class BaseListFragment extends BaseFragment implements ListView.
 	}
 
 	@Override//method to fragment
-	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+	{
 		View view = super.onCreateView(inflater, container, savedInstanceState);
 		mListView = (ListView) view.findViewById(getListViewId());
-		if (mListView == null) {
+		if (mListView == null)
+		{
 			throw new IllegalStateException("Did not override getListViewId, or getListViewId return invalid ListView id");
 		}
 		mListView.setOnScrollListener(this);
 		mListView.setOnItemClickListener(this);
 
-		if (savedInstanceState != null) {
+		if (savedInstanceState != null)
+		{
 			prepareLoader(false);
 			mLastVisibleIndex = savedInstanceState.getInt(SCROLL_POSITION, 0);
 			mOffsetTop = savedInstanceState.getInt(SCROLL_POSITION_SHIFT, 0);
-		} else {
+		}
+		else
+		{
 			prepareLoader(true);
 			reloadData();
 		}
@@ -108,7 +126,8 @@ public abstract class BaseListFragment extends BaseFragment implements ListView.
 	}
 
 	@Override//method to fragment
-	public void onSaveInstanceState(Bundle outState) {
+	public void onSaveInstanceState(Bundle outState)
+	{
 		super.onSaveInstanceState(outState);
 
 		//here we get first visible item in ListView
@@ -119,7 +138,6 @@ public abstract class BaseListFragment extends BaseFragment implements ListView.
 		View view = mListView.getChildAt(0);
 		outState.putInt(SCROLL_POSITION_SHIFT, (view == null) ? 0 : view.getTop());
 	}
-
 
 
 }

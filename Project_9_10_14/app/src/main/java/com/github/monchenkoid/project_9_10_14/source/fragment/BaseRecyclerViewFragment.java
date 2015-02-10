@@ -11,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.github.monchenkoid.project_9_10_14.R;
-import com.github.monchenkoid.project_9_10_14.source.fragment.BaseFragment;
 
 /**
  * Created by shiza on 01.02.2015.
@@ -25,17 +24,22 @@ public abstract class BaseRecyclerViewFragment extends BaseFragment
 	protected abstract RecyclerView.Adapter getNewAdapter();
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+	{
 		View view = super.onCreateView(inflater, container, savedInstanceState);
 
 		mRecyclerView = (RecyclerView) view.findViewById(getRecyclerViewId());
-		if (mRecyclerView == null) {
+		if (mRecyclerView == null)
+		{
 			throw new IllegalStateException("Did not override getRecyclerViewId, or getRecyclerViewId return invalid RecyclerView id");
 		}
 
-		if (savedInstanceState != null) {
+		if (savedInstanceState != null)
+		{
 			prepareLoader(false);
-		} else {
+		}
+		else
+		{
 			prepareLoader(true);
 			reloadData();
 		}
@@ -54,37 +58,45 @@ public abstract class BaseRecyclerViewFragment extends BaseFragment
 		return view;
 	}
 
-	protected RecyclerView.Adapter getAdapter() {
+	protected RecyclerView.Adapter getAdapter()
+	{
 		return mRecyclerView.getAdapter();
 	}
 
-	protected int getRecyclerViewId() {
+	protected int getRecyclerViewId()
+	{
 		return R.id.recycler_view;
 	}
 
-	protected RecyclerViewScrollListener getRecyclerViewScrollListener() {
-		if (mRecyclerViewScrollListener == null) {
+	protected RecyclerViewScrollListener getRecyclerViewScrollListener()
+	{
+		if (mRecyclerViewScrollListener == null)
+		{
 			mRecyclerViewScrollListener = new RecyclerViewScrollListener();
 		}
 		return mRecyclerViewScrollListener;
 	}
 
 	//Scroll in RecyclerView inner SwipeToRefreshLayout hot fix
-	private class RecyclerViewScrollListener extends RecyclerView.OnScrollListener {
+	private class RecyclerViewScrollListener extends RecyclerView.OnScrollListener
+	{
 		@Override
-		public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+		public void onScrolled(RecyclerView recyclerView, int dx, int dy)
+		{
 			int topRowVerticalPosition =
 					(recyclerView == null || recyclerView.getChildCount() == 0)
 							? 0
 							: recyclerView.getChildAt(0).getTop();
 			SwipeRefreshLayout swipeRefreshLayout = getSwipeRefreshLayout();
-			if (swipeRefreshLayout != null) {
+			if (swipeRefreshLayout != null)
+			{
 				swipeRefreshLayout.setEnabled(topRowVerticalPosition >= 0);
 			}
 		}
 
 		@Override
-		public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+		public void onScrollStateChanged(RecyclerView recyclerView, int newState)
+		{
 
 			super.onScrollStateChanged(recyclerView, newState);
 		}

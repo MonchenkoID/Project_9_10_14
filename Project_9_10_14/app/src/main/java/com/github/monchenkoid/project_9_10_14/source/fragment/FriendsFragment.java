@@ -20,7 +20,8 @@ public class FriendsFragment extends Fragment
 	public static final String ARGS_USER_ID = BaseFragment.ARGS_USER_ID;
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+	{
 		View view = inflater.inflate(R.layout.fragment_friends, container, false);
 
 		ViewPager viewPager = (ViewPager) view.findViewById(R.id.pager);
@@ -32,18 +33,22 @@ public class FriendsFragment extends Fragment
 		return view;
 	}
 
-	private String getArgsUserId() {
+	private String getArgsUserId()
+	{
 		Bundle arguments = getArguments();
-		if (arguments != null) {
+		if (arguments != null)
+		{
 			return arguments.getString(ARGS_USER_ID);
 		}
 		return "";
 	}
 
-	public static class Builder implements BaseFragment.Builder {
+	public static class Builder implements BaseFragment.Builder
+	{
 
 		@Override
-		public Fragment build() {
+		public Fragment build()
+		{
 			return new FriendsFragment();
 		}
 	}

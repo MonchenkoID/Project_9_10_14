@@ -1,123 +1,130 @@
 package com.github.monchenkoid.project_9_10_14.bo.models;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.github.monchenkoid.project_9_10_14.bo.JSONObjectWrapper;
 import com.google.gson.annotations.SerializedName;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.github.monchenkoid.project_9_10_14.utils.Constants.KEY_TIM_ID;
-import static com.github.monchenkoid.project_9_10_14.utils.Constants.KEY_TIM_MODEL_A;
-import static com.github.monchenkoid.project_9_10_14.utils.Constants.KEY_TIM_NAME;
-import static com.github.monchenkoid.project_9_10_14.utils.Constants.KEY_TIM_REIGN;
-import static com.github.monchenkoid.project_9_10_14.utils.Constants.KEY_TIM_RELATIONSHIPS;
-import static com.github.monchenkoid.project_9_10_14.utils.Constants.KEY_TIM_UNG;
+import static com.github.monchenkoid.project_9_10_14.utils.Constants.*;
 
 /**
  * Created by Irina Monchenko on 18.01.2015.
  */
 
-public class TypeInfMet extends JSONObjectWrapper
+public class TypeInfMet //extends JSONObjectWrapper
 {
 
-    @SerializedName(KEY_TIM_ID)
-    private Long mId;
-    @SerializedName(KEY_TIM_NAME)
-    private ArrayList<String> mName;
-    @SerializedName(KEY_TIM_UNG)
-    private ArrayList<String> mDiUng;
-    @SerializedName(KEY_TIM_REIGN)
-    private ArrayList<String> mReign;
-    @SerializedName(KEY_TIM_MODEL_A)
-    private ArrayList<String> mModelA;
-    @SerializedName(KEY_TIM_RELATIONSHIPS)
-    private List<Relationship> mRelationships;
+	@SerializedName(KEY_TIM_ID)
+	private Long mId;
+	@SerializedName(KEY_TIM_NAME)
+	private ArrayList<String> mName;
+	@SerializedName(KEY_TIM_UNG)
+	private ArrayList<String> mDiUng;
+	@SerializedName(KEY_TIM_REIGN)
+	private ArrayList<String> mReign;
+	@SerializedName(KEY_TIM_MODEL_A)
+	private ArrayList<String> mModelA;
+	@SerializedName(KEY_TIM_RELATIONSHIPS)
+	private List<Relationship> mRelationships;
 
-	public static final Parcelable.Creator<TypeInfMet> CREATOR
-			= new Parcelable.Creator<TypeInfMet>() {
-		public TypeInfMet createFromParcel(Parcel in) {
-			return new TypeInfMet(in);
-		}
-
-		public TypeInfMet[] newArray(int size) {
-			return new TypeInfMet[size];
-		}
-	};
-
-	public TypeInfMet(String jsonObject) {
-		super(jsonObject);
-	}
-
-	public TypeInfMet(JSONObject jsonObject) {
-		super(jsonObject);
-	}
-
-	protected TypeInfMet(Parcel in) {
-		super(in);
-	}
 	/*
+		public static final Parcelable.Creator<TypeInfMet> CREATOR
+				= new Parcelable.Creator<TypeInfMet>() {
+			public TypeInfMet createFromParcel(Parcel in) {
+				return new TypeInfMet(in);
+			}
 
-    public TypeInfMet(Long mId, ArrayList<String> mName, ArrayList<String> mDiUng, ArrayList<String> mReign,
-                      ArrayList<String> mModelA, List<Relationship> mRelationships) {
+			public TypeInfMet[] newArray(int size) {
+				return new TypeInfMet[size];
+			}
+		};
 
-        this.mId = mId;
-        this.mName = mName;
-        this.mDiUng = mDiUng;
-        this.mReign = mReign;
-        this.mModelA = mModelA;
-        this.mRelationships = mRelationships;
+		public TypeInfMet(String jsonObject) {
+			super(jsonObject);
+		}
 
-    }
-*/
-    public Long getId() {
-        return mId;
-    }
+		public TypeInfMet(JSONObject jsonObject) {
+			super(jsonObject);
+		}
 
-    public void setId(Long mId) {
-        this.mId = mId;
-    }
+		protected TypeInfMet(Parcel in) {
+			super(in);
+		}*/
+	public TypeInfMet()
+	{
+	}
 
-    public ArrayList<String> getName() {
-        return mName;
-    }
+	public TypeInfMet(Long mId, ArrayList<String> mName, ArrayList<String> mDiUng, ArrayList<String> mReign,
+					  ArrayList<String> mModelA, List<Relationship> mRelationships)
+	{
 
-    public void setName(ArrayList<String> mName) {
-        this.mName = mName;
-    }
+		this.mId = mId;
+		this.mName = mName;
+		this.mDiUng = mDiUng;
+		this.mReign = mReign;
+		this.mModelA = mModelA;
+		this.mRelationships = mRelationships;
 
-    public ArrayList<String> getDiUng() {
-        return mDiUng;
-    }
+	}
 
-    public void setDiUng(ArrayList<String> mDiUng) {
-        this.mDiUng = mDiUng;
-    }
+	public Long getId()
+	{
+		return mId;
+	}
 
-    public ArrayList<String> getReign() {
-        return mReign;
-    }
+	public void setId(Long mId)
+	{
+		this.mId = mId;
+	}
 
-    public void setReign(ArrayList<String> mReign) {
-        this.mReign = mReign;
-    }
+	public ArrayList<String> getName()
+	{
+		return mName;
+	}
 
-    public ArrayList<String> getModelA() {
-        return mModelA;
-    }
+	public void setName(ArrayList<String> mName)
+	{
+		this.mName = mName;
+	}
 
-    public void setModelA(ArrayList<String> mModelA) {
-        this.mModelA = mModelA;
-    }
+	public ArrayList<String> getDiUng()
+	{
+		return mDiUng;
+	}
 
-    public List<Relationship> getRelationships() {
-        return mRelationships;
-    }
+	public void setDiUng(ArrayList<String> mDiUng)
+	{
+		this.mDiUng = mDiUng;
+	}
 
-    public void setRelationships(List<Relationship> mRelationships) {
-        this.mRelationships = mRelationships;
-    }
+	public ArrayList<String> getReign()
+	{
+		return mReign;
+	}
+
+	public void setReign(ArrayList<String> mReign)
+	{
+		this.mReign = mReign;
+	}
+
+	public ArrayList<String> getModelA()
+	{
+		return mModelA;
+	}
+
+	public void setModelA(ArrayList<String> mModelA)
+	{
+		this.mModelA = mModelA;
+	}
+
+	public List<Relationship> getRelationships()
+	{
+		return mRelationships;
+	}
+
+	public void setRelationships(List<Relationship> mRelationships)
+	{
+		this.mRelationships = mRelationships;
+	}
 
 }
