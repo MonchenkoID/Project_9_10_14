@@ -110,7 +110,7 @@ public class FragmentMain extends Fragment
 		public boolean onQueryTextChange(String s)
 		{
 	   /*     if (mSearchCheck) {
-                // implement your search here
+				// implement your search here
             }*/
 			return false;
 		}

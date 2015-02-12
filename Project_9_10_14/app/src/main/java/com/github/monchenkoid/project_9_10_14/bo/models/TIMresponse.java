@@ -9,7 +9,8 @@ public class TIMresponse
 {
 	private List<TypeInfMet> items;
 
-	public List<TypeInfMet> getItems() {
+	public List<TypeInfMet> getItems()
+	{
 		return items;
 	}
 }

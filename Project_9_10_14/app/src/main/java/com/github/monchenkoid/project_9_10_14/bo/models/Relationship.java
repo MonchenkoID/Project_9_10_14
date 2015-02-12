@@ -109,7 +109,7 @@ public class Relationship extends JSONObjectWrapper
 		this.mSecondUser = secondUser;
 	}
 /*
-    protected Relationship(Parcel in) {
+	protected Relationship(Parcel in) {
         mId = in.readByte() == 0x00 ? null : in.readLong();
         mTypeRelationship = in.readString();
         mNameRelationship = in.readString();

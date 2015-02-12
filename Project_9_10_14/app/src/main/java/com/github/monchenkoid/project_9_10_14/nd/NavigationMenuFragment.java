@@ -13,7 +13,7 @@ import com.github.monchenkoid.project_9_10_14.R;
  */
 public class NavigationMenuFragment extends Fragment
 {
-	public static final String ARG_PLANET_NUMBER = "planet_number";
+	public static final String ARG_ITEM_NUMBER = "item_number";
 
 	public NavigationMenuFragment()
 	{
@@ -23,7 +23,7 @@ public class NavigationMenuFragment extends Fragment
 	{
 		Fragment fragment = new NavigationMenuFragment();
 		Bundle args = new Bundle();
-		args.putInt(NavigationMenuFragment.ARG_PLANET_NUMBER, position);
+		args.putInt(NavigationMenuFragment.ARG_ITEM_NUMBER, position);
 		fragment.setArguments(args);
 		return fragment;
 	}
@@ -32,7 +32,7 @@ public class NavigationMenuFragment extends Fragment
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 
-		int i = getArguments().getInt(ARG_PLANET_NUMBER);
+		int i = getArguments().getInt(ARG_ITEM_NUMBER);
 
 		String item = getResources().getStringArray(R.array.navigation_array)[i];
 		int fragment;

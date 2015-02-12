@@ -3,7 +3,6 @@ package com.github.monchenkoid.project_9_10_14.nd;
 import android.app.Activity;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
@@ -51,11 +50,9 @@ public abstract class BaseFragment extends Fragment implements LoaderManager.Loa
 	}
 
 	@Override//method to fragment
-	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+	public View onCreateView(LayoutInflater inflater,  ViewGroup container, Bundle savedInstanceState)
 	{
 		View view = inflater.inflate(getLayoutId(), container, false);
-		//	FragmentActivity activity = getActivity();
-		//mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_container);
 		mProgress = view.findViewById(android.R.id.progress);
 		mRetryLoad = view.findViewById(R.id.layout_no_connection);
 		mEmptyData = view.findViewById(R.id.layout_no_data);

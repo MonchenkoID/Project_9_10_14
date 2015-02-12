@@ -22,7 +22,7 @@ import android.view.View;
 import android.widget.Toast;
 import com.github.monchenkoid.project_9_10_14.R;
 
-public class NavigationDrawerActivity extends ActionBarActivity implements PlanetAdapter.OnItemClickListener
+public class NavigationDrawerActivity extends ActionBarActivity implements NavigationMenuAdapter.OnItemClickListener
 {
 	private DrawerLayout mDrawerLayout;
 	private RecyclerView mDrawerList;
@@ -53,7 +53,7 @@ public class NavigationDrawerActivity extends ActionBarActivity implements Plane
 		mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
 		mDrawerList.setHasFixedSize(true);
 		mDrawerList.setLayoutManager(new LinearLayoutManager(this));
-		mDrawerList.setAdapter(new PlanetAdapter(mPlanetTitles, this));
+		mDrawerList.setAdapter(new NavigationMenuAdapter(mPlanetTitles, this));
 		mDrawerToggle = new ActionBarDrawerToggleCompat(this, mDrawerLayout, mToolbar);
 		mDrawerLayout.setDrawerListener(mDrawerToggle);
 
@@ -173,7 +173,6 @@ public class NavigationDrawerActivity extends ActionBarActivity implements Plane
 	private void restoreTitle()
 	{
 		ActionBar actionBar = getSupportActionBar();
-		//actionBar.setTitle("My App Title");
 		if (actionBar != null)
 		{
 			CharSequence title = actionBar.getTitle();

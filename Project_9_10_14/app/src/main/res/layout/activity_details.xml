@@ -2,12 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="48dip"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="48dip"
+    android:paddingBottom="@dimen/material_vertical_margin_horizontal_bottom"
+    android:paddingLeft="@dimen/material_vertical_margin_layout_vertical"
+    android:paddingRight="@dimen/material_vertical_margin_layout_vertical"
+    android:paddingTop="@dimen/material_vertical_margin_horizontal_top"
     tools:context=".DetailsActivity">
-
     <include layout="@layout/adapter_item" />
-
 </RelativeLayout>

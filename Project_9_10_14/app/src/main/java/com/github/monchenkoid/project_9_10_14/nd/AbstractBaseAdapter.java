@@ -12,7 +12,6 @@ public abstract class AbstractBaseAdapter<T, VH extends BaseViewHolder> extends 
 {
 	private final LayoutInflater mInflater;
 	private final HolderBuilder mBuilder;
-	// private ULoader mULoader;
 
 	protected abstract int getLayoutId();
 
@@ -22,7 +21,6 @@ public abstract class AbstractBaseAdapter<T, VH extends BaseViewHolder> extends 
 	{
 		mInflater = LayoutInflater.from(context);
 		mBuilder = builder;
-		// mULoader = CoreApplication.get(context, ULoader.KEY);
 	}
 
 	@Override
@@ -39,19 +37,14 @@ public abstract class AbstractBaseAdapter<T, VH extends BaseViewHolder> extends 
 		{
 			holder = (BaseViewHolder) convertView.getTag();
 		}
-		//noinspection unchecked
 		T item = (T) getItem(position);
 
 		if (holder != null && item != null)
 		{
-			//noinspection unchecked
 			fillData((VH) holder, item);
 		}
 
 		return convertView;
 	}
 
- /*   public ULoader getImageLoader() {
-		return mULoader;
-    }*/
 }

@@ -5,25 +5,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:ignore="MissingPrefix">
-
     <LinearLayout
         android:id="@+id/layoutSeparator"
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <View
             android:id="@+id/separator"
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@color/divider" />
     </LinearLayout>
-
     <RelativeLayout
         android:id="@+id/layoutDados"
         android:layout_width="match_parent"
         android:layout_height="48dp">
-
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
@@ -34,7 +30,6 @@
             android:layout_marginRight="16dp"
             android:layout_centerVertical="true"
             android:contentDescription="@string/clear" />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,7 +39,7 @@
             android:layout_marginLeft="16dp"
             android:layout_toRightOf="@+id/icon"
             android:layout_toEndOf="@+id/icon"
-            android:textSize="@dimen/default_textSize"
+            android:textSize="@dimen/font_english_like_body_1"
             android:textColor="@color/secondary_text"
             android:alpha="0.87"
             android:layout_toLeftOf="@+id/counter"
@@ -63,7 +58,7 @@
             android:layout_marginEnd="8dp"
             android:lines="1"
             android:maxLength="3"
-            android:textSize="@dimen/default_textSize"
+            android:textSize="@dimen/font_english_like_body_1"
             android:textStyle="bold"
             android:layout_centerVertical="true"
             android:gravity="center_horizontal" />

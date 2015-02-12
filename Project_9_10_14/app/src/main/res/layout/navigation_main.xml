@@ -8,26 +8,21 @@
     android:fitsSystemWindows="true"
     app:statusBarBackground="?attr/colorPrimary"
     tools:ignore="MissingPrefix">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="false"
         android:orientation="vertical">
-
         <include layout="@layout/navigation_toolbar" />
-
         <include layout="@layout/navigation_container" />
     </LinearLayout>
-
     <com.github.monchenkoid.project_9_10_14.ui.ScrimInsetsFrameLayout
         android:id="@+id/relativeDrawer"
-        android:layout_width="@dimen/drawer_layout_width"
+        android:layout_width="@dimen/material_vertical_size_navigationdrawer_margin"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
         android:layout_gravity="start"
         app:insetForeground="#4000">
-
         <include
             android:fitsSystemWindows="true"
             layout="@layout/navigation_list_drawer" />

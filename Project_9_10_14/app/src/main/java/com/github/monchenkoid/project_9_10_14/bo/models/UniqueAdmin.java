@@ -17,6 +17,7 @@ public class UniqueAdmin extends User
 	public UniqueAdmin(String mEmail, List<Relationship> mRelationships)
 	{
 		this.mEmail = mEmail;
+
 		this.mRelationships = mRelationships;
 	}
 

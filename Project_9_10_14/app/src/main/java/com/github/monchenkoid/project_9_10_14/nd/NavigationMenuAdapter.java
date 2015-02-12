@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import com.github.monchenkoid.project_9_10_14.R;
 
-public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.ViewHolder>
+public class NavigationMenuAdapter extends RecyclerView.Adapter<NavigationMenuAdapter.ViewHolder>
 {
 	private String[] mDataset;
 	private OnItemClickListener mListener;
@@ -28,7 +28,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.ViewHolder
 		}
 	}
 
-	public PlanetAdapter(String[] myDataset, OnItemClickListener listener)
+	public NavigationMenuAdapter(String[] myDataset, OnItemClickListener listener)
 	{
 		mDataset = myDataset;
 		mListener = listener;

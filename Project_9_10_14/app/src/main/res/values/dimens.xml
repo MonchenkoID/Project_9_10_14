@@ -1,44 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- match_parent = -1dp / wrap_content = -2dp -->
-    <!-- navigation_drawer.xml -->
-    <dimen name="drawer_layout_width">-.5dp</dimen>
-
-    <!-- title item list -->
-    <dimen name="default_textSize">14sp</dimen>
-
     <dimen name="userBackground_layout_height">164dp</dimen>
-
     <dimen name="userPhoto_layout_width">64dp</dimen>
     <dimen name="userPhoto_layout_height">64dp</dimen>
     <dimen name="userPhoto_layout_marginTop">16dp</dimen>
     <dimen name="userPhoto_layout_marginLeft">16dp</dimen>
-
     <dimen name="userData_layout_height">56dp</dimen>
     <dimen name="userData_layout_marginBottom">8dp</dimen>
-
     <dimen name="userName_textSize">14sp</dimen>
     <dimen name="userName_layout_marginLeft">16dp</dimen>
-
     <dimen name="userEmail_textSize">14sp</dimen>
     <dimen name="userEmail_layout_marginLeft">16dp</dimen>
 
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="navigation_drawer_width">240dp</dimen>
-    <dimen name="default_padding">12dp</dimen>
-    <dimen name="default_padding_half">6dp</dimen>
-    <dimen name="default_height">48dp</dimen>
+    <dimen name="material_vertical_margin_layout_vertical">16dp</dimen>
+    <dimen name="material_vertical_margin_horizontal_bottom">48dp</dimen>
+    <dimen name="material_vertical_margin_horizontal_top">48dp</dimen>
+    <dimen name="material_vertical_align_context_horizontal_top">72dp</dimen>
+    <dimen name="material_vertical_size_actionbar">56dp</dimen>
+    <dimen name="material_vertical_size_headline">72dp</dimen>
+    <dimen name="material_vertical_size_list_item">72dp</dimen>
+    <dimen name="material_vertical_size_divider">8dp</dimen>
+    <dimen name="material_vertical_size_title">48dp</dimen>
+    <dimen name="material_vertical_size_navigationdrawer_margin">240dp</dimen>
 
-
-    <dimen name="material_margin_layout_vertical">16dp</dimen>
-    <dimen name="material_margin_avatar_vertical">72dp</dimen>
-    <dimen name="material_divider_vertical">8dp</dimen>
-    <dimen name="material_nawigation_drawer_item_vertical">48dp</dimen>
-    <dimen name="material_nawigation_drawer_margin_vertical">56dp</dimen>
-    <dimen name="material_list_with_icon_vertical">56dp</dimen>
-    <dimen name="material_list_item_vertical">48dp</dimen>
-
+    <dimen name="material_icon_place_size">48dp</dimen>
+    <dimen name="material_icon_size">40dp</dimen>
+    <dimen name="material_icon_min_size">24dp</dimen>
+    <dimen name="material_icon_button_size">36dp</dimen>
+    <dimen name="material_icon_button_place_size">48dp</dimen>
 
     <dimen name="font_english_like_display_4">112sp</dimen>
     <dimen name="font_english_like_display_3">56sp</dimen>
@@ -51,17 +40,6 @@
     <dimen name="font_english_like_body_1">14sp</dimen>
     <dimen name="font_english_like_caption">12sp</dimen>
     <dimen name="font_english_like_button">14sp</dimen>
-    <!-- Define standard dimensions to comply with Holo-style grids and rhythm. -->
 
-    <dimen name="margin_tiny">4dp</dimen>
-    <dimen name="margin_small">8dp</dimen>
-    <dimen name="margin_medium">16dp</dimen>
-    <dimen name="margin_large">32dp</dimen>
-    <dimen name="margin_huge">64dp</dimen>
-
-    <!-- Semantic definitions -->
-
-    <dimen name="horizontal_page_margin">@dimen/margin_medium</dimen>
-    <dimen name="vertical_page_margin">@dimen/margin_medium</dimen>
 
 </resources>

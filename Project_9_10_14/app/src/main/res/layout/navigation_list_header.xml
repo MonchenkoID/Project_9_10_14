@@ -6,14 +6,12 @@
     android:background="#fafafa"
     android:fitsSystemWindows="true"
     tools:ignore="MissingPrefix">
-
     <ImageView
         android:id="@+id/userBackground"
         android:layout_width="match_parent"
         android:layout_height="@dimen/userBackground_layout_height"
         android:contentDescription="@string/clear"
         android:scaleType="fitXY" />
-
     <com.github.monchenkoid.project_9_10_14.ui.RoundedImageView
         android:id="@+id/userPhoto"
         android:layout_width="@dimen/userPhoto_layout_width"
@@ -24,27 +22,6 @@
         android:layout_marginStart="@dimen/userPhoto_layout_marginLeft"
         android:layout_marginLeft="@dimen/userPhoto_layout_marginLeft"
         android:layout_marginTop="@dimen/userPhoto_layout_marginTop" />
-
-    <com.github.monchenkoid.project_9_10_14.ui.RoundedImageView
-        android:id="@+id/userPhotoTwo"
-        android:layout_width="@dimen/userPhotoTwo_layout_width"
-        android:layout_height="@dimen/userPhotoTwo_layout_height"
-        android:layout_alignTop="@+id/userPhoto"
-        android:layout_marginRight="@dimen/userPhotoTwo_layout_marginRight"
-        android:layout_marginEnd="@dimen/userPhotoTwo_layout_marginRight"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <com.github.monchenkoid.project_9_10_14.ui.RoundedImageView
-        android:id="@+id/userPhotoTree"
-        android:layout_width="@dimen/userPhotoTree_layout_width"
-        android:layout_height="@dimen/userPhotoTree_layout_height"
-        android:layout_alignTop="@+id/userPhotoTwo"
-        android:layout_marginRight="@dimen/userPhotoTree_layout_marginRight"
-        android:layout_marginEnd="@dimen/userPhotoTree_layout_marginRight"
-        android:layout_toLeftOf="@+id/userPhotoTwo"
-        android:layout_toStartOf="@+id/userPhotoTwo" />
-
     <LinearLayout
         android:id="@+id/userData"
         android:layout_width="wrap_content"
@@ -57,7 +34,6 @@
         android:layout_marginBottom="@dimen/userData_layout_marginBottom"
         android:gravity="center_vertical"
         android:orientation="vertical">
-
         <TextView
             android:id="@+id/userName"
             fontPath="fonts/Roboto-Medium.ttf"
@@ -67,7 +43,6 @@
             android:layout_marginLeft="@dimen/userName_layout_marginLeft"
             android:textColor="#FFFFFF"
             android:textSize="@dimen/userName_textSize" />
-
         <TextView
             android:id="@+id/userEmail"
             fontPath="fonts/Roboto-Regular.ttf"
