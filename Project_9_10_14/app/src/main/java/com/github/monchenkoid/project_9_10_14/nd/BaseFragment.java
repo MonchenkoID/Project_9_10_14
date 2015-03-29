@@ -19,184 +19,151 @@ import java.util.concurrent.atomic.AtomicBoolean;
 /**
  * Created by shiza on 01.02.2015.
  */
-public abstract class BaseFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>
-{
+public abstract class BaseFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
 
-	private View mProgress;
-	private View mRetryLoad;
-	private View mMainContainer;
-	private View mEmptyData;
-	private SwipeRefreshLayout mSwipeRefreshLayout;
-	public static final String ARGS_USER_ID = "BaseFragment.userId";
+    private View mProgress;
+    private View mRetryLoad;
+    private View mMainContainer;
+    private View mEmptyData;
+    private SwipeRefreshLayout mSwipeRefreshLayout;
+    public static final String ARGS_USER_ID = "BaseFragment.userId";
 
 
-	protected abstract int getLayoutId();
+    protected abstract int getLayoutId();
 
-	protected abstract Loader<Cursor> createLoader(Bundle args);
+    protected abstract Loader<Cursor> createLoader(Bundle args);
 
-	protected abstract int getFragmentTitleResource();
+    protected abstract int getFragmentTitleResource();
 
-	private AtomicBoolean mIsNetworkLoading = new AtomicBoolean(false);
+    private AtomicBoolean mIsNetworkLoading = new AtomicBoolean(false);
 
-	protected abstract void onLoadCursorFinished(Cursor cursor);
+    protected abstract void onLoadCursorFinished(Cursor cursor);
 
-	protected abstract int buildLoaderId();
+    protected abstract int buildLoaderId();
 
-	protected abstract Bundle prepareLoaderBundle();
+    protected abstract Bundle prepareLoaderBundle();
 
-	public interface Builder
-	{
-		Fragment build();
-	}
+    public interface Builder {
+        Fragment build();
+    }
 
-	@Override//method to fragment
-	public View onCreateView(LayoutInflater inflater,  ViewGroup container, Bundle savedInstanceState)
-	{
-		View view = inflater.inflate(getLayoutId(), container, false);
-		mProgress = view.findViewById(android.R.id.progress);
-		mRetryLoad = view.findViewById(R.id.layout_no_connection);
-		mEmptyData = view.findViewById(R.id.layout_no_data);
-		mMainContainer = view.findViewById(R.id.main_container);
-		if (mSwipeRefreshLayout != null)
-		{
-			mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener()
-			{
-				@Override
-				public void onRefresh()
-				{
-					onSwipeRefresh();
-				}
-			});
-		}
-		View buttonView = view.findViewById(R.id.button_retry);
-		buttonView.setOnClickListener(new View.OnClickListener()
-		{
-			@Override
-			public void onClick(View v)
-			{
-				onRetryClick();
-			}
-		});
-		return view;
-	}
+    @Override//method to fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(getLayoutId(), container, false);
+        mProgress = view.findViewById(android.R.id.progress);
+        mRetryLoad = view.findViewById(R.id.layout_no_connection);
+        mEmptyData = view.findViewById(R.id.layout_no_data);
+        mMainContainer = view.findViewById(R.id.main_container);
+        if (mSwipeRefreshLayout != null) {
+            mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                @Override
+                public void onRefresh() {
+                    onSwipeRefresh();
+                }
+            });
+        }
+        View buttonView = view.findViewById(R.id.button_retry);
+        buttonView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onRetryClick();
+            }
+        });
+        return view;
+    }
 
-	@Override//method to fragment
-	public void onStart()
-	{
-		super.onStart();
+    @Override//method to fragment
+    public void onStart() {
+        super.onStart();
 
-		ActionBar actionBar = getActionBar();
-		if (actionBar != null)
-		{
-			actionBar.setTitle(getFragmentTitleResource());
-		}
-	}
+        ActionBar actionBar = getActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle(getFragmentTitleResource());
+        }
+    }
 
-	@Override//method to LoaderManager
-	public Loader<Cursor> onCreateLoader(int i, Bundle bundle)
-	{
-		return createLoader(bundle);
-	}
+    @Override//method to LoaderManager
+    public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
+        return createLoader(bundle);
+    }
 
-	@Override//method to LoaderManager
-	public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor)
-	{
-		showLoad(mIsNetworkLoading.get());
+    @Override//method to LoaderManager
+    public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
+        showLoad(mIsNetworkLoading.get());
 
-		if ((cursor == null || cursor.getCount() == 0) && !mIsNetworkLoading.get())
-		{
-			mEmptyData.setVisibility(View.VISIBLE);
-		}
-		else
-		{
-			mEmptyData.setVisibility(View.GONE);
-			onLoadCursorFinished(cursor);
-		}
-	}
+        if ((cursor == null || cursor.getCount() == 0) && !mIsNetworkLoading.get()) {
+            mEmptyData.setVisibility(View.VISIBLE);
+        } else {
+            mEmptyData.setVisibility(View.GONE);
+            onLoadCursorFinished(cursor);
+        }
+    }
 
-	@Override//method to LoaderManager
-	public void onLoaderReset(Loader<Cursor> cursorLoader)
-	{
-		showLoad(true);
-	}
+    @Override//method to LoaderManager
+    public void onLoaderReset(Loader<Cursor> cursorLoader) {
+        showLoad(true);
+    }
 
-	protected void showLoad(boolean state)
-	{
-		mProgress.setVisibility(state ? View.VISIBLE : View.GONE);
-		if (mMainContainer != null)
-		{
-			mMainContainer.setVisibility(state ? View.GONE : View.VISIBLE);
-		}
-		mRetryLoad.setVisibility(View.GONE);
-		mEmptyData.setVisibility(View.GONE);
-	}
+    protected void showLoad(boolean state) {
+        mProgress.setVisibility(state ? View.VISIBLE : View.GONE);
+        if (mMainContainer != null) {
+            mMainContainer.setVisibility(state ? View.GONE : View.VISIBLE);
+        }
+        mRetryLoad.setVisibility(View.GONE);
+        mEmptyData.setVisibility(View.GONE);
+    }
 
-	protected ActionBar getActionBar()
-	{
-		Activity activity = getActivity();
-		if (activity == null)
-		{
-			return null;
-		}
-		return ((ActionBarActivity) activity).getSupportActionBar();
-	}
+    protected ActionBar getActionBar() {
+        Activity activity = getActivity();
+        if (activity == null) {
+            return null;
+        }
+        return ((ActionBarActivity) activity).getSupportActionBar();
+    }
 
-	protected void onSwipeRefresh()
-	{
-		reloadData();
-	}
+    protected void onSwipeRefresh() {
+        reloadData();
+    }
 
-	protected void onRetryClick()
-	{
-		reloadData();
-	}
+    protected void onRetryClick() {
+        reloadData();
+    }
 
-	protected SwipeRefreshLayout getSwipeRefreshLayout()
-	{
-		return mSwipeRefreshLayout;
-	}
+    protected SwipeRefreshLayout getSwipeRefreshLayout() {
+        return mSwipeRefreshLayout;
+    }
 
-	protected void prepareLoader(boolean needRestart)
-	{
-		prepareLoader(needRestart, this);
-	}
+    protected void prepareLoader(boolean needRestart) {
+        prepareLoader(needRestart, this);
+    }
 
-	protected void prepareLoader(boolean needRestart, LoaderManager.LoaderCallbacks<Cursor> callback)
-	{
-		showLoad(true);
-		if (needRestart)
-		{
-			getLoaderManager().restartLoader(buildLoaderId(), prepareLoaderBundle(), callback);
-		}
-		else
-		{
-			getLoaderManager().initLoader(buildLoaderId(), prepareLoaderBundle(), callback);
-		}
-	}
+    protected void prepareLoader(boolean needRestart, LoaderManager.LoaderCallbacks<Cursor> callback) {
+        showLoad(true);
+        if (needRestart) {
+            getLoaderManager().restartLoader(buildLoaderId(), prepareLoaderBundle(), callback);
+        } else {
+            getLoaderManager().initLoader(buildLoaderId(), prepareLoaderBundle(), callback);
+        }
+    }
 
-	protected void reloadData()
-	{
-	}
+    protected void reloadData() {
+    }
 
-	protected String getArgsUserId()
-	{
-		return getArgsStringByName(ARGS_USER_ID);
-	}
+    protected String getArgsUserId() {
+        return getArgsStringByName(ARGS_USER_ID);
+    }
 
-	protected String getArgsStringByName(String name)
-	{
-		return getArgsByName(name);
-	}
+    protected String getArgsStringByName(String name) {
+        return getArgsByName(name);
+    }
 
-	protected <T> T getArgsByName(String name)
-	{
-		Bundle arguments = getArguments();
-		if (arguments != null)
-		{
-			Object argResult = arguments.get(name);
-			//noinspection unchecked
-			return (T) argResult;       //may be throw ClassCastException
-		}
-		return null;
-	}
+    protected <T> T getArgsByName(String name) {
+        Bundle arguments = getArguments();
+        if (arguments != null) {
+            Object argResult = arguments.get(name);
+            //noinspection unchecked
+            return (T) argResult;       //may be throw ClassCastException
+        }
+        return null;
+    }
 }

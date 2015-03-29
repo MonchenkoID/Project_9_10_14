@@ -23,11 +23,17 @@
     <string name="drawer_close">Navigation drawer Close</string>
     <string name="header_not_created">Header was not created</string>
     <string name="custom_header_not_created">Custom header was not created</string>
-    <string name="start_navigation_listener">You must start the NavigationListener in onInit() method of its main activity. Example: this.setNavigationListener(this);</string>
-    <string name="remove_selector_navigation">The option to remove the select is active. Please remove the removeSelectorNavigation method so you can use the setNewSelectorNavigation</string>
-    <string name="list_null_or_empty">List of null or empty names. Solution: mListNameItem = new ArrayList &#60;&#62; (); mListNameItem.add (position, R.string.name);</string>
+    <string name="start_navigation_listener">You must start the NavigationListener in onInit() method of its main
+        activity. Example: this.setNavigationListener(this);
+    </string>
+    <string name="remove_selector_navigation">The option to remove the select is active. Please remove the
+        removeSelectorNavigation method so you can use the setNewSelectorNavigation
+    </string>
+    <string name="list_null_or_empty">List of null or empty names. Solution: mListNameItem = new ArrayList &#60;&#62;
+        (); mListNameItem.add (position, R.string.name);
+    </string>
     <string name="value_icon_should_be_0">The value of the icon for a subHeader item should be 0</string>
-    <string name="enter_item_name_position">Enter the item name position </string>
+    <string name="enter_item_name_position">Enter the item name position</string>
 
     <string-array name="navigation_array">
         <item>ТИМ-ы</item>
@@ -41,7 +47,9 @@
     <string name="app_not_available">Sorry, there\'s no web browser available</string>
     <string name="intro_message">test</string>
     <string name="navigationdraweractivity_title">Navigation Drawer Example</string>
-    <string name="navigationdraweractivity_description">This example illustrates a common usage of the DrawerLayout widget in the Android support library.</string>
+    <string name="navigationdraweractivity_description">This example illustrates a common usage of the DrawerLayout
+        widget in the Android support library.
+    </string>
     <string name="no_connection">No connection</string>
     <string name="retry">Retry</string>
     <string name="avatar">avatar</string>

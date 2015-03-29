@@ -1,49 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.github.monchenkoid.project_9_10_14" >
+          package="com.github.monchenkoid.project_9_10_14">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
 
     <application
-        android:name=".CoreApplication"
-        android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme.DarkActionBar" >
+            android:name=".CoreApplication"
+            android:allowBackup="true"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.DarkActionBar">
         <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
+                android:name="com.google.android.gms.version"
+                android:value="@integer/google_play_services_version"/>
 
         <activity
-            android:name=".ui.adapters.interfaces.MainActivity"
-            android:label="@string/app_name" >
-        </activity>
+                android:name=".ui.adapters.interfaces.MainActivity"
+                android:label="@string/app_name"/>
         <activity
-            android:name=".ui.activities.TIMListActivity"
-            android:label="@string/title_activity_timlist" />
+                android:name=".ui.activities.TIMListActivity"
+                android:label="@string/title_activity_timlist"/>
         <activity
-            android:name=".ui.activities.DetailsActivity"
-            android:label="@string/title_activity_details" />
+                android:name=".ui.activities.DetailsActivity"
+                android:label="@string/title_activity_details"/>
         <activity
-            android:name=".ui.activities.MainActivity"
-            android:label="@string/title_activity_details" >
-        </activity>
+                android:name=".ui.activities.MainActivity"
+                android:label="@string/title_activity_details"/>
         <activity
-            android:name=".nd.MainActivity"
-            android:label="@string/app_name" >
+                android:name=".nd.MainActivity"
+                android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
-            android:name=".nd.NavigationDrawerActivity"
-            android:label="@string/app_name" />
+                android:name=".nd.NavigationDrawerActivity"
+                android:label="@string/app_name"/>
+        <meta-data
+            android:name="com.crashlytics.ApiKey"
+            android:value="734d9ca104fbaf410252a85a4b8520c9e0f80b99" />
     </application>
 
 </manifest>

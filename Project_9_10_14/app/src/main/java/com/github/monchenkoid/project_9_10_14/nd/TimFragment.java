@@ -12,69 +12,56 @@ import android.view.ViewGroup;
 import com.github.monchenkoid.project_9_10_14.R;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-public class TimFragment extends Fragment
-{
+public class TimFragment extends Fragment {
 
-	private OnFragmentInteractionListener mListener;
+    private OnFragmentInteractionListener mListener;
 
-	public static TimFragment newInstance(String param1, String param2)
-	{
-		TimFragment fragment = new TimFragment();
-		return fragment;
-	}
+    public static TimFragment newInstance(String param1, String param2) {
+        TimFragment fragment = new TimFragment();
+        return fragment;
+    }
 
-	public TimFragment()
-	{
-	}
+    public TimFragment() {
+    }
 
-	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
-	@Override
-	public void onCreate(Bundle savedInstanceState)
-	{
-		super.onCreate(savedInstanceState);
-	}
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-							 Bundle savedInstanceState)
-	{
-		return inflater.inflate(R.layout.fragment_tim, container, false);
-	}
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_tim, container, false);
+    }
 
-	public void onButtonPressed(Uri uri)
-	{
-		if (mListener != null)
-		{
-			mListener.onFragmentInteraction(uri);
-		}
-	}
+    public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            mListener.onFragmentInteraction(uri);
+        }
+    }
 
-	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
-	@Override
-	public void onAttach(Activity activity)
-	{
-		super.onAttach(activity);
-		try
-		{
-			mListener = (OnFragmentInteractionListener) activity;
-		}
-		catch (ClassCastException e)
-		{
-			throw new ClassCastException(activity.toString() + " must implement OnFragmentInteractionListener");
-		}
-	}
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            mListener = (OnFragmentInteractionListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement OnFragmentInteractionListener");
+        }
+    }
 
-	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
-	@Override
-	public void onDetach()
-	{
-		super.onDetach();
-		mListener = null;
-	}
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
 
-	public interface OnFragmentInteractionListener
-	{
-		public void onFragmentInteraction(Uri uri);
-	}
+    public interface OnFragmentInteractionListener {
+        public void onFragmentInteraction(Uri uri);
+    }
 
 }

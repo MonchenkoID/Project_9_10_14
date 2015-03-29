@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<datastore-indexes autoGenerate="false">
+    <datastore-index kind="Guestbook" ancestor="true" source="manual">
+        <property name="user" direction="asc"/>
+        <property name="date" direction="asc"/>
+        <property name="content" direction="asc"/>
+    </datastore-index>
+    <datastore-index kind="Glosary" ancestor="true" source="manual">
+        <property name="name" direction="desc"/>
+    </datastore-index>
+    <datastore-index kind="TIM" ancestor="true" source="manual">
+        <property name="name" direction="desc"/>
+        <property name="name_alias" direction="desc"/>
+        <property name="name_formal" direction="desc"/>
+        <property name="name_formal_full" direction="desc"/>
+        <property name="name_role" direction="desc"/>
+        <property name="name_mbti" direction="desc"/>
+        <property name="ung_extravert_or_introvert" direction="desc"/>
+        <property name="ung_intuition_or_sensation" direction="desc"/>
+        <property name="ung_thinking_or_feeling" direction="desc"/>
+        <property name="ung_rational_or_irrational" direction="desc"/>
+        <property name="model_a_leading" direction="desc"/>
+        <property name="model_a_creative" direction="desc"/>
+        <property name="model_a_role" direction="desc"/>
+        <property name="model_a_vulnerable" direction="desc"/>
+        <property name="model_a_suggestive" direction="desc"/>
+        <property name="model_a_mobilizing" direction="desc"/>
+        <property name="model_a_observant" direction="desc"/>
+        <property name="model_a_background" direction="desc"/>
+    </datastore-index>
+</datastore-indexes>

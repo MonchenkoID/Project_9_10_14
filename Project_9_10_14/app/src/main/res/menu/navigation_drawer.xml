@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:myapp="http://schemas.android.com/apk/res-auto">
+      xmlns:myapp="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_websearch"
-        android:icon="@drawable/action_search"
-        android:title="@string/action_websearch"
-        myapp:showAsAction="ifRoom|withText"/>
+            android:id="@+id/action_websearch"
+            android:icon="@drawable/action_search"
+            android:title="@string/action_websearch"
+            myapp:showAsAction="ifRoom|withText"/>
 </menu>

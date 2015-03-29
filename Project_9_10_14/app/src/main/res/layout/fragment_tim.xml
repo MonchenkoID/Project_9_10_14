@@ -1,102 +1,117 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="56dp"
-    tools:context="com.github.monchenkoid.project_9_10_14.nd.TimFragment">
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="56dp"
+                tools:context="com.github.monchenkoid.project_9_10_14.nd.TimFragment">
+
     <include
-        android:id="@+id/layout_no_data"
-        layout="@layout/layout_no_data" />
+            android:id="@+id/layout_no_data"
+            layout="@layout/layout_no_data"/>
+
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView">
-        <RelativeLayout
-            android:id="@+id/main_container"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/tvNameAlias"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView">
+
+        <RelativeLayout
+                android:id="@+id/main_container"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Дон Кихот"
-                android:textSize="@dimen/font_english_like_display_1" />
+                android:layout_height="wrap_content">
+
             <TextView
-                android:id="@+id/tvNameFormal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/tvNameAlias"
-                android:text="(ИЛЭ)"
-                android:textSize="@dimen/font_english_like_display_1"/>
+                    android:id="@+id/tvNameAlias"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Дон Кихот"
+                    android:textSize="@dimen/font_english_like_display_1"/>
+
             <TextView
-                android:id="@+id/tvTitleMBTI"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Тип по MBTI :"
-                android:textSize="@dimen/font_english_like_title"
-                android:layout_below="@+id/tvNameAlias"/>
+                    android:id="@+id/tvNameFormal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tvNameAlias"
+                    android:text="(ИЛЭ)"
+                    android:textSize="@dimen/font_english_like_display_1"/>
+
             <TextView
-                android:id="@+id/tvNameMBTI"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ENTP"
-                android:textSize="@dimen/font_english_like_title"
-                android:layout_below="@+id/tvNameAlias"
-                android:layout_toRightOf="@+id/tvTitleMBTI"/>
+                    android:id="@+id/tvTitleMBTI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Тип по MBTI :"
+                    android:textSize="@dimen/font_english_like_title"
+                    android:layout_below="@+id/tvNameAlias"/>
+
             <TextView
-                android:id="@+id/tvTitleAuthor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Автор описания :"
-                android:textSize="@dimen/font_english_like_subhead"
-                android:layout_below="@+id/tvNameMBTI"/>
+                    android:id="@+id/tvNameMBTI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ENTP"
+                    android:textSize="@dimen/font_english_like_title"
+                    android:layout_below="@+id/tvNameAlias"
+                    android:layout_toRightOf="@+id/tvTitleMBTI"/>
+
             <TextView
-                android:id="@+id/tvAuthor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Гуленко"
-                android:textSize="@dimen/font_english_like_subhead"
-                android:layout_below="@+id/tvTitleAuthor"/>
+                    android:id="@+id/tvTitleAuthor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Автор описания :"
+                    android:textSize="@dimen/font_english_like_subhead"
+                    android:layout_below="@+id/tvNameMBTI"/>
+
             <TextView
-                android:id="@+id/tvDescription_1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="1. Хорошо подмечает противоречия и упущения в делах и словах. Скептически оценивает перспективы поспешных начинаний. Может точно дать характеристику человеку, предсказать его основные реакции. Ироничен. Терпеливо подводит человека к необходимому шагу, готовя его заранее."
-                android:textSize="@dimen/font_english_like_body_1"
-                android:layout_below="@+id/tvAuthor"/>
+                    android:id="@+id/tvAuthor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Гуленко"
+                    android:textSize="@dimen/font_english_like_subhead"
+                    android:layout_below="@+id/tvTitleAuthor"/>
+
             <TextView
-                android:id="@+id/tvDescription_2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="2. Берется только за те дела, которые гарантируют надежную прибыль. Бережлив в обращении с деньгами. Работу делает четко, не торопясь, вникая в детали. Все просчитывает в уме, стремясь контролировать процесс. Умеет с выгодой использовать накопленную информацию."
-                android:textSize="@dimen/font_english_like_body_1"
-                android:layout_below="@+id/tvDescription_1"/>
+                    android:id="@+id/tvDescription_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1. Хорошо подмечает противоречия и упущения в делах и словах. Скептически оценивает перспективы поспешных начинаний. Может точно дать характеристику человеку, предсказать его основные реакции. Ироничен. Терпеливо подводит человека к необходимому шагу, готовя его заранее."
+                    android:textSize="@dimen/font_english_like_body_1"
+                    android:layout_below="@+id/tvAuthor"/>
+
             <TextView
-                android:id="@+id/tvDescription_3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="3. Предусмотрителен в вопросах комфорта и здоровья. Не приемлет авральные методы и голый энтузиазм. В быту окружает себя большим количеством привычных предметов. Нередко бывает гурманом. Выполняет нормы гигиены, старается соблюдать чистоту."
-                android:textSize="@dimen/font_english_like_body_1"
-                android:layout_below="@+id/tvDescription_2"/>
+                    android:id="@+id/tvDescription_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2. Берется только за те дела, которые гарантируют надежную прибыль. Бережлив в обращении с деньгами. Работу делает четко, не торопясь, вникая в детали. Все просчитывает в уме, стремясь контролировать процесс. Умеет с выгодой использовать накопленную информацию."
+                    android:textSize="@dimen/font_english_like_body_1"
+                    android:layout_below="@+id/tvDescription_1"/>
+
             <TextView
-                android:id="@+id/tvDescription_4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="4. Любит поспорить на самые разные темы. Горячась, портит настроение себе и окружающим. Плохо управляет своими эмоциями: его состояние колеблется от меланхолической депрессии до вспышек недовольства. Его проблема — обретение внутреннего равновесия. Очень не любит, когда его выводят из состояния спокойствия и расслабленности."
-                android:textSize="@dimen/font_english_like_body_1"
-                android:layout_below="@+id/tvDescription_3"/>
+                    android:id="@+id/tvDescription_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3. Предусмотрителен в вопросах комфорта и здоровья. Не приемлет авральные методы и голый энтузиазм. В быту окружает себя большим количеством привычных предметов. Нередко бывает гурманом. Выполняет нормы гигиены, старается соблюдать чистоту."
+                    android:textSize="@dimen/font_english_like_body_1"
+                    android:layout_below="@+id/tvDescription_2"/>
+
+            <TextView
+                    android:id="@+id/tvDescription_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="4. Любит поспорить на самые разные темы. Горячась, портит настроение себе и окружающим. Плохо управляет своими эмоциями: его состояние колеблется от меланхолической депрессии до вспышек недовольства. Его проблема — обретение внутреннего равновесия. Очень не любит, когда его выводят из состояния спокойствия и расслабленности."
+                    android:textSize="@dimen/font_english_like_body_1"
+                    android:layout_below="@+id/tvDescription_3"/>
+
             <ExpandableListView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/expandableListView"
-                android:layout_below="@+id/tvDescription_4">
-            </ExpandableListView>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/expandableListView"
+                    android:layout_below="@+id/tvDescription_4"></ExpandableListView>
         </RelativeLayout>
     </ScrollView>
+
     <include
-        android:id="@android:id/progress"
-        layout="@layout/layout_progress" />
+            android:id="@android:id/progress"
+            layout="@layout/layout_progress"/>
+
     <include
-        android:id="@+id/layout_no_connection"
-        layout="@layout/layout_no_connection" />
+            android:id="@+id/layout_no_connection"
+            layout="@layout/layout_no_connection"/>
 </RelativeLayout>

@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/layout_no_connection"
-    android:layout_alignParentBottom="true"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/material_vertical_size_title"
-    android:orientation="horizontal"
-    android:visibility="gone">
+              android:id="@+id/layout_no_connection"
+              android:layout_alignParentBottom="true"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/material_vertical_size_title"
+              android:orientation="horizontal"
+              android:visibility="gone">
+
     <TextView
-        android:text="@string/no_connection"
-        android:gravity="center"
-        android:layout_width="0dp"
-        android:layout_weight="2"
-        android:layout_height="match_parent" />
+            android:text="@string/no_connection"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="match_parent"/>
+
     <Button
-        android:id="@+id/button_retry"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="match_parent"
-        android:text="@string/retry" />
+            android:id="@+id/button_retry"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="@string/retry"/>
 </LinearLayout>
