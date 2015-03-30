@@ -1,14 +1,16 @@
-package com.github.monchenkoid.project_9_10_14.nd;
+package com.github.monchenkoid.project_9_10_14.ui.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
 import com.github.monchenkoid.project_9_10_14.R;
+import com.github.monchenkoid.project_9_10_14.ui.activities.MainActivity;
 
 /**
- * Created by shiza on 06.02.2015.
+ * Created by Irina Monchenko on 06.02.2015.
  */
 public class NavigationDrawerAdapter extends BaseAdapter {
     private MainActivity.NavigationDrawer[] mSamples;

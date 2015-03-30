@@ -3,7 +3,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingTop="56dp"
-                tools:context="com.github.monchenkoid.project_9_10_14.nd.TimFragment">
+                tools:context="com.github.monchenkoid.project_9_10_14.ui.fragments.TimFragment">
 
     <include
             android:id="@+id/layout_no_data"

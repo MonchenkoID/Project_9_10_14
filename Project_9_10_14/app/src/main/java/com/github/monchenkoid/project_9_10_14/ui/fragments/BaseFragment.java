@@ -1,4 +1,4 @@
-package com.github.monchenkoid.project_9_10_14.nd;
+package com.github.monchenkoid.project_9_10_14.ui.fragments;
 
 import android.app.Activity;
 import android.database.Cursor;
