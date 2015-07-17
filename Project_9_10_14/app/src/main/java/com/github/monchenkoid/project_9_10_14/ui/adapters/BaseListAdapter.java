@@ -1,15 +1,15 @@
 package com.github.monchenkoid.project_9_10_14.ui.adapters;
 
 import android.content.Context;
+
 import com.github.monchenkoid.project_9_10_14.nd.holder.BaseViewHolder;
 import com.github.monchenkoid.project_9_10_14.nd.holder.HolderBuilder;
-import com.github.monchenkoid.project_9_10_14.ui.adapters.AbstractBaseAdapter;
 
 import java.util.List;
 
 public abstract class BaseListAdapter<T, VH extends BaseViewHolder> extends AbstractBaseAdapter<T, VH> {
 
-    private List<T> mList;
+    private final List<T> mList;
 
     public BaseListAdapter(Context context, List<T> list, HolderBuilder builder) {
         super(context, builder);

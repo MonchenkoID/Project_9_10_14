@@ -3,16 +3,15 @@ package com.github.monchenkoid.project_9_10_14.bo.models;
 import java.util.List;
 
 /**
- * Created by Irina Monchenko on 17.01.2015.
+ * @author Iryna Monchenko
+ * @version on 17.01.2015
  */
+
 public class UniquePersonage {
 
-    private Long id;
-
+    private Long mId;
     private String mMedia;
-
     private String mPersonaName;
-
     private List<Relationship> mRelationships;
 
     public UniquePersonage(String media, String personaName, List<Relationship> relationships) {

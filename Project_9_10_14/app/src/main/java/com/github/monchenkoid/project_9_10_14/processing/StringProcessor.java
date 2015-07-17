@@ -7,25 +7,27 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 /**
- * Created by Irina Monchenko on 19.10.2014.
+ * @author Iryna Monchenko
+ * @version on 19.10.2014
  */
+
 public class StringProcessor implements Processor<String, InputStream> {
 
     @Override
     public String process(InputStream inputStream) throws Exception {
         InputStreamReader inputStreamReader = null;
-        BufferedReader in = null;
+        BufferedReader bufferedReader = null;
         try {
             inputStreamReader = new InputStreamReader(inputStream);
-            in = new BufferedReader(inputStreamReader);
-            String str;
+            bufferedReader = new BufferedReader(inputStreamReader);
+            String string;
             StringBuilder builder = new StringBuilder();
-            while ((str = in.readLine()) != null) {
-                builder.append(str);
+            while ((string = bufferedReader.readLine()) != null) {
+                builder.append(string);
             }
             return builder.toString();
         } finally {
-            HttpDataSource.close(in);
+            HttpDataSource.close(bufferedReader);
             HttpDataSource.close(inputStreamReader);
             HttpDataSource.close(inputStream);
         }

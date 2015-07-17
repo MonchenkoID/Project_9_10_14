@@ -1,18 +1,16 @@
 package com.github.monchenkoid.project_9_10_14.backend.models;
 
 /**
- * Created by shiza on 05.03.2015.
+ @author Iryna Monchenko
+ @version on 05.03.2015
  */
+
 public class Relationship extends Entity {
 
     private Long mId;
-
     private Long mFromId;
-
     private Long mToId;
-
     private String mTypeRelationship;
-
     private String mNameRelationship;
 
     public Long getId() {

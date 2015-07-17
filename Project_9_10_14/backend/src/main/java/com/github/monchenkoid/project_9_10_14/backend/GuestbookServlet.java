@@ -11,8 +11,10 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- * Created by shiza on 12.02.2015.
+ @author Iryna Monchenko
+ @version on 12.02.2015
  */
+
 public class GuestbookServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)

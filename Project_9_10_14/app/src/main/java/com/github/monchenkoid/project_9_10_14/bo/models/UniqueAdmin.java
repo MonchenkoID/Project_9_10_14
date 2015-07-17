@@ -3,20 +3,19 @@ package com.github.monchenkoid.project_9_10_14.bo.models;
 import java.util.List;
 
 /**
- * Created by Irina Monchenko on 17.01.2015.
+ * @author Iryna Monchenko
+ * @version on 17.01.2015
  */
+
 public class UniqueAdmin extends User {
 
-    private Long id;
-
+    private Long mId;
     private String mEmail;
-
     private List<Relationship> mRelationships;
 
-    public UniqueAdmin(String mEmail, List<Relationship> mRelationships) {
-        this.mEmail = mEmail;
-
-        this.mRelationships = mRelationships;
+    public UniqueAdmin(String email, List<Relationship> relationships) {
+        this.mEmail = email;
+        this.mRelationships = relationships;
     }
 
     public UniqueAdmin() {
@@ -24,19 +23,19 @@ public class UniqueAdmin extends User {
         mRelationships = null;
     }
 
-    public String getmEmail() {
+    public String getEmail() {
         return mEmail;
     }
 
-    public void setmEmail(String mEmail) {
-        this.mEmail = mEmail;
+    public void setEmail(String email) {
+        this.mEmail = email;
     }
 
-    public List<Relationship> getmRelationships() {
+    public List<Relationship> getRelationships() {
         return mRelationships;
     }
 
-    public void setmRelationships(List<Relationship> mRelationships) {
-        this.mRelationships = mRelationships;
+    public void setRelationships(List<Relationship> relationships) {
+        this.mRelationships = relationships;
     }
 }

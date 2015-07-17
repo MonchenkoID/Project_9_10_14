@@ -8,7 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by shiza on 17.02.2015.
+ @author Iryna Monchenko
+ @version on 17.02.2015
  */
 
 public class TimServlet extends HttpServlet {

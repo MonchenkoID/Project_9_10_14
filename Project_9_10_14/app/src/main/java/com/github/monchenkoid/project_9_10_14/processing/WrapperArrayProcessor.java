@@ -1,6 +1,5 @@
 package com.github.monchenkoid.project_9_10_14.processing;
 
-import com.github.monchenkoid.project_9_10_14.bo.JSONObjectWrapper;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -9,9 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by shiza on 08.02.2015.
+ * @author Iryna Monchenko
+ * @version on 08.02.2015
  */
-public abstract class WrapperArrayProcessor<T extends JSONObjectWrapper> implements Processor<List<T>, InputStream> {
+public abstract class WrapperArrayProcessor<T> implements Processor<List<T>, InputStream> {
 
     @Override
     public List<T> process(InputStream inputStream) throws Exception {

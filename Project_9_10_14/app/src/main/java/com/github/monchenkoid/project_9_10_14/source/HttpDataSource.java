@@ -1,6 +1,7 @@
 package com.github.monchenkoid.project_9_10_14.source;
 
 import android.content.Context;
+
 import com.github.monchenkoid.project_9_10_14.CoreApplication;
 
 import java.io.Closeable;
@@ -9,8 +10,10 @@ import java.io.InputStream;
 import java.net.URL;
 
 /**
- * Created by Irina Monchenko on 19.10.2014.
+ * @author Iryna Monchenko
+ * @version on 19.10.2014
  */
+
 public class HttpDataSource implements DataSource<InputStream, String> {
 
     public static final String KEY = "HttpDataSource";

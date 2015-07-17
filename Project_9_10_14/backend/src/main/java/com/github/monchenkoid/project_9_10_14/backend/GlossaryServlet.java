@@ -1,17 +1,14 @@
 package com.github.monchenkoid.project_9_10_14.backend;
 
     import com.google.appengine.api.datastore.*;
-    import com.google.appengine.api.users.User;
-    import com.google.appengine.api.users.UserService;
-    import com.google.appengine.api.users.UserServiceFactory;
-
     import javax.servlet.http.HttpServlet;
     import javax.servlet.http.HttpServletRequest;
     import javax.servlet.http.HttpServletResponse;
     import java.io.IOException;
 
 /**
- * Created by shiza on 17.02.2015.
+ @author Iryna Monchenko
+ @version on 17.02.2015
  */
 
 public class GlossaryServlet extends HttpServlet {

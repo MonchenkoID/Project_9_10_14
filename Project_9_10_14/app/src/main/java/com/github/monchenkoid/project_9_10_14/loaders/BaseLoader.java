@@ -8,7 +8,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 /**
- * Created by Monchenko Irina on 4/30/2014.
+ * @author Iryna Monchenko
+ * @version on 4/30/2014
  */
 public abstract class BaseLoader<T> extends AsyncTaskLoader<T> {
     private static final String TAG = BaseLoader.class.getSimpleName();

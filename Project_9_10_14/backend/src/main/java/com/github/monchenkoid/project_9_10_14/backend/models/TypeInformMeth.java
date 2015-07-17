@@ -3,8 +3,10 @@ package com.github.monchenkoid.project_9_10_14.backend.models;
 import java.util.ArrayList;
 
 /**
- * Created by shiza on 05.03.2015.
+ @author Iryna Monchenko
+ @version on 05.03.2015
  */
+
 public class TypeInformMeth extends Entity {
 
     private Long mId;

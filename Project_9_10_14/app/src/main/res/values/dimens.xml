@@ -1,45 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="userBackground_layout_height">164dp</dimen>
-    <dimen name="userPhoto_layout_width">64dp</dimen>
-    <dimen name="userPhoto_layout_height">64dp</dimen>
-    <dimen name="userPhoto_layout_marginTop">16dp</dimen>
-    <dimen name="userPhoto_layout_marginLeft">16dp</dimen>
-    <dimen name="userData_layout_height">56dp</dimen>
-    <dimen name="userData_layout_marginBottom">8dp</dimen>
-    <dimen name="userName_textSize">14sp</dimen>
-    <dimen name="userName_layout_marginLeft">16dp</dimen>
-    <dimen name="userEmail_textSize">14sp</dimen>
-    <dimen name="userEmail_layout_marginLeft">16dp</dimen>
-
-    <dimen name="material_vertical_margin_layout_vertical">16dp</dimen>
-    <dimen name="material_vertical_margin_horizontal_bottom">48dp</dimen>
-    <dimen name="material_vertical_margin_horizontal_top">48dp</dimen>
-    <dimen name="material_vertical_align_context_horizontal_top">72dp</dimen>
-    <dimen name="material_vertical_size_actionbar">56dp</dimen>
-    <dimen name="material_vertical_size_headline">72dp</dimen>
-    <dimen name="material_vertical_size_list_item">72dp</dimen>
-    <dimen name="material_vertical_size_divider">8dp</dimen>
-    <dimen name="material_vertical_size_title">48dp</dimen>
-    <dimen name="material_vertical_size_navigationdrawer_margin">240dp</dimen>
-
-    <dimen name="material_icon_place_size">48dp</dimen>
-    <dimen name="material_icon_size">40dp</dimen>
-    <dimen name="material_icon_min_size">24dp</dimen>
-    <dimen name="material_icon_button_size">36dp</dimen>
-    <dimen name="material_icon_button_place_size">48dp</dimen>
-
-    <dimen name="font_english_like_display_4">112sp</dimen>
-    <dimen name="font_english_like_display_3">56sp</dimen>
-    <dimen name="font_english_like_display_2">45sp</dimen>
-    <dimen name="font_english_like_display_1">34sp</dimen>
-    <dimen name="font_english_like_headline">24sp</dimen>
-    <dimen name="font_english_like_title">20sp</dimen>
-    <dimen name="font_english_like_subhead">16sp</dimen>
-    <dimen name="font_english_like_body_2">14sp</dimen>
-    <dimen name="font_english_like_body_1">14sp</dimen>
-    <dimen name="font_english_like_caption">12sp</dimen>
-    <dimen name="font_english_like_button">14sp</dimen>
-
 
 </resources>

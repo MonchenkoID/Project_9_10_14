@@ -1,93 +1,88 @@
 package com.github.monchenkoid.project_9_10_14.bo.models;
 
-
 /**
- * Created by Irina Monchenko on 24.12.2014.
+ * @author Iryna Monchenko
+ * @version on 24.12.2014
  */
+
 public abstract class User {
 
-    private Long id;
-
+    private Long mId;
     private String mName;
-
     private String mState;
-
     private String mAddress;
-
     private String mGender;
-
     private Role mRole;
-
     private TypeInfMet mTypeInfMetObject;
 
     public User() {
 
     }
 
-    public User(Long id, String mName, String mState, String mAddress,
-                String mGender, Role mRole, TypeInfMet mTypeInfMetObject) {
-        this.id = id;
-        this.mName = mName;
-        this.mState = mState;
-        this.mAddress = mAddress;
-        this.mGender = mGender;
-        this.mRole = mRole;
-        this.mTypeInfMetObject = mTypeInfMetObject;
+    public User(Long id, String name, String state, String address,
+                String gender, Role role, TypeInfMet typeInfMetObject) {
+        this.mId = id;
+        this.mName = name;
+        this.mState = state;
+        this.mAddress = address;
+        this.mGender = gender;
+        this.mRole = role;
+        this.mTypeInfMetObject = typeInfMetObject;
     }
 
     public Long getId() {
-        return id;
+        return mId;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.mId = id;
     }
 
     public String getName() {
         return mName;
     }
 
-    public void setName(String mName) {
-        this.mName = mName;
+    public void setName(String name) {
+        this.mName = name;
     }
 
     public String getState() {
         return mState;
     }
 
-    public void setState(String mState) {
-        this.mState = mState;
+    public void setState(String state) {
+        this.mState = state;
     }
 
     public String getAddress() {
         return mAddress;
     }
 
-    public void setAddress(String mAddress) {
-        this.mAddress = mAddress;
+    public void setAddress(String address) {
+        this.mAddress = address;
     }
 
     public String getGender() {
         return mGender;
     }
 
-    public void setGender(String mGender) {
-        this.mGender = mGender;
+    public void setGender(String gender) {
+        this.mGender = gender;
     }
 
     public Role getRole() {
         return mRole;
     }
 
-    public void setRole(Role mRole) {
-        this.mRole = mRole;
+    public void setRole(Role role) {
+        this.mRole = role;
     }
 
     public TypeInfMet getTypeInfMetObject() {
         return mTypeInfMetObject;
     }
 
-    public void setTypeInfMetObject(TypeInfMet mTypeInfMetObject) {
-        this.mTypeInfMetObject = mTypeInfMetObject;
+    public void setTypeInfMetObject(TypeInfMet typeInfMetObject) {
+        this.mTypeInfMetObject = typeInfMetObject;
     }
 }

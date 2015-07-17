@@ -3,12 +3,15 @@ package com.github.monchenkoid.project_9_10_14.bo.models;
 import java.util.List;
 
 /**
- * Created by shiza on 08.02.2015.
+ * @author Iryna Monchenko
+ * @version on 08.02.2015
  */
+
 public class TIMresponse {
-    private List<TypeInfMet> items;
+
+    private List<TypeInfMet> mItems;
 
     public List<TypeInfMet> getItems() {
-        return items;
+        return mItems;
     }
 }

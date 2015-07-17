@@ -3,22 +3,24 @@ package com.github.monchenkoid.project_9_10_14.bo.models;
 import android.util.Log;
 
 /**
- * Created by Irina Monchenko on 17.01.2015.
+ * @author Iryna Monchenko
+ * @version on 17.01.2015
  */
+
 public class Role<T> {
 
     private static final String TAG = "ROLE";
-    private T role;
+    private final T mRole;
 
-    public Role(T mRole) {
-        this.role = mRole;
+    public Role(T role) {
+        this.mRole = role;
     }
 
     public T getRole() {
-        return role;
+        return mRole;
     }
 
     public void showType() {
-        Log.i(TAG, "Тип T: " + role.getClass().getName());
+        Log.i(TAG, "Тип T: " + mRole.getClass().getName());
     }
 }

@@ -3,27 +3,25 @@ package com.github.monchenkoid.project_9_10_14.bo.models;
 import java.util.List;
 
 /**
- * Created by Irina Monchenko on 17.01.2015.
+ * @author Iryna Monchenko
+ * @version on 17.01.2015
  */
+
 public class UniqueAnalized extends User {
 
-    private Long id;
-
+    private Long mId;
     private int mAgeDefinition;
-
     private String mCityDefinition;
-
     private String mSocialAddress;
-
     private List<Relationship> mRelationships;
 
-    public UniqueAnalized(int mAgeDefinition, String mCityDefinition, String mSocialAddress,
-                          List<Relationship> mRelationships) {
+    public UniqueAnalized(int ageDefinition, String cityDefinition, String socialAddress,
+                          List<Relationship> relationships) {
 
-        this.mAgeDefinition = mAgeDefinition;
-        this.mCityDefinition = mCityDefinition;
-        this.mSocialAddress = mSocialAddress;
-        this.mRelationships = mRelationships;
+        this.mAgeDefinition = ageDefinition;
+        this.mCityDefinition = cityDefinition;
+        this.mSocialAddress = socialAddress;
+        this.mRelationships = relationships;
     }
 
     public UniqueAnalized() {
@@ -33,35 +31,35 @@ public class UniqueAnalized extends User {
         mRelationships = null;
     }
 
-    public int getmAgeDefinition() {
+    public int getAgeDefinition() {
         return mAgeDefinition;
     }
 
-    public void setmAgeDefinition(int mAgeDefinition) {
-        this.mAgeDefinition = mAgeDefinition;
+    public void setAgeDefinition(int ageDefinition) {
+        this.mAgeDefinition = ageDefinition;
     }
 
-    public String getmCityDefinition() {
+    public String getCityDefinition() {
         return mCityDefinition;
     }
 
-    public void setmCityDefinition(String mCityDefinition) {
-        this.mCityDefinition = mCityDefinition;
+    public void setCityDefinition(String cityDefinition) {
+        this.mCityDefinition = cityDefinition;
     }
 
-    public String getmSocialAddress() {
+    public String getSocialAddress() {
         return mSocialAddress;
     }
 
-    public void setmSocialAddress(String mSocialAddress) {
-        this.mSocialAddress = mSocialAddress;
+    public void setSocialAddress(String socialAddress) {
+        this.mSocialAddress = socialAddress;
     }
 
-    public List<Relationship> getmRelationships() {
+    public List<Relationship> getRelationships() {
         return mRelationships;
     }
 
-    public void setmRelationships(List<Relationship> mRelationships) {
-        this.mRelationships = mRelationships;
+    public void setRelationships(List<Relationship> relationships) {
+        this.mRelationships = relationships;
     }
 }

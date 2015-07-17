@@ -12,8 +12,10 @@ import java.io.IOException;
 import java.util.Date;
 
 /**
- * Created by shiza on 23.02.2015.
+ @author Iryna Monchenko
+ @version on 23.02.2015
  */
+
 public class SignGuestbookServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)

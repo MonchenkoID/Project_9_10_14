@@ -2,11 +2,10 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="@dimen/material_vertical_margin_horizontal_bottom"
-                android:paddingLeft="@dimen/material_vertical_margin_layout_vertical"
-                android:paddingRight="@dimen/material_vertical_margin_layout_vertical"
-                android:paddingTop="@dimen/material_vertical_margin_horizontal_top"
+                android:paddingBottom="@dimen/abc_action_bar_content_inset_material"
+                android:paddingLeft="@dimen/abc_action_bar_content_inset_material"
+                android:paddingRight="@dimen/abc_action_bar_content_inset_material"
+                android:paddingTop="@dimen/abc_action_bar_content_inset_material"
                 tools:context=".DetailsActivity">
 
-    <include layout="@layout/adapter_item"/>
 </RelativeLayout>
