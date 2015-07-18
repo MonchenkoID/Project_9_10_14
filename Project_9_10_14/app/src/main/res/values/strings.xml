@@ -3,23 +3,6 @@
 
     <string name="app_name">Socionics</string>
     <string name="title_activity_timlist">TIMListActivity</string>
-    <string name="no_data">Нет данных</string>
     <string name="title_activity_details">DetailsActivity</string>
-    <string name="tims">ТИМы</string>
-    <string name="reignins">Признаки Рейнина</string>
-    <string name="model_a">Модель А</string>
-    <string name="sub_tims">Подтипы</string>
-    <string name="table_relationships">Таблица отношений</string>
-    <string name="administrating">Администрирование</string>
-    <string name="new_person">Новый подопытный</string>
-    <string-array name="navigation_array">
-        <item>ТИМ-ы</item>
-        <item>Признаки Рейнина</item>
-        <item>Модель А</item>
-        <item>Таблица отношений</item>
-        <item>Администрирование</item>
-    </string-array>
-    <string name="label_entp_alias">Дон Кихот</string>
-    <string name="label_entp_formal">(ИЛЭ)</string>
-    <string name="label_entp_bmti">ENTP</string>
+
 </resources>
